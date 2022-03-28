@@ -1,0 +1,43 @@
+:root {
+  --primary-text-color: #757575;
+  --secondary-text-color: #212121;
+  --accent-text-color: #2196f3;
+  --title-text-color: #ffffff;
+
+  --bgc-portfolio-cards: rgba(33, 150, 243, 0.9);
+  --overlay-bgc: rgba(47, 48, 58, 0.8);
+  --secondary-background-color: #f5f4fa;
+  --third-background-color: #2f303a;
+  --icon-fill-main: #afb1b8;
+
+  --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  --box-shadow-long: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  --box-shadow-pf-card: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  --transition-time: 250ms;
+}
+
+// $secondary-text-color: #212121;
+// $primary-text-color: #757575;
+// $accent-text-color: #2196f3;
+// $title-text-color: #ffffff;
+// $background-color: #ffffff;
+// $bgc-portfolio-cards: rgba(33, 150, 243, 0.9);
+// $overlay-bgc: rgba(47, 48, 58, 0.8);
+// $secondary-background-color: #f5f4fa;
+// $third-background-color: #2f303a;
+// $icon-fill-main: #afb1b8;
+
+// $cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+// $box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+// $box-shadow-long: 0px 1px 3px rgba(0, 0, 0, 0.12),
+//   0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+// $box-shadow-pf-card: 0px 1px 1px rgba(0, 0, 0, 0.12),
+//   0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+// $transition-time: 250ms;

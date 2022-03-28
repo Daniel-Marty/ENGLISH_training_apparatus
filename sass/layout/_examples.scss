@@ -1,0 +1,37 @@
+.examples__section {
+  padding-bottom: 94px;
+}
+.examples {
+  display: flex;
+  padding-left: 0;
+}
+.examples__item {
+  margin-left: 30px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.examples__pic-div {
+  position: relative;
+  overflow: hidden;
+}
+.examples__overlay {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--overlay-bgc);
+}
+.examples__text {
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}

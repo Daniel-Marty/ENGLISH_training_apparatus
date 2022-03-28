@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/style.css">
+    <title>TRAIN ENGLISH</title>
+</head>
+
+<body>
+    <header>
+        <ul class="buttons">
+            <li><button onclick="presentPC()"  id='present__pc' type="button" class="tense"></button></li>
+            <li><button onclick="presentP()"   id='present__p'  type="button" class="tense"></button></li>
+            <li><button onclick="presentC()"   id='present__c'  type="button" class="tense"></button></li>
+            <li><button onclick="presentS()"   id='present__s'  type="button" class="tense"></button></li>
+            <li><button onclick="pastS()"      id='past__s'     type="button" class="tense"></button></li>
+            <li><button onclick="pastC()"      id='past__c'     type="button" class="tense"></button></li>
+            <li><button onclick="pastP()"      id='past__p'     type="button" class="tense"></button></li>
+            <li><button onclick="pastPC()"     id='past__pc'    type="button" class="tense"></button></li>
+            <li><button onclick="futureS()"    id='future__s'   type="button" class="tense"></button></li>
+            <li><button onclick="futureC()"    id='future__c'   type="button" class="tense"></button></li>
+            <li><button onclick="futureP()"    id='future__p'   type="button" class="tense"></button></li>
+            <li><button onclick="futurePC()"   id='future__pc'  type="button" class="tense"></button></li>
+            <li><button onclick="presentC()" 
+                id='plan___f' type="button" class="tense">gonna</button></li>
+        </ul>
+    </header>
+    <ul>
+        <li><p id = 'prompt__pr__s'  class="prompt hidden">He does <br> He doesn't do <br> Does he do? </p></li>
+        <li><p id = 'prompt__pr__c'  class="prompt hidden">I am doing <br> He isn't doing <br> Are we doing?</p></li>
+        <li><p id = 'prompt__pr__p'  class="prompt hidden">You have done <br> You haven't done <br> Have you done?</p></li>
+        <li><p id = 'prompt__pr__pc' class="prompt hidden">I've been doing <br> She hasn't been doing <br> Have you been doing?</p></li>
+        <li><p id = 'prompt__p__s'   class="prompt hidden">V2 &nbsp; &nbsp; did &nbsp; &nbsp; didn't </p></li>
+        <li><p id = 'prompt__p__c'   class="prompt hidden">was &nbsp; were &nbsp;+ &nbsp;ING</p></li>
+        <li><p id = 'prompt__p__p'   class="prompt hidden">&nbsp;&nbsp;&nbsp;&nbsp;had &nbsp; &nbsp; &nbsp;+ V3</p></li>
+        <li><p id = 'prompt__p__pc'  class="prompt hidden">had + been + ING</p></li>
+        <li><p id = 'prompt__f__s'   class="prompt hidden">will / shall (won't) </p></li>
+        <li><p id = 'prompt__f__c'   class="prompt hidden"></p></li>
+        <li><p id = 'prompt__f__p'   class="prompt hidden"></p></li>
+        <li><p id = 'prompt__f__pc'  class="prompt hidden"></p></li>
+        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
+        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
+        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
+        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
+        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
+        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
+        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
+        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
+    </ul>
+    <ul class="gradient">
+        <img onclick="get_random_mark" class="mark" id="mark" src="images-marks/2.png" alt="mark" height="160">
+               <li><div class="subject" onclick="get_random_subject()"><img class="verb__pic" id = 'subject'
+                src="./images-subject/she.jpg" alt="he" height="200"></div></li>
+                <!-- <li>
+                    <div class="subject"><img class="verb__pic" src="./images-modals/need.jpg" alt="he" height="200"></div>
+                </li> -->
+               <li ><div  id="div" onclick="get_random_verb()" class="verb"><img class="verb__pic" id = 'verb'
+                src="./images-verbs/argue.gif" alt="eat"  width="300"></div></li>
+               </ul>
+             
+       <script src="./js/modal.js"></script>
+</body>
+</html>
