@@ -2,10 +2,12 @@
   /*---------------------------ROOT COLORS-----------------------*/
   --background-color: rgba(0, 0, 0, 0.2 );
   --present-color:#13f631;
-  --present--s: 0px 0px 4px 35px var(--present-color), 0px 0px 20px 100px #ffffff;
-  --present--p: 0px 0px 4px 35px var(--present-color), 0px 0px 20px 60px black;
-  --present--pc: 0px 0px 4px 35px var(--present-color), 0px 0px 0px 41px black, 0px 0px 20px 60px yellow;
-  --present--c: 0px 0px 4px 35px var(--present-color), 0px 0px 20px 60px yellow;
+  --past-color: #0057fa;
+  --future-color: #ff0505;
+  --present--s: 0px 0px 4px 35px #13f631, 0px 0px 20px 100px #ffffff;
+  --present--p: 0px 0px 4px 35px #13f631, 0px 0px 20px 60px black;
+  --present--pc: 0px 0px 4px 35px #13f631, 0px 0px 0px 41px black, 0px 0px 20px 60px yellow;
+  --present--c: 0px 0px 4px 35px #13f631, 0px 0px 20px 60px yellow;
   --past--s: 0px 0px 4px 35px #0057fa, 0px 0px 20px 100px white;
   --past--c: 0px 0px 4px 35px #0057fa, 0px 0px 20px 60px yellow;
   --past--p: 0px 0px 4px 35px #0057fa, 0px 0px 20px 60px black;
@@ -20,11 +22,18 @@
 body {
   font-family: "roboto", sans-serif;
 }
+
+.boxShadow {
+  width: 200px;
+  height: 200px;
+  background-color: black;
+}
+
 .prompt {
   z-index: 9;
   position: absolute;
-  left: 5%;
-  top: 50px;
+  left: 13%;
+  top: 130px;
   font-weight: bold;
   font-size: 20px;
   line-height: 1.16;
@@ -48,91 +57,98 @@ body {
   width: 170px;
   left: 40%;
   top:0%;
-
 }
-#present__p {
+.buttons {
+  display: flex;
+}
+.button {
   width: 40px;
   height: 20px;
   border-radius: 5px;
-  border:solid 4px #13f631;
+}
+.conditional__list {
+  position: absolute;
+  display: flex;
+  right: 7%;
+  top: 15%;
+
+}
+.conditional__item {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  margin-left: 10px;
+}
+.zero {
+  border: 5px solid var(--present-color);
+  box-shadow: 0px 0px 5px 2px var(--present-color);
+
+}
+.first {
+  border: 5px solid var(--future-color);
+  box-shadow: 0px 0px 5px 2px var(--future-color);
+}
+.second {
+  border: 5px solid var(--past-color);
+  box-shadow: 0px 0px 5px 3px var(--past-color);
+  background-color: white;
+}
+.third {
+  border: 5px solid black;
+  box-shadow: 0px 0px 5px 2px black;
+}
+
+#present__p {
+   border:solid 4px #13f631;
   box-shadow: 0px 0px 5px 3px black;
 }
 #present__c {
-   width: 40px;
-  height: 20px;
-  border-radius: 5px;
   border:solid 4px #13f631;
   box-shadow: 0px 0px 5px 3px yellow;
 }
 #present__pc {
-  width: 40px;
-  height: 20px;
-  border-radius: 5px;
   border:solid 4px #13f631;
   box-shadow: 0px 0px 5px 2px black, 0px 0px 5px 7px yellow;
 }
 #present__s {
-  width: 40px;
-  height: 20px;
-  border-radius: 5px;
   border:solid 4px #13f631;
   box-shadow: 0px 0px 5px 2px #13f631;
 }
 #past__s {
-  width: 40px;
-  height: 20px;
-  border-radius: 5px;
   border:solid 4px #0057fa;
   box-shadow: 0px 0px 5px 2px #0057fa, 0px 0px 5px 5px white;
 }
 #past__c {
-   width: 40px;
-  height: 20px;
-  border-radius: 5px;
   border:solid 4px #0057fa;
   box-shadow: 0px 0px 5px 3px yellow;
 }
 #past__p {
-   width: 40px;
-  height: 20px;
-  border-radius: 5px;
   border:solid 4px #0057fa;
   box-shadow: 0px 0px 5px 3px black;
 }
 #past__pc {
-   width: 40px;
-  height: 20px;
-  border-radius: 5px;
   border:solid 4px #0057fa;
   box-shadow: 0px 0px 5px 3px black,0px 0px 5px 7px yellow;
 }
 #future__s {
-  width: 40px;
-  height: 20px;
-  border-radius: 5px;
   border:solid 4px #ff0505;
   box-shadow: 0px 0px 5px 2px #ff0505, 0px 0px 5px 5px white;
 }
 #future__c {
-   width: 40px;
-  height: 20px;
-  border-radius: 5px;
   border:solid 4px #ff0505;
   box-shadow: 0px 0px 5px 3px yellow;
 }
 #future__p {
-   width: 40px;
-  height: 20px;
-  border-radius: 5px;
   border:solid 4px #ff0505;
   box-shadow: 0px 0px 5px 3px black;
 }
 #future__pc {
-   width: 40px;
-  height: 20px;
-  border-radius: 5px;
   border:solid 4px #ff0505;
   box-shadow: 0px 0px 5px 3px black,0px 0px 5px 7px yellow;
+}
+#conditionals{
+  border:solid 4px #ff66e0;
+  box-shadow: 0px 0px 5px 3px #ff66e0;
 }
 
 .present__s {
@@ -181,9 +197,7 @@ img {
   li {
   list-style: none;
 }
-.buttons {
-  display: flex;
-}
+
 .tense {
   margin-left: 20px;
 }
@@ -197,7 +211,7 @@ img {
   align-items: center;
   justify-content: space-around;
 }
-.verb {
+.secondVerb {
     text-align: center;
     /* border:solid 30px var(--present-color); */
     border-radius: 30px;
