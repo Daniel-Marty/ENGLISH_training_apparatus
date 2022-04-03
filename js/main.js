@@ -1,8 +1,13 @@
 let marks_array = ['1.png', '2.png', '3.png']
 let subject_array = ['he.jpg','it.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg', 'Kianu.jpg', 'Emilia.jpg', 'Charlie.jpg', 'David.jpg']
 let verbs_array = ['accuse.gif', 'add.gif', 'admit.gif', 'advise.gif', 'agree.gif', 'apologize.gif', 'argue.gif', 'ask_for_opinion.gif', 'ask.gif', 'backup.gif', 'become.gif', 'begged.gif', 'bet.gif','bite.gif', 'break.gif', 'bring.gif', 'broadcast.gif', 'buy.gif', 'cast.gif', 'catch.gif', 'challenge.gif', 'challenge.gif', 'chatting.gif', 'cheer.gif', 'choose.gif', 'circle.gif', 'claim.gif', 'come_up.gif', 'come.gif', 'comfort.gif', 'complain.gif', 'cook.gif', 'compliment.gif', 'conclude.gif', 'confess.gif', 'confuse.gif', 'continue.gif', 'cross_out.gif', 'cut.gif', 'decide.gif', 'deny.gif', 'doubt.gif', 'drive.gif', 'eat.gif', 'get_embarrassed.gif', 'encourage.gif', 'entertain.gif', 'explain.gif', 'fall.gif', 'fight.gif', 'forget.gif', 'count.gif', 'get_dressed.gif', 'give.gif', 'go.gif', 'greet.gif', 'have_to.gif', 'hear.gif', 'hesitate.gif', 'hide.gif', 'hit.gif', 'hit_again.gif', 'hurt.gif', 'inform.gif', 'interrupt.gif', 'buy.gif', 'ask.gif', 'interrupt.gif', 'knit.gif', 'let_go.gif', 'lie.gif', 'list.gif', 'listen.gif', 'look_for.gif', 'lost.gif', 'attract_attention.gif', 'offer.gif', 'persuade.gif','point_out.gif', 'punch.gif', 'put_down.gif', 'deny2.gif', 'quit.gif', 'read.gif', 'realize.gif', 'recommend.gif', 'regret.gif', 'remind.gif', 'repeat.gif', 'reply.gif', 'respond.gif', 'ride.gif', 'rip_off.gif', 'rise.gif', 'run_out_of_time.gif', 'run_out_of.gif', 'run.gif', 'rush.gif', 'being_sarcastic.gif', 'say.gif', 'see.gif', 'seek.gif', 'set.gif', 'shout_out.gif', 'shut.gif', 'slice.gif', 'sorry.gif', 'spare.gif', 'speak.gif', 'spread.gif', 'start_talking.gif', 'steal.gif', 'suggest.gif', 'shopping.gif', 'surprise.gif', 'take.gif', 'take_off_clothes.gif', 'take_off_plane.gif', 'taste.gif', 'teach.gif', 'tell.gif', 'think.gif', 'think2.gif', 'throw.gif', 'figure_out.gif', 'being_interested.gif', 'try.gif', 'turn_back.gif', 'wake.gif', 'walk.gif', 'want.gif', 'warn.gif', 'welcome.gif', 'whisper.gif', 'write.gif']
-let simple_verbs_array = ['go.gif', 'ask.gif', 'buy.gif', 'catch.gif', 'circle.gif', 'come.gif', 'cook.gif', 'cut.gif', 'drive.gif', 'eat.gif', 'explain.gif', 'fall.gif', 'fight.gif', 'give.gif', 'go.gif', 'hear.gif', 'listen.gif', 'hit.gif', 'lie.gif', 'look_for.gif', 'need.gif', 'offer.gif', 'read.gif', 'ride.gif', 'run.gif', 'say.gif', 'shut.gif', 'take.gif', 'take_off_clothes.gif', 'teach.gif', 'think.gif', 'throw.gif', 'try.gif', 'wake.gif', 'walk.gif', 'write.gif']
 let first_verbs_array = ['want.gif', 'need.gif', 'have_to.gif']
+
+let zero_level_verbs = ['eat.gif', 'drink.gif', 'go.gif', 'see.gif', 'like.gif', 'cook.gif']
+let first_level_verbs = ['eat.gif', 'drink.gif', 'go.gif', 'see.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif']
+let second_level_verbs = ['eat.gif', 'drink.gif', 'go.gif', 'see.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif', 'want.gif', 'need.gif', 'run.gif', 'take.gif', 'walk.gif', 'work.gif', 'have.jpg', 'fly.gif', 'sleep.gif', 'come.gif', 'come_back.gif', 'have_to.gif']
+let third_level_verbs = ['eat.gif', 'drink.gif', 'go.gif', 'see.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif', 'want.gif', 'need.gif', 'run.gif', 'take.gif', 'walk.gif', 'work.gif', 'have.jpg', 'fly.gif', 'sleep.gif', 'come.gif', 'come_back.gif', 'have_to.gif', 'clean.gif', 'ask.gif', 'be_angry.gif', 'be_happy.gif', 'look_for.gif', 'be_late.gif', 'be_tired.gif', 'bite.gif', 'break.gif', 'bring.gif', 'buy.gif', 'circle.gif', 'continue.gif', 'speak.gif', 'hear.gif', 'hide.gif']
+let fourth_level_verbs = ['eat.gif', 'drink.gif', 'go.gif', 'see.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif', 'want.gif', 'need.gif', 'run.gif', 'take.gif', 'walk.gif', 'work.gif', 'have.jpg', 'fly.gif', 'sleep.gif', 'come.gif', 'come_back.gif', 'have_to.gif', 'clean.gif','ask.gif', 'be_angry.gif', 'be_happy.gif', 'look_for.gif', 'be_late.gif', 'be_tired.gif', 'bite.gif', 'break.gif', 'bring.gif', 'buy.gif', 'circle.gif', 'continue.gif', 'speak.gif', 'hear.gif', 'hide.gif']
 
 const buttonPrS = document.getElementById('present__s');
 const buttonPrC = document.getElementById('present__c');
@@ -56,6 +61,30 @@ function get_second_verb() {
     selected_image = verbs_array[random_verb]
     document.getElementById('verb').src = `./images-verbs/${selected_image}`
 }
+
+function zero_level() {
+    random_verb = Math.floor(Math.random() * zero_level_verbs.length);
+    selected_image = zero_level_verbs[random_verb]
+    document.getElementById('verb').src = `./images-verbs/${selected_image}`
+}
+
+function first_level() {
+    random_verb = Math.floor(Math.random() * first_level_verbs.length);
+    selected_image = first_level_verbs[random_verb]
+    document.getElementById('verb').src = `./images-verbs/${selected_image}`
+}
+function second_level() {
+    random_verb = Math.floor(Math.random() * second_level_verbs.length);
+    selected_image = second_level_verbs[random_verb]
+    document.getElementById('verb').src = `./images-verbs/${selected_image}`
+}
+function third_level() {
+    random_verb = Math.floor(Math.random() * third_level_verbs.length);
+    selected_image = third_level_verbs[random_verb]
+    document.getElementById('verb').src = `./images-verbs/${selected_image}`
+}
+
+
 let hidePrompts = function() {
     for (let i = 0; i < prompts.length; i++) {
         let promptsClasses = prompts[i];
