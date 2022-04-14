@@ -6,7 +6,15 @@ html {
 *::after {
   box-sizing: inherit;
 }
-.list {
+
+img {
+  display: block;
+  border-radius: 20px;
+  // max-width: 100%;
+  // height: auto;
+}
+
+li {
   list-style: none;
   text-decoration: none;
 }
@@ -27,11 +35,6 @@ ul {
 
 .button {
   cursor: pointer;
-}
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 address {
   font-style: normal;

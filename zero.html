@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+        integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="./css/main.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <ul class="buttons">
+            <li><a href="./index.html"><button id='main_menu' onclick="zero_level()" type="button"
+                        class="button tense">main</button></a></li>
+            <li><button id='present__s' type="button" class="button tense"></button></li>
+            <li><button id='future__s' type="button" class="button tense"></button></li>
+            <li><button id='zero_level' onclick="zero_level()" type="button" class="button tense">0</button></li>
+            <li><button id='first_level' onclick="first_level()" type="button" class="button tense">1</button></li>
+            <li><button id='second_level' onclick="second_level()" type="button" class="button tense">2</button></li>
+            <li><button id='third_level' onclick="third_level()" type="button" class="button tense">3</button></li>
+            <li><button id='fourth_level' onclick="fourth_level()" type="button" class="button tense">4</button></li>
+            <li><button id='fifth_level' onclick="fifth_level()" type="button" class="button tense">5</button></li>
+            <li><button id='sixth_level' onclick="sixth_level()" type="button" class="button tense">6</button></li>
+        </ul>
+    </header>
+<ul>
+    <li>
+        <p id='prompt__pr__s' class="prompt hidden">He does <br> He doesn't do <br> Does he do? </p>
+    </li>
+    <li>
+        <p id='prompt__f__s' class="prompt hidden">I will say <br> I won't say<br> Will I say? </p>
+    </li>
+</ul>
+
+    <img onclick="get_random_mark" class="mark" id="mark" src="images-marks/1.png" alt="mark" height="160">
+    <ul class="content">
+        <li>
+            <div class="subject" onclick="get_random_subject()">
+                <img class="verb__pic" id='subject' src="./images-subject/Emilia.jpg" alt="subject" height="200">
+            </div>
+        </li>
+        <li>
+            <div id="secondVerb" onclick="zero_level()" class="secondVerb"><img class="verb__pic" id='verb'
+                    src="./images-verbs/argue.gif" alt="eat" width="300"></div>
+        </li>
+    </ul>
+    <script src="./js/zero.js"></script>
+</body>
+

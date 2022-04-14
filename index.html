@@ -1,58 +1,91 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="./css/style.css">
-    <title>TRAIN ENGLISH</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+        integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="./css/main.min.css">
+    <title>Document</title>
 </head>
 
 <body>
     <header>
         <ul class="buttons">
             <li><button id='present__pc' type="button" class="button tense"></button></li>
-            <li><button id='present__p'  type="button" class="button tense"></button></li>
-            <li><button id='present__c'  type="button" class="button tense"></button></li>
-            <li><button id='present__s'  type="button" class="button tense"></button></li>
-            <li><button id='past__s'     type="button" class="button tense"></button></li>
-            <li><button id='past__c'     type="button" class="button tense"></button></li>
-            <li><button id='past__p'     type="button" class="button tense"></button></li>
-            <li><button id='past__pc'    type="button" class="button tense"></button></li>
-            <li><button id='future__s'   type="button" class="button tense"></button></li>
-            <li><button id='future__c'   type="button" class="button tense"></button></li>
-            <li><button id='future__p'   type="button" class="button tense"></button></li>
-            <li><button id='future__pc'  type="button" class="button tense"></button></li>
-            <li><button id='plan___f'    type="button" class="button tense"></button></li>
-            <li><button onclick="conditionals()"   id='conditionals'  type="button" class="button tense"></button></li> 
-            <li><button id='zero_level' onclick="zero_level()" type="button" class="button tense">0</button></li>
+            <li><button id='present__p' type="button" class="button tense"></button></li>
+            <li><button id='present__c' type="button" class="button tense"></button></li>
+            <li><button id='present__s' type="button" class="button tense"></button></li>
+            <li><button id='past__s' type="button" class="button tense"></button></li>
+            <li><button id='past__c' type="button" class="button tense"></button></li>
+            <li><button id='past__p' type="button" class="button tense"></button></li>
+            <li><button id='past__pc' type="button" class="button tense"></button></li>
+            <li><button id='future__s' type="button" class="button tense"></button></li>
+            <li><button id='future__c' type="button" class="button tense"></button></li>
+            <li><button id='future__p' type="button" class="button tense"></button></li>
+            <li><button id='future__pc' type="button" class="button tense"></button></li>
+            <li><button id='button_there_is' type="button" class="button tense">T</button></li>
+            <li><button onclick="conditionals()" id='conditionals' type="button" class="button tense"></button></li>
+            <li><a href="./zero.html"><button id='zero_level' onclick="zero_level()" type="button" class="button tense">0</button></a></li>
             <li><button id='first_level' onclick="first_level()" type="button" class="button tense">1</button></li>
             <li><button id='second_level' onclick="second_level()" type="button" class="button tense">2</button></li>
             <li><button id='third_level' onclick="third_level()" type="button" class="button tense">3</button></li>
-
+            <li><button id='fourth_level' onclick="fourth_level()" type="button" class="button tense">4</button></li>
+            <li><button id='fifth_level' onclick="fifth_level()" type="button" class="button tense">5</button></li>
+            <li><button id='sixth_level' onclick="sixth_level()" type="button" class="button tense">6</button></li>
         </ul>
     </header>
     <ul>
-        <li><p id = 'prompt__pr__s'  class="prompt hidden">He does <br> He doesn't do <br> Does he do? </p></li>
-        <li><p id = 'prompt__pr__c'  class="prompt hidden">I am doing <br> He isn't doing <br> Are we doing?</p></li>
-        <li><p id = 'prompt__pr__p'  class="prompt hidden">You have done <br> You haven't done <br> Have you done?</p></li>
-        <li><p id = 'prompt__pr__pc' class="prompt hidden">I've been doing <br> She hasn't been doing <br> Have you been doing?</p></li>
-        <li><p id = 'prompt__p__s'   class="prompt hidden">I went there <br> I didn't go there <br> Did you go there?</p></li>
-        <li><p id = 'prompt__p__c'   class="prompt hidden">I was doing <br> I wasn't doing <br> Was I doing?</p></li>
-        <li><p id = 'prompt__p__p'   class="prompt hidden">I had eaten <br> I hadn't eaten <br> Had you eaten? </p></li>
-        <li><p id = 'prompt__p__pc'  class="prompt hidden">I had been doing <br> I hadn't been doing <br> Had you been doing?</p></li>
-        <li><p id = 'prompt__f__s'   class="prompt hidden">I will say <br> I won't say<br> Will I say? </p></li>
-        <li><p id = 'prompt__f__c'   class="prompt hidden">I will be saying <br>I won't be saying<br>Will I be saying?</p></li>
-        <li><p id = 'prompt__f__p'   class="prompt hidden">I will have done<br>I won't have done<br>Will you have done?</p></li>
-        <li><p id = 'prompt__f__pc'  class="prompt hidden">I will have been doing <br> I won't have been doing<br>Will you have been doing?</p></li>
-        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
-        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
-        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
-        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
-        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
-        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
-        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
-        <li><p id = 'prompt__ __ __' class="prompt hidden"></p></li>
+        <li>
+            <p id='prompt__pr__s' class="prompt hidden">He does <br> He doesn't do <br> Does he do? </p>
+        </li>
+        <li>
+            <p id='prompt__pr__c' class="prompt hidden">I am doing <br> He isn't doing <br> Are we doing?</p>
+        </li>
+        <li>
+            <p id='prompt__pr__p' class="prompt hidden">You have done <br> You haven't done <br> Have you done?</p>
+        </li>
+        <li>
+            <p id='prompt__pr__pc' class="prompt hidden">I've been doing <br> She hasn't been doing <br> Have you been
+                doing?</p>
+        </li>
+        <li>
+            <p id='prompt__p__s' class="prompt hidden">I went there <br> I didn't go there <br> Did you go there?</p>
+        </li>
+        <li>
+            <p id='prompt__p__c' class="prompt hidden">I was doing <br> I wasn't doing <br> Was I doing?</p>
+        </li>
+        <li>
+            <p id='prompt__p__p' class="prompt hidden">I had eaten <br> I hadn't eaten <br> Had you eaten? </p>
+        </li>
+        <li>
+            <p id='prompt__p__pc' class="prompt hidden">I had been doing <br> I hadn't been doing <br> Had you been doing?
+            </p>
+        </li>
+        <li>
+            <p id='prompt__f__s' class="prompt hidden">I will say <br> I won't say<br> Will I say? </p>
+        </li>
+        <li>
+            <p id='prompt__f__c' class="prompt hidden">I will be saying <br>I won't be saying<br>Will I be saying?</p>
+        </li>
+        <li>
+            <p id='prompt__f__p' class="prompt hidden">I will have done<br>I won't have done<br>Will you have done?</p>
+        </li>
+        <li>
+            <p id='prompt__f__pc' class="prompt hidden">I will have been doing <br> I won't have been doing<br>Will you have
+                been doing?</p>
+        </li>
+       
     </ul>
     <ul class="conditional__list hidden" id="circles">
         <li class="conditional__item zero"></li>
@@ -61,21 +94,32 @@
         <li class="conditional__item third"></li>
         <li class="conditional__item mixed"></li>
     </ul>
+    
+    <div class="boxShadow hidden" style="box-shadow: 0px 0px 4px 35px #ff0505, 0px 0px 20px 60px black;"></div>
+    
+    <div><img onclick="get_random_mark" class="mark" id="mark" src="images-marks/2.png" alt="mark" height="160"></div>
 
-<div class="boxShadow hidden" style = "box-shadow: 0px 0px 4px 35px #ff0505, 0px 0px 20px 60px black;"></div>
+    <ul class="content">
+        <li>
+            <div class="subject" onclick="get_random_subject()">
+                <img class="verb__pic" id='subject' src="./images-subject/Emilia.jpg" alt="subject" height="200">
+            </div>
+        </li>
+        <li>
+            <div class="first_verb" onclick="get_first_verb()">
+                <img class="verb__pic hidden" id='second_verb' src="./images-modals/need.jpg" alt="he" width="200">
+            </div>
+        </li>
+        <li><div  onclick="there_is()" class="there_is hidden" id="there_is"><img id="threre_is_pic" src="./images-thereis/04.jpg" alt="there IS"
+            height="350"></div></li>
+        <li>
+            <div id="secondVerb" onclick="get_second_verb()" class="secondVerb"><img class="verb__pic" id='verb'
+                    src="./images-verbs/argue.gif" alt="eat" width="300"></div>
+        </li>
+        
+    </ul>
 
-
-    <ul class="gradient">
-        <img onclick="get_random_mark" class="mark" id="mark" src="images-marks/2.png" alt="mark" height="160">
-               <li><div class="subject" onclick="get_random_subject()"><img class="verb__pic" id = 'subject'
-                src="./images-subject/Emilia.jpg" alt="subject" height="200"></div></li>
-                <li>
-                    <div class="subject" id = "first_div" onclick="get_first_verb()"><img class="verb__pic hidden" id = 'second_verb' src="./images-modals/need.jpg" alt="he" width="200"></div>
-                </li>
-               <li ><div  id="secondVerb" onclick="get_second_verb()" class="secondVerb"><img class="verb__pic" id = 'verb'
-                src="./images-verbs/argue.gif" alt="eat"  width="300"></div></li>
-               </ul>
-             
-       <script src="./js/main.js"></script>
+    
+    <script src="./js/main.js"></script>
 </body>
 </html>

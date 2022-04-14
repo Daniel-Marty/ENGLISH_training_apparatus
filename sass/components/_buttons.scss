@@ -1,0 +1,120 @@
+.tense {
+  // margin-left: 20px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  line-height: 20px;
+  }
+
+.button {
+  min-width: 40px;
+  height: 20px;
+  line-height: 5px;
+  top:50%; 
+  left: 50%;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  color: transparent;
+  background: #333131;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 2px rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  box-shadow: 2px 0px 23px 12px white;
+}
+#present__p {
+  border: solid 4px #13f631;
+  box-shadow: 0px 0px 5px 3px black;
+}
+#present__c {
+  border: solid 4px #13f631;
+  box-shadow: 0px 0px 5px 3px yellow;
+}
+#present__pc {
+  border: solid 4px #13f631;
+  box-shadow: 0px 0px 5px 2px black, 0px 0px 5px 7px yellow;
+}
+#present__s {
+  border: solid 4px #13f631;
+  box-shadow: 0px 0px 5px 2px #13f631;
+}
+#past__s {
+  border: solid 4px #0057fa;
+  box-shadow: 0px 0px 5px 2px #0057fa, 0px 0px 5px 5px white;
+}
+#past__c {
+  border: solid 4px #0057fa;
+  box-shadow: 0px 0px 5px 3px yellow;
+}
+#past__p {
+  border: solid 4px #0057fa;
+  box-shadow: 0px 0px 5px 3px black;
+}
+#past__pc {
+  border: solid 4px #0057fa;
+  box-shadow: 0px 0px 5px 3px black, 0px 0px 5px 7px yellow;
+}
+#future__s {
+  border: solid 4px #ff0505;
+  box-shadow: 0px 0px 5px 2px #ff0505, 0px 0px 5px 5px white;
+}
+#future__c {
+  border: solid 4px #ff0505;
+  box-shadow: 0px 0px 5px 3px yellow;
+}
+#future__p {
+  border: solid 4px #ff0505;
+  box-shadow: 0px 0px 5px 3px black;
+}
+#future__pc {
+  border: solid 4px #ff0505;
+  box-shadow: 0px 0px 5px 3px black, 0px 0px 5px 7px yellow;
+}
+#conditionals {
+  border: solid 4px #ff66e0;
+  box-shadow: 0px 0px 5px 3px #ff66e0;
+}
+.present__s {
+  box-shadow: var(--present--s);
+}
+.present__p {
+  box-shadow: var(--present--p);
+}
+.present__pc {
+  box-shadow: var(--present--pc)
+}
+.present__c {
+  box-shadow: var(--present--c);
+}
+.plan__f {
+  box-shadow: var(--present--c);
+}
+.past__s {
+  box-shadow: var(--past--s);
+}
+.past__c {
+  box-shadow: var(--past--c);
+}
+.past__p {
+  box-shadow: var(--past--p);
+}
+.past__pc {
+  box-shadow: var(--past--pc);
+}
+.future__s {
+  box-shadow: var(--future--s);
+}
+.future__c {
+  box-shadow: var(--future--c);
+}
+.future__p {
+  box-shadow: var(--future--p);
+}
+.future__pc {
+  box-shadow: var(--future--pc);
+}
