@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+        integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="./css/main.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <ul class="buttons">
+            <li><a href="./index.html"><button id='main_menu' type="button"
+                        class="button tense">main</button></a></li>
+            <li><button id='button_there_is' type="button" class="button tense">T</button></li>
+            <li><button id='conditionals' type="button" class="button tense"></button></li>
+
+            <li><a href="./level_0.html"><button id='zero_level' type="button" class="button tense">0</button></a></li>
+            <li><a href="./level_1.html"><button id='first_level' type="button" class="button tense">1</button></a></li>
+            <li><a href="./level_2.html"><button id='second_level' type="button" class="button tense">2</button></a>
+            </li>
+            <li><a href="./level_3.html"><button id='third_level' type="button" class="button tense">3</button></a></li>
+            <li><a href="./level_4.html"><button id='fourth_level' type="button" class="button tense">4</button></a>
+            </li>
+            <li><a href="./level_5.html"><button id='fifth_level' type="button" class="button tense">5</button></a></li>
+            <li><a href="./level_6.html"><button id='sixth_level' type="button" class="button tense">6</button></a></li>
+        </ul>
+    </header>
+    
+       
+           
+    <ul class="conditional__list" id="circles">
+        <li class=""><button type="button" id="circle_zero" class="conditional__circle zero"></button></li>
+        <li class=""><button type="button" id="circle_first" class="conditional__circle first"></button></li>
+        <li class=""><button type="button" id="circle_second" class="conditional__circle second"></button></li>
+        <li class=""><button type="button" id="circle_third" class="conditional__circle third"></button></li>
+        <li class=""><button type="button" id="circle_mixed" class="conditional__circle mixed"></button></li>
+    </ul>
+
+    <div class="boxShadow hidden" style="box-shadow: 0px 0px 4px 35px #ff0505, 0px 0px 20px 60px black;"></div>
+
+    
+
+    <ul class="content__conditionals">
+        <li class="conditionals__item">
+            <div class="subject" onclick="get_random_subject()">
+                <img class="verb__pic" id='subject' src="./images-subject/Emilia.jpg" alt="subject" width="150">
+            </div>
+        </li>
+        <li class="conditionals__item"><div><img onclick="get_random_mark1()" class="mark__conditional" id="mark1" src="images-marks/2.png" alt="mark" height="160"></div></li>
+        <li class="conditionals__item">
+            <div class="first_verb" onclick="get_first_verb()">
+                <img class="verb__pic" id='firstVerbPic' src="./images-verbs/be_annoyed.gif" alt="he" width="200">
+            </div>
+        </li>
+        <li class="conditionals__item">
+            <div class="subject" onclick="get_random_subject()">
+                <img class="verb__pic" id='subject' src="./images-subject/Emilia.jpg" alt="subject" width="150">
+            </div>
+        </li>
+        <li class="conditionals__item"><div><img onclick="get_random_mark2()" class="mark__conditional" id="mark2" src="images-marks/1.png" alt="mark" height="160"></div></li>
+        <!-- <li class="conditionals__item">
+            <div onclick="there_is()" class="there_is hidden" id="there_is"><img id="threre_is_pic"
+                    src="./images-thereis/04.jpg" alt="there IS" width="300"></div>
+        </li> -->
+        <li class="conditionals__item">
+            <div id="secondVerb" onclick="get_second_verb()" class="secondVerb__conditionals"><img  id='secondVerbPic'
+                    src="./images-verbs/argue.gif" alt="eat" width="200"></div>
+        </li>
+
+    </ul>
+
+
+    <script src="./js/conditionals.js"></script>
+</body>
+
+</html>

@@ -3,21 +3,37 @@
     display: flex;
     right: 7%;
     top: 15%;
-
 }
-.conditional__item {
-    width: 40px;
-    height: 40px;
+.conditional__circle{
     border-radius: 40px;
+    height: 40px;
+    width: 40px;
     margin-left: 10px;
+}
+.content__conditionals {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 30%;
+    align-items: center;
+    box-shadow: 2px 0px 23px 12px white;
+}
+.conditionals__item {
+    border-radius: 40px;
+    margin-left: 30px;
+}
+.secondVerb__conditionals {
+    border-radius: 40px;
 }
 .zero {
     border: 5px solid var(--present-color);
     box-shadow: 0px 0px 5px 2px var(--present-color);
+    background-color: white;
 }
 .first {
     border: 5px solid var(--future-color);
     box-shadow: 0px 0px 5px 2px var(--future-color);
+    background-color: white;
 }
 .second {
     border: 5px solid var(--past-color);
@@ -27,4 +43,5 @@
 .third {
     border: 5px solid black;
     box-shadow: 0px 0px 5px 2px black;
+    background-color: white;
 }
