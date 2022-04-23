@@ -81,7 +81,7 @@ let sixth_level_styles = [PrSStyle, FSStyle, PSStyle, PrPStyle, PrCStyle, PCStyl
 function get_random_subject() {
     random_subject = Math.floor(Math.random() * subject_array.length);
     selected_image = subject_array[random_subject]
-    document.getElementById('subject').src = `../images-subject/${selected_image}`
+    document.getElementById('subject').src = `./images-subject/${selected_image}`
 }
 function get_random_mark() {
     random_mark = Math.floor(Math.random() * marks_array.length);
@@ -143,7 +143,6 @@ buttonThereIs.addEventListener('click', () => {
     mark.style.left = "1050px";
     hidePrompts();
     hideTimeMarkers();
-    // there_is_prompts();
 })
 
     

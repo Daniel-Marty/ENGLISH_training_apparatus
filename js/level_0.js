@@ -19,7 +19,7 @@ let zero_level_styles = [PrSStyle, FSStyle]
 function get_random_subject() {
     random_subject = Math.floor(Math.random() * subject_array.length);
     selected_image = subject_array[random_subject]
-    document.getElementById('subject').src = `../images-subject/${selected_image}`
+    document.getElementById('subject').src = `./images-subject/${selected_image}`
 }
 function get_random_mark() {
     random_mark = Math.floor(Math.random() * marks_array.length);

@@ -15,6 +15,11 @@
   --future--c: 0px 0px 4px 35px #ff0505, 0px 0px 20px 60px yellow;
   --future--p: 0px 0px 4px 35px #ff0505, 0px 0px 20px 60px black;
   --future--pc: 0px 0px 4px 35px #ff0505, 0px 0px 0px 41px black, 0px 0px 20px 60px yellow;
+  --transition-time: 300ms;
+  --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --accent-bg-color: #3366ff;
+  --accent-shadow: 0px 0px 8px 15px white;
+  --accent-shadow-tense: 0px 0px 5px 10px white;
 }
 
 html {
@@ -117,71 +122,142 @@ body {
   text-shadow: 0px 3px 2px rgba(255, 255, 255, 0.5);
   border-radius: 8px;
   box-shadow: 2px 0px 23px 12px white;
+  transition: color var(--transition-time) var(--cubic-bezier), background-color var(--transition-time) var(--cubic-bezier), background-transition 300ms, box-shadow 300ms var(--cubic-bezier);
+}
+.button:hover, .button:focus {
+  color: white;
+  background-color: red;
+  box-shadow: var(--accent-shadow);
 }
 
 #present__p {
   border: solid 4px #13f631;
   box-shadow: 0px 0px 5px 3px black;
 }
+#present__p:hover, #present__p:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
+}
 
 #present__c {
   border: solid 4px #13f631;
   box-shadow: 0px 0px 5px 3px yellow;
+}
+#present__c:hover, #present__c:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
 }
 
 #present__pc {
   border: solid 4px #13f631;
   box-shadow: 0px 0px 5px 2px black, 0px 0px 5px 7px yellow;
 }
+#present__pc:hover, #present__pc:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
+}
 
 #present__s {
   border: solid 4px #13f631;
   box-shadow: 0px 0px 5px 2px #13f631;
+}
+#present__s:hover, #present__s:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
 }
 
 #past__s {
   border: solid 4px #0057fa;
   box-shadow: 0px 0px 5px 2px #0057fa, 0px 0px 5px 5px white;
 }
+#past__s:hover, #past__s:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
+}
 
 #past__c {
   border: solid 4px #0057fa;
   box-shadow: 0px 0px 5px 3px yellow;
+}
+#past__c:hover, #past__c:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
 }
 
 #past__p {
   border: solid 4px #0057fa;
   box-shadow: 0px 0px 5px 3px black;
 }
+#past__p:hover, #past__p:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
+}
 
 #past__pc {
   border: solid 4px #0057fa;
   box-shadow: 0px 0px 5px 3px black, 0px 0px 5px 7px yellow;
+}
+#past__pc:hover, #past__pc:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
 }
 
 #future__s {
   border: solid 4px #ff0505;
   box-shadow: 0px 0px 5px 2px #ff0505, 0px 0px 5px 5px white;
 }
+#future__s:hover, #future__s:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
+}
 
 #future__c {
   border: solid 4px #ff0505;
   box-shadow: 0px 0px 5px 3px yellow;
+}
+#future__c:hover, #future__c:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
 }
 
 #future__p {
   border: solid 4px #ff0505;
   box-shadow: 0px 0px 5px 3px black;
 }
+#future__p:hover, #future__p:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
+}
 
 #future__pc {
   border: solid 4px #ff0505;
   box-shadow: 0px 0px 5px 3px black, 0px 0px 5px 7px yellow;
 }
+#future__pc:hover, #future__pc:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
+}
 
 #conditionals {
   border: solid 4px #ff66e0;
   box-shadow: 0px 0px 5px 3px #ff66e0;
+}
+#conditionals:hover, #conditionals:focus {
+  color: var(--title-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--accent-shadow-tense);
 }
 
 .present__s {
@@ -349,6 +425,7 @@ body {
   top: 5%;
   border-radius: 80px;
   margin-top: 50px;
+  transition: box-shadow 300ms var(cubic-bezier);
 }
 
 .content {
