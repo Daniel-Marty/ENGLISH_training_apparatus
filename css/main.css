@@ -330,6 +330,7 @@ body {
   border-radius: 14px;
   box-shadow: 2px 0px 23px 12px white;
   padding: 12px;
+  transition: opacity 250ms var(--cubic-bezier);
 }
 
 .time_marker {
