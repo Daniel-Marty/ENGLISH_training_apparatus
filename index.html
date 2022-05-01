@@ -14,9 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
         integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="./css/style.css"> -->
     <link rel="stylesheet" href="./css/main.min.css">
-    <title>Document</title>
+    <title>ENGLISH MACHINE</title>
 </head>
 
 <body>
@@ -55,44 +54,45 @@
     </header>
     <ul>
         <li>
-            <a href="https://docs.google.com/document/d/1t8dyZpZAmtfAaugtWFbQvOp4NQglAiNQrQS6xTFjpvQ/edit?usp=sharing" target="_blank"><p id='prompt__pr__s' class="prompt hidden">He does <br> He doesn't do <br> Does he do? </p></a>
+            <a href="https://docs.google.com/document/d/1t8dyZpZAmtfAaugtWFbQvOp4NQglAiNQrQS6xTFjpvQ/edit?usp=sharing" target="_blank"><p id='prompt__pr__s' class="text prompt hidden">He does <br> He doesn't do <br> Does he do? </p></a>
         </li>
         <li>
-            <p id='prompt__pr__c' class="prompt hidden">I am doing <br> He isn't doing <br> Are we doing?</p>
+            <p id='prompt__pr__c' class="text prompt hidden">I am doing <br> He isn't doing <br> Are we doing?</p>
         </li>
         <li>
-            <p id='prompt__pr__p' class="prompt hidden">You have done <br> You haven't done <br> Have you done?</p>
+            <p id='prompt__pr__p' class="text prompt hidden">You have done <br> You haven't done <br> Have you done?</p>
         </li>
         <li>
-            <p id='prompt__pr__pc' class="prompt hidden">I've been doing <br> She hasn't been doing <br> Have you been
+            <p id='prompt__pr__pc' class="text prompt hidden">I've been doing <br> She hasn't been doing <br> Have you been
                 doing?</p>
         </li>
         <li>
-            <p id='prompt__p__s' class="prompt hidden">I went there <br> I didn't go there <br> Did you go there?</p>
+            <p id='prompt__p__s' class="text prompt hidden">I went there <br> I didn't go there <br> Did you go there?</p>
         </li>
         <li>
-            <p id='prompt__p__c' class="prompt hidden">I was doing <br> I wasn't doing <br> Was I doing?</p>
+            <p id='prompt__p__c' class="text prompt hidden">I was doing <br> I wasn't doing <br> Was I doing?</p>
         </li>
         <li>
-            <p id='prompt__p__p' class="prompt hidden">I had eaten <br> I hadn't eaten <br> Had you eaten? </p>
+            <p id='prompt__p__p' class="text prompt hidden">I had eaten <br> I hadn't eaten <br> Had you eaten? </p>
         </li>
         <li>
-            <p id='prompt__p__pc' class="prompt hidden">I had been doing <br> I hadn't been doing <br> Had you been doing?
+            <p id='prompt__p__pc' class="text prompt hidden">I had been doing <br> I hadn't been doing <br> Had you been doing?
             </p>
         </li>
         <li>
-            <p id='prompt__f__s' class="prompt hidden">I will say <br> I won't say<br> Will I say? </p>
+            <p id='prompt__f__s' class="text prompt hidden">I will say <br> I won't say<br> Will I say? </p>
         </li>
         <li>
-            <p id='prompt__f__c' class="prompt hidden">I will be saying <br>I won't be saying<br>Will I be saying?</p>
+            <p id='prompt__f__c' class="text prompt hidden">I will be saying <br>I won't be saying<br>Will I be saying?</p>
         </li>
         <li>
-            <p id='prompt__f__p' class="prompt hidden">I will have done<br>I won't have done<br>Will you have done?</p>
+            <p id='prompt__f__p' class="text prompt hidden">I will have done<br>I won't have done<br>Will you have done?</p>
         </li>
         <li>
-            <p id='prompt__f__pc' class="prompt hidden">I will have been doing <br> I won't have been doing<br>Will you have
+            <p id='prompt__f__pc' class="text prompt hidden">I will have been doing <br> I won't have been doing<br>Will you have
                 been doing?</p>
         </li>
+
        <ul class="time_markers_list">
            <li>
                <a href="https://docs.google.com/document/d/1t8dyZpZAmtfAaugtWFbQvOp4NQglAiNQrQS6xTFjpvQ/edit?usp=sharing" target="_blank">
@@ -172,18 +172,19 @@
             </div>
         </li>
         <li>
-            <div class="first_verb" onclick="get_first_verb()">
-                <img class="verb__pic hidden" id='firstVerb' src="./images-verbs/be_annoyed.gif" alt="he" width="300">
-            </div>
-        </li>
-        <li><div  onclick="there_is()" class="there_is hidden" id="there_is"><img id="threre_is_pic" src="./images-thereis/04.jpg" alt="there IS"
+            <div  onclick="there_is()" class="there_is hidden" id="there_is"><img id="threre_is_pic" src="./images-thereis/04.jpg" alt="there IS"
             height="350"></div></li>
         <li>
             <div id="secondVerb" onclick="get_second_verb()" class="secondVerb"><img class="verb__pic" id='verb'
                     src="./images-verbs/argue.gif" alt="eat" width="250"></div>
         </li>
-        
     </ul>
+    <div >
+        <ul>
+            <li><p class="text secondVerb_question" id="secondVerb_question">?</p></li>
+            <li><div id="secondVerb_prompt" class="text secondVerb_prompt hidden"><p>Go baby go!</p></div></li>
+        </ul>
+    </div>
 
     
     <script src="./js/main.js"></script>

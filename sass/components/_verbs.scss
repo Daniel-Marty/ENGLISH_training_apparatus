@@ -5,3 +5,21 @@
     border-radius: 40px;
     margin-left: 100px;
 }
+.secondVerb_question {
+    position: absolute;
+    z-index: 8;
+    left:63%;
+    top:20%;
+    opacity: 1;
+    text-align: center;
+    min-width: 43px;
+}
+.secondVerb_prompt{
+    position: absolute;
+    z-index: 10;
+    left:58%;
+    top:20%;
+    min-width: 60px;
+    opacity: 0;
+    text-align: center;
+}

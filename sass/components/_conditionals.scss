@@ -71,3 +71,25 @@
     position: absolute;
     right: 34.1%;
 }
+.secondVerb_question_cond {
+    font-size: small;
+    line-height: 1;
+    height: 35px;
+    position: absolute;
+    z-index: 8;
+    left: 75%;
+    top: 20%;
+    opacity: 1;
+    text-align: center;
+    min-width: 43px;
+}
+
+.secondVerb_prompt_cond {
+    position: absolute;
+    z-index: 10;
+    left: 72%;
+    top: 20%;
+    min-width: 60px;
+    opacity: 0;
+    text-align: center;
+}

@@ -97,6 +97,29 @@ body {
   border-radius: 30px;
 }
 
+.text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.16;
+  letter-spacing: 0.03em;
+  color: transparent;
+  background: #333131;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
+  border-radius: 14px;
+  box-shadow: 2px 0px 23px 12px white;
+  padding: 12px;
+  box-shadow: 2px 0px 23px 12px white;
+  transition: color var(--transition-time) var(--cubic-bezier), background-color var(--transition-time) var(--cubic-bezier), background-transition 300ms, box-shadow 300ms var(--cubic-bezier);
+}
+.text:hover, .text:focus {
+  color: white;
+  background-color: red;
+  box-shadow: var(--accent-shadow);
+}
+
 .buttons {
   display: flex;
   justify-content: space-around;
@@ -317,20 +340,6 @@ body {
   position: absolute;
   left: 10%;
   top: 100px;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 1.16;
-  letter-spacing: 0.03em;
-  color: transparent;
-  background: #333131;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
-  border-radius: 14px;
-  box-shadow: 2px 0px 23px 12px white;
-  padding: 12px;
-  transition: opacity 250ms var(--cubic-bezier);
 }
 
 .time_marker {
@@ -437,6 +446,29 @@ body {
   right: 34.1%;
 }
 
+.secondVerb_question_cond {
+  font-size: small;
+  line-height: 1;
+  height: 35px;
+  position: absolute;
+  z-index: 8;
+  left: 75%;
+  top: 20%;
+  opacity: 1;
+  text-align: center;
+  min-width: 43px;
+}
+
+.secondVerb_prompt_cond {
+  position: absolute;
+  z-index: 10;
+  left: 72%;
+  top: 20%;
+  min-width: 60px;
+  opacity: 0;
+  text-align: center;
+}
+
 .first_verb {
   border-radius: 40px;
 }
@@ -444,6 +476,26 @@ body {
 .secondVerb {
   border-radius: 40px;
   margin-left: 100px;
+}
+
+.secondVerb_question {
+  position: absolute;
+  z-index: 8;
+  left: 63%;
+  top: 20%;
+  opacity: 1;
+  text-align: center;
+  min-width: 43px;
+}
+
+.secondVerb_prompt {
+  position: absolute;
+  z-index: 10;
+  left: 58%;
+  top: 20%;
+  min-width: 60px;
+  opacity: 0;
+  text-align: center;
 }
 
 .mark {

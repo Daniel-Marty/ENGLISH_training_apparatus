@@ -11,3 +11,29 @@ box-shadow: #32feedb8 0px 0px 2px 7px, white 0px 0px 5px 12px;
 border-radius: 30px;
 // border: 3px solid #999;
 }
+.text {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.16;
+    letter-spacing: 0.03em;
+    color: transparent;
+    background: #333131;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
+    border-radius: 14px;
+    box-shadow: 2px 0px 23px 12px white;
+    padding: 12px;
+    box-shadow: 2px 0px 23px 12px white;
+    transition: color var(--transition-time) var(--cubic-bezier),
+    background-color var(--transition-time) var(--cubic-bezier),
+    background-transition 300ms,
+    box-shadow 300ms var(--cubic-bezier);
+    &:hover,
+    &:focus {
+      color: white;
+      background-color: red;
+      box-shadow: var(--accent-shadow);
+    }
+}

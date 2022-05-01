@@ -5,6 +5,8 @@ const buttonMain = document.getElementById('main_menu');
 const subject = document.getElementById('subject');
 const secondVerb = document.querySelector('.secondVerb');
 const mark = document.querySelector('.mark');
+const second_verb_question = document.getElementById('secondVerb_question');
+const second_verb_prompt = document.getElementById('secondVerb_prompt');
 
 const prompts = document.getElementsByClassName('prompt');
 const promptPrS = document.getElementById('prompt__pr__s')
@@ -15,9 +17,8 @@ const FSStyle =  'rgb(255, 5, 5) 0px 0px 4px 15px, white 0px 0px 20px 35px'
 const PSStyle = 'rgb(0, 87, 250) 0px 0px 4px 15px, white 0px 0px 20px 35px'
 
 let marks_array = ['1.png', '2.png', '3.png']
-let subject_array = ['he.jpg','it.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg', 'Kianu.jpg', 'Emilia.jpg', 'Charlie.jpg', 'David.jpg']
-let zero_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'is.jpg', 'do.gif']
-let first_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'is.jpg', 'do.gif', 'eat.gif', 'drink.gif', 'go.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif']
+let subject_array = ['he.jpg','it.jpg', 'cat.jpg', 'dog.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg']
+let first_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'to be.jpg', 'do.gif', 'eat.gif', 'drink.gif', 'draw.gif', 'go.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif']
 let first_level_styles = [PrSStyle, FSStyle, PSStyle]
 
 function get_random_subject() {
@@ -30,16 +31,22 @@ function get_random_mark() {
     selected_image = marks_array[random_mark]
     document.getElementById('mark').src = `./images-marks/${selected_image}`
 }
-function zero_level() {
-    random_verb = Math.floor(Math.random() * zero_level_verbs.length);
-    selected_image = zero_level_verbs[random_verb]
-    document.getElementById('verb').src = `./images-verbs/${selected_image}`
-}
+
 function first_level() {
     random_verb = Math.floor(Math.random() * first_level_verbs.length);
     selected_image = first_level_verbs[random_verb]
     document.getElementById('verb').src = `./images-verbs/${selected_image}`
+    document.getElementById('secondVerb_prompt').innerHTML = `${selected_image.slice(0,-4)}`
 }
+second_verb_question.addEventListener('click', () => {
+    second_verb_question.classList.add('hidden');
+    second_verb_prompt.style.opacity = 1;
+    second_verb_prompt.classList.remove('hidden');
+})
+second_verb_prompt.addEventListener('click', () => {
+    second_verb_question.classList.remove('hidden');
+    second_verb_prompt.classList.add('hidden')
+})
 function get_random_style() {
     random_style = Math.floor(Math.random() * first_level_styles.length);
     selected_style = first_level_styles[random_style]

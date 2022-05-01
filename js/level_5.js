@@ -11,6 +11,8 @@ const buttonMain = document.getElementById('main_menu');
 const subject = document.getElementById('subject');
 const secondVerb = document.querySelector('.secondVerb');
 const mark = document.querySelector('.mark');
+const second_verb_question = document.getElementById('secondVerb_question');
+const second_verb_prompt = document.getElementById('secondVerb_prompt');
 
 const prompts = document.getElementsByClassName('prompt');
 const promptPrS = document.getElementById('prompt__pr__s')
@@ -32,8 +34,8 @@ const FCStyle = 'rgb(255, 5, 5) 0px 0px 4px 15px, yellow 0px 0px 20px 35px'
 const PrPCStyle = 'rgb(19, 246, 49) 0px 0px 4px 14px, black 0px 0px 0px 18px, yellow 0px 0px 20px 35px'
 
 let marks_array = ['1.png', '2.png', '3.png']
-let subject_array = ['he.jpg','it.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg', 'Kianu.jpg', 'Emilia.jpg', 'Charlie.jpg', 'David.jpg']
-let fifth_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'is.jpg', 'do.gif', 'eat.gif', 'drink.gif', 'go.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif', 'want.jpg', 'need.gif', 'run.gif', 'take.gif', 'walk.gif', 'work.gif', 'have.jpg', 'fly.gif', 'sleep.gif', 'come.gif', 'come_back.gif', 'have_to.gif', 'clean.gif', 'ask.gif', 'be_angry.gif', 'be_happy.gif', 'look_for.gif', 'be_late.gif', 'be_tired.gif', 'bite.gif', 'break.gif', 'bring.gif', 'buy.gif', 'circle.gif', 'continue.gif', 'speak.gif', 'hear.gif', 'hide.gif', 'wait.gif', 'panic.gif', 'live.gif', 'lie.gif', 'meet.gif', 'know.gif', 'argue.gif', 'take_off_plane.gif', 'take_off_clothes.gif', 'tell.gif', 'think.gif', 'think2.gif', 'hit.gif', 'hit2.gif', 'arrive.gif', 'agree.gif', 'throw.gif', 'burn.gif', 'fall.gif', 'feel.gif', 'drive.gif', 'call.gif', 'catch.gif', 'travel.gif', 'try.gif', 'explain.gif', 'hurry.gif', 'make_a_bed.gif', 'make_coffee.gif', 'taste.gif', 'teach.gif', 'create.gif', 'make.gif', 'build.gif', 'add.gif', 'admit.gif', 'be_able.gif', 'be_cold.gif', 'be_friends.gif', 'be_grumpy.gif', 'advise.gif', 'become.gif', 'beg.gif', 'be_interested.gif', 'be_sarcastic.gif', 'break_into.gif', 'broadcast.gif', 'chat.gif', 'choose.gif', 'climb.gif', 'come_up.gif', 'complain.gif', 'compliment.gif', 'confuse.gif', 'count.gif', 'cross_out.gif', 'cut.gif', 'decide.gif', 'disappear.gif', 'do_ballet.gif', 'do_gymnastics.gif', 'entertain.gif', 'feed.gif', 'feel_sick.gif', 'fight.gif', 'forget.gif', 'freeze.gif', 'get_dressed.gif', 'get_fat.gif', 'give.gif', 'go_out.gif', 'have_picnic.gif', 'heat_up.gif', 'hesitate.gif', 'hurt.gif', 'inform.gif', 'invite.gif', 'leave.gif', 'let_go.gif', 'list.gif', 'lose_weight.gif', 'find.gif', 'get_a_present.gif', 'unwrap.gif', 'pay.gif', 'sell.gif', 'wrap.gif', 'win.gif', 'welcome.gif']
+let subject_array = ['he.jpg','it.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg', 'cat.jpg', 'dog.jpg', 'Charlie.jpg',]
+let fifth_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'to be.jpg', 'do.gif', 'eat.gif', 'drink.gif', 'draw.gif', 'go.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif', 'need.gif', 'run.gif', 'take.gif', 'walk.gif', 'work.gif', 'have.jpg', 'fly.gif', 'sleep.gif', 'come.gif', 'come back.gif', 'have to.gif', 'clean.gif', 'ask.gif', 'be angry.gif', 'be happy.gif', 'look for.gif', 'be late.gif', 'be tired.gif', 'bite.gif', 'break.gif', 'bring.gif', 'buy.gif', 'circle.gif', 'continue.gif', 'speak.gif', 'hear.gif', 'hide.gif', 'wait.gif', 'panic.gif', 'live.gif', 'lie.gif', 'meet.gif', 'know.gif', 'argue.gif', 'take off plane.gif', 'take off clothes.gif', 'tell.gif', 'think.gif', 'think2.gif', 'hit.gif', 'hit2.gif', 'arrive.gif', 'agree.gif', 'throw.gif', 'burn.gif', 'fall.gif', 'feel.gif', 'drive.gif', 'call.gif', 'catch.gif', 'travel.gif', 'try.gif', 'explain.gif', 'hurry.gif', 'make a bed.gif', 'make coffee.gif', 'taste.gif', 'teach.gif', 'create.gif', 'make.gif', 'build.gif', 'add.gif', 'admit.gif', 'be able.gif', 'be cold.gif', 'be friends.gif', 'be grumpy.gif', 'advise.gif', 'become.gif', 'beg.gif', 'be interested.gif', 'be sarcastic.gif', 'break into.gif', 'broadcast.gif', 'chat.gif', 'choose.gif', 'climb.gif', 'come up.gif', 'complain.gif', 'compliment.gif', 'confuse.gif', 'count.gif', 'cross out.gif', 'cut.gif', 'decide.gif', 'disappear.gif', 'do ballet.gif', 'do gymnastics.gif', 'entertain.gif', 'feed.gif', 'feel sick.gif', 'fight.gif', 'forget.gif', 'freeze.gif', 'get dressed.gif', 'get fat.gif', 'give.gif', 'go out.gif', 'have picnic.gif', 'heat up.gif', 'hesitate.gif', 'hurt.gif', 'inform.gif', 'invite.gif', 'leave.gif', 'let go.gif', 'list.gif', 'lose weight.gif', 'find.gif', 'get a present.gif', 'unwrap.gif', 'pay.gif', 'sell.gif', 'wrap.gif', 'win.gif', 'welcome.gif']
 let fifth_level_styles = [PrSStyle, FSStyle, PSStyle, PrPStyle, PrCStyle, PCStyle, FCStyle, PrPCStyle]
 
 function get_random_subject() {
@@ -50,7 +52,17 @@ function fifth_level() {
     random_verb = Math.floor(Math.random() * fifth_level_verbs.length);
     selected_image = fifth_level_verbs[random_verb]
     document.getElementById('verb').src = `./images-verbs/${selected_image}`
+    document.getElementById('secondVerb_prompt').innerHTML = `${selected_image.slice(0,-4)}`
 }
+second_verb_question.addEventListener('click', () => {
+    second_verb_question.classList.add('hidden');
+    second_verb_prompt.style.opacity = 1;
+    second_verb_prompt.classList.remove('hidden');
+})
+second_verb_prompt.addEventListener('click', () => {
+    second_verb_question.classList.remove('hidden');
+    second_verb_prompt.classList.add('hidden')
+})
 function get_random_style() {
     random_style = Math.floor(Math.random() * fifth_level_styles.length);
     selected_style = fifth_level_styles[random_style]
