@@ -9,6 +9,7 @@ body {
 .current {
 box-shadow: #32feedb8 0px 0px 2px 7px, white 0px 0px 5px 12px;
 border-radius: 30px;
+background: rgb(255,0,0,0.3);
 // border: 3px solid #999;
 }
 .text {
@@ -17,7 +18,7 @@ border-radius: 30px;
     line-height: 1.16;
     letter-spacing: 0.03em;
     color: transparent;
-    background: #333131;
+    background: red;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;

@@ -18,7 +18,7 @@ const PSStyle = 'rgb(0, 87, 250) 0px 0px 4px 15px, white 0px 0px 20px 35px'
 
 let marks_array = ['1.png', '2.png', '3.png']
 let subject_array = ['he.jpg','it.jpg', 'cat.jpg', 'dog.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg']
-let first_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'to be.jpg', 'do.gif', 'eat.gif', 'drink.gif', 'draw.gif', 'go.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif']
+let first_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'be.jpg', 'do.gif', 'eat.gif', 'drink.gif', 'draw.gif', 'go.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif']
 let first_level_styles = [PrSStyle, FSStyle, PSStyle]
 
 function get_random_subject() {

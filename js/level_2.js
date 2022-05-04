@@ -21,7 +21,7 @@ const PrPStyle = 'rgb(19, 246, 49) 0px 0px 4px 15px, black 0px 0px 20px 30px'
 
 let marks_array = ['1.png', '2.png', '3.png']
 let subject_array = ['he.jpg','it.jpg', 'me.jpg', 'cat.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg', 'Emilia.jpg', 'Charlie.jpg', 'David.jpg']
-let second_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'to be.jpg', 'do.gif', 'eat.gif', 'drink.gif', 'draw.gif', 'go.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif', 'want.jpg', 'need.gif', 'run.gif', 'take.gif', 'walk.gif', 'work.gif', 'have.jpg', 'fly.gif', 'sleep.gif', 'come.gif', 'come back.gif', 'have to.gif']
+let second_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'be.jpg', 'do.gif', 'eat.gif', 'drink.gif', 'draw.gif', 'go.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif', 'want.jpg', 'need.gif', 'run.gif', 'take.gif', 'walk.gif', 'work.gif', 'have.jpg', 'fly.gif', 'sleep.gif', 'come.gif', 'come back.gif', 'have to.gif']
 let second_level_styles = [PrSStyle, FSStyle, PSStyle, PrPStyle]
 
 function get_random_subject() {

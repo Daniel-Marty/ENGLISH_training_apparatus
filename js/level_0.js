@@ -15,7 +15,7 @@ const FSStyle =  'rgb(255, 5, 5) 0px 0px 4px 15px, white 0px 0px 20px 35px'
 
 let marks_array = ['1.png', '2.png', '3.png']
 let subject_array = ['he.jpg','it.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg',]
-let zero_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'to be.jpg', 'do.gif']
+let zero_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'be.jpg', 'do.gif']
 let zero_level_styles = [PrSStyle, FSStyle]
 
 function get_random_subject() {
@@ -90,3 +90,5 @@ buttonFS.addEventListener('click', () => {
     subject.style.boxShadow = FSStyle;
     mark.style.boxShadow = FSStyle;
 })
+
+
