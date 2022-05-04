@@ -26,6 +26,7 @@ const mark = document.querySelector('.mark');
 const changeBody = document.getElementById('fuckingClick');
 const prompts = document.getElementsByClassName('prompt');
 const timeMarkers = document.getElementsByClassName('time_marker');
+
 const second_verb_question = document.getElementById('secondVerb_question');
 const second_verb_prompt = document.getElementById('secondVerb_prompt');
 

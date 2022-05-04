@@ -15,6 +15,10 @@ const circle_third = document.getElementById('circle_third');
 const circle_mixed = document.getElementById('circle_mixed');
 const firstIf = document.getElementById('first_if');
 const secondIf = document.getElementById('second_if');
+const firstWould = document.getElementById('first_would');
+const secondWould = document.getElementById('second_would');
+const first_verb_question = document.getElementById('firstVerb_question');
+const first_verb_prompt = document.getElementById('firstVerb_prompt');
 const second_verb_question = document.getElementById('secondVerb_question');
 const second_verb_prompt = document.getElementById('secondVerb_prompt');
 
@@ -22,19 +26,25 @@ const PrSStyle = 'rgb(19, 246, 49) 0px 0px 4px 15px, rgb(255, 255, 255) 0px 0px 
 const FSStyle =  'rgb(255, 5, 5) 0px 0px 4px 15px, white 0px 0px 20px 35px'
 const PSStyle = 'rgb(0, 87, 250) 0px 0px 4px 15px, white 0px 0px 20px 35px'
 const PPStyle = 'rgb(0, 87, 250) 0px 0px 4px 15px, black 0px 0px 20px 35px'
-
+const whiteStyle = 'rgb(250, 250, 250) 0px 0px 4px 15px, white 0px 0px 20px 35px'
 
 let marks_array = ['1.png', '2.png', '3.png']
 let no_question_marks = ['1.png', '2.png']
-let subject_array = ['he.jpg','it.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg', 'Emilia.jpg', 'Charlie.jpg', 'David.jpg']
+let subject_array = ['he.jpg','it.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg', 'Charlie.jpg', 'David.jpg']
 let first_verbs_array = ['want.jpg', 'need.gif', 'have to.gif', 'apologize.gif', 'argue.gif', 'be able.gif', 'be angry.gif', 'be annoyed.gif', 'be cold.gif', 'be happy.gif', 'be interested.gif', 'be late.gif', 'be sarcastic.gif', 'be stubborn.gif', 'be tired.gif', 'be young.gif', 'build.gif', 'bring.gif', 'be friends.gif', 'nod.gif',]
 let second_verbs_array = ['want.jpg', 'have to.gif', 'throw up.gif', 'get dirty.gif', 'nod.gif', 'write.gif', 'work.gif', 'win.gif', 'walk.gif', 'wait.gif', 'try.gif', 'travel.gif', 'think.gif', 'teach.gif', 'take off clothes.gif', 'swim.gif', 'suggest.gif', 'stay.jpg', 'start talking.gif', 'spin.gif', 'smoke.gif', 'sleep.gif', 'run.gif', 'repeat.gif', 'remind.gif', 'realize.gif', 'read.gif', 'pay.gif', 'panic.gif', 'overtake.gif', 'make coffee.gif', 'make a bed.gif', 'lose weight.gif', 'look for.gif', 'listen.gif', 'like.gif', 'lie.gif', 'let go.gif', 'leave.gif', 'jump.gif', 'interrupt.gif', 'hide.gif', 'hesitate.gif', 'hear.gif', 'go out.gif', 'get fat.gif', 'figure out.gif', 'feel sick.gif', 'disappear.gif', 'fall.gif', 'fart.gif', 'escape.gif', 'drink.gif', 'drive.gif', 'forget.gif', 'deny.gif', 'come.gif', 'come up.gif', 'come back.gif', 'recommend.gif' ]
 let first_conditional_styles = [PrSStyle, FSStyle]
-let second_conditional_styles = [PSStyle, ]
+let second_conditional_styles = [PSStyle, whiteStyle]
+let modals_array = ['would', 'could', 'might',]
 
 function getFirstConditionalStyle() {
     random_style = Math.floor(Math.random() * first_conditional_styles.length);
     selected_style = first_conditional_styles[random_style]
+    firstVerb.style.boxShadow = selected_style;
+}
+function getSecondConditionalStyle() {
+    random_style = Math.floor(Math.random() * second_conditional_styles.length);
+    selected_style = second_conditional_styles[random_style]
     firstVerb.style.boxShadow = selected_style;
 }
  
@@ -68,14 +78,32 @@ function get_first_verb() {
     random_verb = Math.floor(Math.random() * first_verbs_array.length);
     selected_image = first_verbs_array[random_verb]
     document.getElementById('firstVerbPic').src = `./images-verbs/${selected_image}`
-    console.log(selected_image);
+       document.getElementById('firstVerb_prompt').innerHTML = `${selected_image.slice(0, -4)}`
 }
+second_verb_question.addEventListener('click', () => {
+    first_verb_question.classList.add('hidden');
+    first_verb_prompt.style.opacity = 1;
+    first_verb_prompt.classList.remove('hidden');
+})
+first_verb_prompt.addEventListener('click', () => {
+    first_verb_question.classList.remove('hidden');
+    first_verb_prompt.classList.add('hidden')
+})
 function get_second_verb() {
     random_verb = Math.floor(Math.random() * second_verbs_array.length);
     selected_image = second_verbs_array[random_verb]
     document.getElementById('secondVerbPic').src = `./images-verbs/${selected_image}`
     document.getElementById('secondVerb_prompt').innerHTML = `${selected_image.slice(0, -4)}`
 }
+first_verb_question.addEventListener('click', () => {
+    first_verb_question.classList.add('hidden');
+    first_verb_prompt.style.opacity = 1;
+    first_verb_prompt.classList.remove('hidden');
+})
+first_verb_prompt.addEventListener('click', () => {
+    first_verb_question.classList.remove('hidden');
+    first_verb_prompt.classList.add('hidden')
+})
 second_verb_question.addEventListener('click', () => {
     second_verb_question.classList.add('hidden');
     second_verb_prompt.style.opacity = 1;
@@ -85,6 +113,12 @@ second_verb_prompt.addEventListener('click', () => {
     second_verb_question.classList.remove('hidden');
     second_verb_prompt.classList.add('hidden')
 })
+function get_random_modal() {
+    random_modal = Math.floor(Math.random() * modals_array.length);
+    selected_modal = modals_array[random_modal]
+    first_would.innerHTML = `${selected_modal}`,
+        second_would.innerHTML = `${selected_modal}`;
+}
 
 function zeroStyle() {
     firstVerb.style.boxShadow = PrSStyle;
@@ -119,8 +153,18 @@ circle_first.addEventListener('click', () => {
     get_first_verb();
     get_second_verb();
     getFirstConditionalStyle();
+    firstWould.style.opacity = '0', secondWould.style.opacity = '0';
     if (firstVerb.style.boxShadow == PrSStyle) { secondVerb.style.boxShadow = FSStyle, firstIf.style.opacity = '1', secondIf.style.opacity = '0', get_random_mark2(), no_question1()} 
     else {secondVerb.style.boxShadow = PrSStyle, firstIf.style.opacity = '0', secondIf.style.opacity = '1',get_random_mark1(), no_question2() }
+});
+circle_second.addEventListener('click', () => {
+    get_random_subject();
+    get_first_verb();
+    get_second_verb();
+    getSecondConditionalStyle();
+    get_random_modal();
+    if (firstVerb.style.boxShadow == PSStyle) {secondVerb.style.boxShadow = whiteStyle, firstWould.style.opacity = '0', firstIf.style.opacity = '1', secondWould.style.opacity = '1', secondIf.style.opacity = '0', get_random_mark2(), no_question1()} 
+    else {secondVerb.style.boxShadow = PSStyle, firstIf.style.opacity = '0', secondWould.style.opacity = '0', firstWould.style.opacity = '1', secondIf.style.opacity = '1', get_random_mark1(), no_question2() }
 });
 // window.addEventListener('click', function (event) {
 //     get_random_subject()

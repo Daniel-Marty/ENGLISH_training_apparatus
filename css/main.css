@@ -433,7 +433,7 @@ body {
   text-shadow: 0px 3px 2px rgba(255, 255, 255, 0.5);
   border-radius: 8px;
   box-shadow: 2px 0px 23px 12px white;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 250ms var(--cubic-bezier);
 }
 
@@ -445,6 +445,56 @@ body {
 .second_if {
   position: absolute;
   right: 34.1%;
+}
+
+.would {
+  position: absolute;
+  top: 22%;
+  display: inline-block;
+  padding: 0px 12px;
+  font-weight: bold;
+  font-size: 28px;
+  color: transparent;
+  background: #333131;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 2px rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  box-shadow: 2px 0px 23px 12px white;
+  opacity: 0;
+  transition: opacity 250ms var(--cubic-bezier);
+}
+
+.first_would {
+  left: 33%;
+}
+
+.second_would {
+  right: 32%;
+}
+
+.firstVerb_question_cond {
+  font-size: small;
+  line-height: 1;
+  height: 35px;
+  position: absolute;
+  z-index: 8;
+  left: 48.5%;
+  top: 20%;
+  opacity: 1;
+  text-align: center;
+  min-width: 43px;
+}
+
+.firstVerb_prompt_cond {
+  position: absolute;
+  z-index: 10;
+  left: 45%;
+  top: 20%;
+  min-width: 60px;
+  opacity: 0;
+  text-align: center;
 }
 
 .secondVerb_question_cond {
