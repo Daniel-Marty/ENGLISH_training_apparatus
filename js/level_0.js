@@ -19,7 +19,7 @@ speak.addEventListener('click', function () {
 }) 
 recognition.onresult = function (e) {
     console.log(e);
-    var transcript = r.result[0][0].transcript;
+    var transcript = e.result[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
 }
