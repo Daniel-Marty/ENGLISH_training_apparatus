@@ -186,6 +186,5 @@ circle_second.addEventListener('click', () => {
 //     mark.style.boxShadow = PrSStyle;
 // })
 
-// 3. Напиши ф-цію positiveSum, яка приймає масив чисел та повертає їх суму.
-// Але рахуватись мають лише позитивні числа!!!
+
 

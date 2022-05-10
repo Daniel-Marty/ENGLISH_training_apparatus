@@ -128,6 +128,10 @@ body {
   line-height: 20px;
 }
 
+.test {
+  position: absolute;
+}
+
 .button {
   min-width: 40px;
   height: 20px;
@@ -192,6 +196,16 @@ body {
   color: var(--title-text-color);
   background-color: var(--accent-bg-color);
   box-shadow: var(--accent-shadow-tense);
+}
+
+#present__s_test {
+  top: 10%;
+  left: 14%;
+}
+
+#future__s_test {
+  top: 10%;
+  left: 24%;
 }
 
 #past__s {
