@@ -1,15 +1,29 @@
-const recognizer = new webkitSpeechRecognition();
-recognizer.interimResults = true;
-recognizer.lang = 'en-En';
-recognizer.onresult = function (event) {
-    var result = event.results[event.resultIndex];
-    if (result.isFinal) {
-        alert('Хуя се! Ты сказал: ' + result[0].transcript);
-    } else {
-        console.log('fuck me: ', result[0].transcript);
-    }
-};
-recognizer.start();
+// const recognizer = new webkitSpeechRecognition();
+// recognizer.interimResults = true;
+// recognizer.lang = 'en-En';
+// recognizer.onresult = function (event) {
+//     var result = event.results[event.resultIndex];
+//     if (result.isFinal) {
+//         alert('Хуя се! Ты сказал: ' + result[0].transcript);
+//     } else {
+//         console.log('fuck me: ', result[0].transcript);
+//     }
+// };
+var speak = document.getElementById('speak');
+var textarea = document.getElementById('text_area');
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
+speak.addEventListener('click', function () {
+    recognition.start();
+}) 
+recognition.onresult = function (e) {
+    console.log(e);
+    var transcript = r.result[0][0].transcript;
+    transcript.innerHTML = transcript;
+    textarea.innerHTML = transcript;
+}
+recognition.start();
+
 const buttonPrS = document.getElementById('present__s');
 const buttonPrSTest = document.getElementById('present__s_test');
 const buttonFS = document.getElementById('future__s');
@@ -20,6 +34,7 @@ const secondVerb = document.querySelector('.secondVerb');
 const mark = document.querySelector('.mark');
 const second_verb_question = document.getElementById('secondVerb_question');
 const second_verb_prompt = document.getElementById('secondVerb_prompt');
+
 
 const prompts = document.getElementsByClassName('prompt');
 const promptPrS = document.getElementById('prompt__pr__s')
@@ -53,7 +68,6 @@ function get_TestVerb() {
         selected_image = testVerbsArray[`${testStart}`]
         document.getElementById('verb').src = `./images-verbs/${selected_image}`
         document.getElementById('secondVerb_prompt').innerHTML = `${selected_image.slice(0, -4)}`
-        
     }
 }
 function get_TestMark( ) {
@@ -68,11 +82,13 @@ buttonPrSTest.addEventListener('click', () => {
         get_TestSubject();
         get_TestVerb();
         get_TestMark();
+        
         secondVerb.style.boxShadow = PrSStyle;
         subject.style.boxShadow = PrSStyle;
         mark.style.boxShadow = PrSStyle;
     }
 })
+
 buttonFSTest.addEventListener('click', () => {
     if (testStart < testVerbsArray.length) {
         testStart += 1;
