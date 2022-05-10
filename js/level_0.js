@@ -15,6 +15,7 @@ var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogniti
 var recognition = new SpeechRecognition();
 speak.addEventListener('click', function () {
     recognition.start();
+    textarea.innerHTML = '...speaking';
 }) 
 recognition.onresult = function (e) {
     console.log(e);
@@ -22,7 +23,6 @@ recognition.onresult = function (e) {
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
 }
-recognition.start();
 
 const buttonPrS = document.getElementById('present__s');
 const buttonPrSTest = document.getElementById('present__s_test');
