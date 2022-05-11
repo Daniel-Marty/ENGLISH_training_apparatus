@@ -121,6 +121,33 @@ body {
   box-shadow: var(--accent-shadow);
 }
 
+.text_area {
+  z-index: 12;
+  position: absolute;
+  left: 7%;
+  top: 29%;
+  padding: 5px;
+  min-width: 50px;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: transparent;
+  background: #333131;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 2px rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  box-shadow: 0px 0px 25px 12px white;
+  transition: color var(--transition-time) var(--cubic-bezier), background-color var(--transition-time) var(--cubic-bezier), background-transition 300ms, box-shadow 300ms var(--cubic-bezier);
+}
+.text_area:hover, .text_area:focus {
+  color: white;
+  background: red;
+  box-shadow: var(--accent-shadow);
+}
+
 .buttons {
   display: flex;
   justify-content: space-around;
@@ -348,6 +375,14 @@ body {
 
 .future__pc {
   box-shadow: var(--future--pc);
+}
+
+#speak {
+  position: absolute;
+  left: 19%;
+  top: 14%;
+  height: 45px;
+  width: 45px;
 }
 
 .prompt {
