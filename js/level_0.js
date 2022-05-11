@@ -13,6 +13,7 @@ var speak = document.getElementById('speak');
 var textarea = document.getElementById('text_area');
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
+recognition.lang = 'en-En';
 speak.addEventListener('click', function () {
     recognition.start();
     textarea.innerHTML = '...speaking';
