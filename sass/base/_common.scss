@@ -61,11 +61,6 @@ background: rgb(255,0,0,0.3);
   background-color var(--transition-time) var(--cubic-bezier),
   background-transition 300ms,
   box-shadow 300ms var(--cubic-bezier);
-    &:hover,
-  &:focus {
-    color: white;
-    background: red;
-    box-shadow: var(--accent-shadow);
-  }
+  
   }
   

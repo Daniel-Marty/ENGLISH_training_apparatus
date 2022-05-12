@@ -1,6 +1,22 @@
 const buttonPrS = document.getElementById('present__s');
 const buttonFS = document.getElementById('future__s');
 const buttonFC = document.getElementById('future__c');
+var speak = document.getElementById('speak');
+var textarea = document.getElementById('text_area');
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
+recognition.lang = 'en-En';
+speak.addEventListener('click', function () {
+    recognition.start();
+    textarea.innerHTML = '...speaking';
+}) 
+recognition.onresult = function (e) {
+    console.log(e);
+    var transcript = e.results[0][0].transcript;
+    transcript.innerHTML = transcript;
+    textarea.innerHTML = transcript;
+}
+
 const buttonPS = document.getElementById('past__s');
 const buttonPrP = document.getElementById('present__p');
 const buttonPrC = document.getElementById('present__c');

@@ -1,3 +1,20 @@
+var speak = document.getElementById('speak');
+var textarea = document.getElementById('text_area');
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
+recognition.lang = 'en-En';
+speak.addEventListener('click', function () {
+    recognition.start();
+    textarea.innerHTML = '...speaking';
+}) 
+recognition.onresult = function (e) {
+    console.log(e);
+    var transcript = e.results[0][0].transcript;
+    transcript.innerHTML = transcript;
+    textarea.innerHTML = transcript;
+}
+
+
 const buttonPrS = document.getElementById('present__s');
 const buttonFS = document.getElementById('future__s');
 const buttonPS = document.getElementById('past__s');
