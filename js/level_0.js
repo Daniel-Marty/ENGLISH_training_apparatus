@@ -95,7 +95,7 @@ recognition.onresult = function (e) {
     var transcript = e.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
-     if (textarea.innerHTML === 'I am' && testStart === '0' && testStart < testVerbsArray.length) {
+     if (testStart === '0' && textarea.innerHTML === 'I am') {
         speak.style.background = 'rgba(6, 229, 102, 1)';
         console.log('fucking blue'); 
         testStart += 1;
