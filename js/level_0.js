@@ -50,7 +50,7 @@ function get_TestVerb() {
     if (testStart < +testVerbsArray.length) {
         selected_image = testVerbsArray[`${testStart}`]
         document.getElementById('verb').src = `./images-verbs/${selected_image}`
-        document.getElementById('secondVerb_prompt').innerHTML = `${selected_image.slice(0, -4)}`
+        // document.getElementById('secondVerb_prompt').innerHTML = `${selected_image.slice(0, -4)}`
     }
 }
 function get_TestMark( ) {
@@ -91,7 +91,7 @@ speak.addEventListener('click', function () {
        
 }) 
 recognition.onresult = function (e) {
-    console.log(e);
+    console.log(e); 
     var transcript = e.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
