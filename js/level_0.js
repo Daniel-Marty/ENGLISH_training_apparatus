@@ -84,10 +84,18 @@ buttonFSTest.addEventListener('click', () => {
     speak.classList.remove('hidden');
 })
 
+function testForward (){
+ speak.style.background = 'rgba(6, 229, 102, 1)';
+        console.log('fucking blue'); 
+        testStart += 1;
+        get_TestSubject();
+        get_TestVerb();
+        get_TestMark();
+}
 speak.addEventListener('click', function () {
+    speak.style.background = 'red';
     recognition.start();
     textarea.innerHTML = '...speaking';
-
        
 }) 
 recognition.onresult = function (e) {
@@ -95,15 +103,14 @@ recognition.onresult = function (e) {
     var transcript = e.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
-     if (textarea.innerHTML === 'he is') {
-        speak.style.background = 'rgba(6, 229, 102, 1)';
-        console.log('fucking blue'); 
-        testStart += 1;
-        get_TestSubject();
-        get_TestVerb();
-        get_TestMark();
+     if (testStart === 0 && transcript === 'I am' ) {
+         testForward();
+     } else if
+         (testStart === 1 && (transcript === 'he is' || transcript === "he's")) {
+         testForward();
+        }
     }
-}
+
 
 function get_random_mark() {
     random_mark = Math.floor(Math.random() * marks_array.length);
