@@ -88,7 +88,7 @@ speak.addEventListener('click', function () {
     recognition.start();
     textarea.innerHTML = '...speaking';
     speak.style.background = 'rgba(6, 229, 102, 1)';
-    if ((textarea.innerHTML === 'I am' && testStart === '0' && testStart < testVerbsArray.length) {
+    if (textarea.innerHTML === 'I am' && testStart === '0' && testStart < testVerbsArray.length) {
         speak.style.background = 'green';
         console.log('fucking blue'); 
         testStart += 1;
