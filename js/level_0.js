@@ -60,20 +60,21 @@ function get_TestMark( ) {
     }
 }
 buttonPrSTest.addEventListener('click', () => {
-    if (testStart < testVerbsArray.length) {
-        testStart += 1;
-        get_TestSubject();
-        get_TestVerb();
-        get_TestMark();
+    testStart = '0';
+    get_TestSubject();
+    get_TestVerb();
+    get_TestMark();
         
-        secondVerb.style.boxShadow = PrSStyle;
-        subject.style.boxShadow = PrSStyle;
-        mark.style.boxShadow = PrSStyle;
-    }
-})
+    secondVerb.style.boxShadow = PrSStyle;
+    subject.style.boxShadow = PrSStyle;
+    mark.style.boxShadow = PrSStyle;
+});
 
 buttonFSTest.addEventListener('click', () => {
-    
+     testStart = '0';
+    get_TestSubject();
+    get_TestVerb();
+    get_TestMark();
          secondVerb.style.boxShadow = FSStyle;
         subject.style.boxShadow = FSStyle;
         mark.style.boxShadow = FSStyle;
@@ -87,22 +88,22 @@ speak.addEventListener('click', function () {
     recognition.start();
     textarea.innerHTML = '...speaking';
     speak.style.background = 'rgba(6, 229, 102, 1)';
-    if (testStart < testVerbsArray.length) {
-        testStart += 1;
+    if ((textarea.innerHTML === 'I am' && testStart === '0')&& (testStart < testVerbsArray.length)) {
+        speak.style.background = 'green';
+        console.log('fucking blue'); 
+         testStart += 1;
         get_TestSubject();
         get_TestVerb();
         get_TestMark();
     }
+       
 }) 
 recognition.onresult = function (e) {
     console.log(e);
     var transcript = e.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
-    if (textarea.innerHTML === 'I am' && testStart === '0') {
-        speak.style.background = 'green';
-        console.log('fucking blue'); 
-    }
+    
 }
 
 function get_random_mark() {
