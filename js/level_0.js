@@ -59,6 +59,8 @@ function get_TestMark( ) {
         document.getElementById('mark').src = `./images-marks/${selected_image}`
     }
 }
+let markPrS = mark.style.boxShadow;
+
 buttonPrSTest.addEventListener('click', () => {
     testStart = 0;
     get_TestSubject();
@@ -67,13 +69,13 @@ buttonPrSTest.addEventListener('click', () => {
         
     secondVerb.style.boxShadow = PrSStyle;
     subject.style.boxShadow = PrSStyle;
-    mark.style.boxShadow = PrSStyle;
+    markPrS = PrSStyle;
     textarea.classList.remove('hidden');
     speak.classList.remove('hidden');
 });
 
 buttonFSTest.addEventListener('click', () => {
-     testStart += 1;
+     testStart = 0;
     get_TestSubject();
     get_TestVerb();
     get_TestMark();
@@ -105,63 +107,63 @@ recognition.onresult = function (e) {
     textarea.innerHTML = transcript;
     if (testStart === 0 && transcript === 'I am') {
         testForward();
-    } else if (testStart === 1 && (transcript === 'he is' || transcript === "he's")) {
+    } else if (testStart === 1 && (transcript === 'he is' || transcript === "he's") &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 2 && (transcript === 'she is' || transcript === "she's")) {
+    } else if (testStart === 2 && (transcript === 'she is' || transcript === "she's") &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 3 && transcript === 'they are') {
+    } else if (testStart === 3 && transcript === 'they are' &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 4 && transcript === 'it is') {
+    } else if (testStart === 4 && transcript === 'it is' &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 5 && (transcript === "we aren't" || transcript === "we are not")) {
+    } else if (testStart === 5 && (transcript === "we aren't" || transcript === "we are not") &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 6 && (transcript === "you aren't" || transcript === "you are not")) {
+    } else if (testStart === 6 && (transcript === "you aren't" || transcript === "you are not") &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 7 && (transcript === "do I have" || transcript === "have I")) {
+    } else if (testStart === 7 && (transcript === "do I have" || transcript === "have I") &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 8 && transcript === "does he have") {
+    } else if (testStart === 8 && transcript === "does he have" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 9 && transcript === "she has") {
+    } else if (testStart === 9 && transcript === "she has" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 10 && transcript === "they have") {
+    } else if (testStart === 10 && transcript === "they have" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 11 && (transcript === "it doesn't have" || transcript === "it does not have")) {
+    } else if (testStart === 11 && (transcript === "it doesn't have" || transcript === "it does not have") &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 12 && transcript === "we have") {
+    } else if (testStart === 12 && transcript === "we have" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 13 && transcript === "do you have") {
+    } else if (testStart === 13 && transcript === "do you have" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 14 && transcript === "do I have") {
+    } else if (testStart === 14 && transcript === "do I have" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 15 && (transcript === "you can't" || transcript === 'you cannot' || transcript === 'you can not')) {
+    } else if (testStart === 15 && (transcript === "you can't" || transcript === 'you cannot' || transcript === 'you can not') &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 16 && transcript === "can she") {
+    } else if (testStart === 16 && transcript === "can she" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 17 && transcript === "we can") {
+    } else if (testStart === 17 && transcript === "we can" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 18 && transcript === "does he want") {
+    } else if (testStart === 18 && transcript === "does he want" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 19 && transcript === "do I have") {
+    } else if (testStart === 19 && transcript === "do I have" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 20 && (transcript === "she doesn't see" || transcript === 'she does not see')) {
+    } else if (testStart === 20 && (transcript === "she doesn't see" || transcript === 'she does not see') &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 21 && (transcript === "we don't do" || transcript === 'we do not do')) {
+    } else if (testStart === 21 && (transcript === "we don't do" || transcript === 'we do not do') &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 22 && transcript === "I do") {
+    } else if (testStart === 22 && transcript === "I do" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 23 && transcript === "he doesn't want" || transcript === 'he does not want') {
+    } else if (testStart === 23 && (transcript === "he doesn't want" || transcript === 'he does not want') &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 24 && transcript === "we want") {
+    } else if (testStart === 24 && transcript === "we want" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 25 && transcript === "do you want") {
+    } else if (testStart === 25 && transcript === "do you want" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 26 && transcript === "do I see") {
+    } else if (testStart === 26 && transcript === "do I see" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 27 && transcript === "she doesn't see" || transcript === 'she does not see') {
+    } else if (testStart === 27 && (transcript === "she doesn't see" || transcript === 'she does not see') &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 28 && transcript === "she sees") {
+    } else if (testStart === 28 && transcript === "she sees" &&  markPrS == PrSStyle) {
         testForward();
-    } else if (testStart === 29 && transcript === "does she see") {
+    } else if (testStart === 29 && transcript === "does she see" &&  markPrS == PrSStyle) {
  speak.style.background = 'rgba(6, 229, 102, 1)';
     }
 }
