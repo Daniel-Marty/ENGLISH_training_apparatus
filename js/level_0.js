@@ -73,7 +73,7 @@ buttonPrSTest.addEventListener('click', () => {
 });
 
 buttonFSTest.addEventListener('click', () => {
-     testStart = 0;
+     testStart += 1;
     get_TestSubject();
     get_TestVerb();
     get_TestMark();
@@ -99,18 +99,48 @@ speak.addEventListener('click', function () {
        
 }) 
 recognition.onresult = function (e) {
-    console.log(e); 
+    console.log(e);
     var transcript = e.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
-     if (testStart === 0 && transcript === 'I am' ) {
-         testForward();
-     } else if
-         (testStart === 1 && (transcript === 'he is' || transcript === "he's")) {
-         testForward();
-        }
+    if (testStart === 0 && transcript === 'I am') {
+        testForward();
+    } else if (testStart === 1 && (transcript === 'he is' || transcript === "he's")) {
+        testForward();
+    } else if (testStart === 2 && (transcript === 'she is' || transcript === "she's")) {
+        testForward();
+    } else if (testStart === 3 && transcript === 'they are') {
+        testForward();
+    } else if (testStart === 4 && transcript === 'it is') {
+        testForward();
+    } else if (testStart === 5 && (transcript === "they aren't" || transcript === "they are not")) {
+        testForward();
+    } else if (testStart === 6 && (transcript === "you aren't" || transcript === "you are not")) {
+        testForward();
+    } else if (testStart === 7 && (transcript === "do I have" || transcript === "have I")) {
+        testForward();
+    } else if (testStart === 8 && transcript === "does he have") {
+        testForward();
+    } else if (testStart === 9 && transcript === "she has") {
+        testForward();
+    } else if (testStart === 10 && transcript === "they have") {
+        testForward();
+    } else if (testStart === 11 && (transcript === "it doesn't have" || transcript === "it does not have")) {
+        testForward();
+    } else if (testStart === 12 && transcript === "we have") {
+        testForward();
+    } else if (testStart === 13 && transcript === "do you have") {
+        testForward();
+    } else if (testStart === 14 && transcript === "do I have") {
+        testForward();
+    } else if (testStart === 15 && (transcript === "you can't" || transcript === 'you cannot' || transcript === 'you can not')) {
+        testForward();
+    } else if (testStart === 16 && transcript === "can she") {
+        testForward();
+    } else if (testStart === 17 && transcript === "we can") {
+        testForward();
     }
-
+}
 
 function get_random_mark() {
     random_mark = Math.floor(Math.random() * marks_array.length);
