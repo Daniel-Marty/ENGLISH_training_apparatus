@@ -3,16 +3,8 @@ var textarea = document.getElementById('text_area');
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 recognition.lang = 'en-En';
-speak.addEventListener('click', function () {
-    recognition.start();
-    textarea.innerHTML = '...speaking';
-}) 
-recognition.onresult = function (e) {
-    console.log(e);
-    var transcript = e.results[0][0].transcript;
-    transcript.innerHTML = transcript;
-    textarea.innerHTML = transcript;
-}
+
+
 
 const buttonPrS = document.getElementById('present__s');
 const buttonPrSTest = document.getElementById('present__s_test');
@@ -42,6 +34,7 @@ let testSubjectsArray = ['me.jpg', 'he.jpg', 'she.jpg', 'they.jpg', 'it.jpg', 'w
 let testVerbsArray    = ['be.jpg', 'be.jpg', 'be.jpg',  'be.jpg',   'be.jpg', 'be.jpg', 'be.jpg',  'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'can.jpg', 'can.jpg', 'can.jpg', 'want.jpg', 'see.gif', 'do.gif', 'do.gif', 'want.jpg', 'want.jpg', 'want.jpg', 'see.gif', 'see.gif', 'see.gif']
 let markTestArr = ['1.png', '1.png','1.png','1.png','1.png','2.png','2.png','3.png','3.png','1.png','1.png','2.png','1.png','3.png','3.png','2.png','3.png','1.png','3.png','2.png','2.png','1.png','2.png','1.png','3.png','3.png','2.png','1.png','3.png']
 let testStart = -1;
+
 function get_random_subject() {
     random_subject = Math.floor(Math.random() * subject_array.length);
     selected_image = subject_array[random_subject]
@@ -80,20 +73,37 @@ buttonPrSTest.addEventListener('click', () => {
 })
 
 buttonFSTest.addEventListener('click', () => {
-    if (testStart < testVerbsArray.length) {
-        testStart += 1;
-        get_TestSubject();
-        get_TestVerb();
-        get_TestMark();
+    
          secondVerb.style.boxShadow = FSStyle;
         subject.style.boxShadow = FSStyle;
         mark.style.boxShadow = FSStyle;
-    }
 })
 buttonFSTest.addEventListener('click', () => {
     // testStart + 1;
     // console.log("shit");
 })
+
+speak.addEventListener('click', function () {
+    recognition.start();
+    textarea.innerHTML = '...speaking';
+    speak.style.background = 'rgba(6, 229, 102, 1)';
+    if (testStart < testVerbsArray.length) {
+        testStart += 1;
+        get_TestSubject();
+        get_TestVerb();
+        get_TestMark();
+    }
+}) 
+recognition.onresult = function (e) {
+    console.log(e);
+    var transcript = e.results[0][0].transcript;
+    transcript.innerHTML = transcript;
+    textarea.innerHTML = transcript;
+    if (textarea.innerHTML = 'I am' & testStart === "0") {
+         speak.style.background = blue;
+    }
+}
+
 function get_random_mark() {
     random_mark = Math.floor(Math.random() * marks_array.length);
     selected_image = marks_array[random_mark]
@@ -165,5 +175,8 @@ buttonFS.addEventListener('click', () => {
     subject.style.boxShadow = FSStyle;
     mark.style.boxShadow = FSStyle;
 })
+
+
+
 
 

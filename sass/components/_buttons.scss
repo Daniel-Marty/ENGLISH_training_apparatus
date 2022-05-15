@@ -39,20 +39,15 @@
     background: red ;
     box-shadow:var(--accent-shadow);
   }
-  &:active {
-    background: #13f631;
-  }
 }
-#speak {
+#speak { 
+  z-index: 13;
   position: absolute;
-  left: 19%;
+  left: 35%;
   top: 14%;
-  height: 55px;
-  width: 55px;
-
-  
+  height: 75px;
+  width: 75px;
 }
-
 .microphone {
   padding: 5px;
   border-radius: 40px;
