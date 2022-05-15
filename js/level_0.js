@@ -87,7 +87,7 @@ buttonFSTest.addEventListener('click', () => {
 speak.addEventListener('click', function () {
     recognition.start();
     textarea.innerHTML = '...speaking';
-  
+
        
 }) 
 recognition.onresult = function (e) {
@@ -95,7 +95,7 @@ recognition.onresult = function (e) {
     var transcript = e.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
-     if (testStart === '0' && textarea.innerHTML === 'he is') {
+     if (textarea.innerHTML === 'he is') {
         speak.style.background = 'rgba(6, 229, 102, 1)';
         console.log('fucking blue'); 
         testStart += 1;
