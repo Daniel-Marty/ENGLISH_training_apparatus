@@ -87,15 +87,7 @@ buttonFSTest.addEventListener('click', () => {
 speak.addEventListener('click', function () {
     recognition.start();
     textarea.innerHTML = '...speaking';
-    speak.style.background = 'rgba(6, 229, 102, 1)';
-    if (textarea.innerHTML === 'I am' && testStart === '0' && testStart < testVerbsArray.length) {
-        speak.style.background = 'green';
-        console.log('fucking blue'); 
-        testStart += 1;
-        get_TestSubject();
-        get_TestVerb();
-        get_TestMark();
-    }
+   
        
 }) 
 recognition.onresult = function (e) {
@@ -103,7 +95,14 @@ recognition.onresult = function (e) {
     var transcript = e.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
-    
+     if (textarea.innerHTML === 'I am' && testStart === '0' && testStart < testVerbsArray.length) {
+        speak.style.background = 'rgba(6, 229, 102, 1)';
+        console.log('fucking blue'); 
+        testStart += 1;
+        get_TestSubject();
+        get_TestVerb();
+        get_TestMark();
+    }
 }
 
 function get_random_mark() {
