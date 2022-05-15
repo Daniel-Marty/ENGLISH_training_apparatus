@@ -124,12 +124,12 @@ body {
 .text_area {
   z-index: 12;
   position: absolute;
-  left: 12%;
-  bottom: 15%;
+  left: 30%;
+  bottom: 12%;
   padding: 5px;
   min-width: 50px;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 35px;
   line-height: 1.1;
   letter-spacing: 0.03em;
   color: transparent;

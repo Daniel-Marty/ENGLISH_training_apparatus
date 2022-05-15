@@ -99,9 +99,9 @@ recognition.onresult = function (e) {
     var transcript = e.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
-    if (textarea.innerHTML === 'he is') {
-        speak.style.background = 'blue';
-        console.log('fucking blue');
+    if (textarea.innerHTML === 'I am' && testStart === '0') {
+        speak.style.background = 'green';
+        console.log('fucking blue'); 
     }
 }
 
