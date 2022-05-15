@@ -100,7 +100,8 @@ recognition.onresult = function (e) {
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
     if (textarea.innerHTML === 'he is') {
-         speak.style.background = blue;
+        speak.style.background = 'blue';
+        console.log('fucking blue');
     }
 }
 
