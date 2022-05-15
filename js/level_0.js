@@ -60,7 +60,7 @@ function get_TestMark( ) {
     }
 }
 buttonPrSTest.addEventListener('click', () => {
-    testStart = '0';
+    testStart = 0;
     get_TestSubject();
     get_TestVerb();
     get_TestMark();
@@ -73,7 +73,7 @@ buttonPrSTest.addEventListener('click', () => {
 });
 
 buttonFSTest.addEventListener('click', () => {
-     testStart = '0';
+     testStart = 0;
     get_TestSubject();
     get_TestVerb();
     get_TestMark();
@@ -87,7 +87,7 @@ buttonFSTest.addEventListener('click', () => {
 speak.addEventListener('click', function () {
     recognition.start();
     textarea.innerHTML = '...speaking';
-   
+  
        
 }) 
 recognition.onresult = function (e) {
