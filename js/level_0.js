@@ -113,7 +113,7 @@ recognition.onresult = function (e) {
         testForward();
     } else if (testStart === 4 && transcript === 'it is') {
         testForward();
-    } else if (testStart === 5 && (transcript === "they aren't" || transcript === "they are not")) {
+    } else if (testStart === 5 && (transcript === "we aren't" || transcript === "we are not")) {
         testForward();
     } else if (testStart === 6 && (transcript === "you aren't" || transcript === "you are not")) {
         testForward();
@@ -139,6 +139,30 @@ recognition.onresult = function (e) {
         testForward();
     } else if (testStart === 17 && transcript === "we can") {
         testForward();
+    } else if (testStart === 18 && transcript === "does he want") {
+        testForward();
+    } else if (testStart === 19 && transcript === "do I have") {
+        testForward();
+    } else if (testStart === 20 && (transcript === "she doesn't see" || transcript === 'she does not see')) {
+        testForward();
+    } else if (testStart === 21 && (transcript === "we don't do" || transcript === 'we do not do')) {
+        testForward();
+    } else if (testStart === 22 && transcript === "I do") {
+        testForward();
+    } else if (testStart === 23 && transcript === "he doesn't want" || transcript === 'he does not want') {
+        testForward();
+    } else if (testStart === 24 && transcript === "we want") {
+        testForward();
+    } else if (testStart === 25 && transcript === "do you want") {
+        testForward();
+    } else if (testStart === 26 && transcript === "do I see") {
+        testForward();
+    } else if (testStart === 27 && transcript === "she doesn't see" || transcript === 'she does not see') {
+        testForward();
+    } else if (testStart === 28 && transcript === "she sees") {
+        testForward();
+    } else if (testStart === 29 && transcript === "does she see") {
+ speak.style.background = 'rgba(6, 229, 102, 1)';
     }
 }
 
