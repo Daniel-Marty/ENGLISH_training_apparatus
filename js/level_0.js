@@ -68,6 +68,8 @@ buttonPrSTest.addEventListener('click', () => {
     secondVerb.style.boxShadow = PrSStyle;
     subject.style.boxShadow = PrSStyle;
     mark.style.boxShadow = PrSStyle;
+    textarea.classList.remove('hidden');
+    speak.classList.remove('hidden');
 });
 
 buttonFSTest.addEventListener('click', () => {
@@ -77,21 +79,19 @@ buttonFSTest.addEventListener('click', () => {
     get_TestMark();
          secondVerb.style.boxShadow = FSStyle;
         subject.style.boxShadow = FSStyle;
-        mark.style.boxShadow = FSStyle;
-})
-buttonFSTest.addEventListener('click', () => {
-    // testStart + 1;
-    // console.log("shit");
+    mark.style.boxShadow = FSStyle;
+      textarea.classList.remove('hidden');
+    speak.classList.remove('hidden');
 })
 
 speak.addEventListener('click', function () {
     recognition.start();
     textarea.innerHTML = '...speaking';
     speak.style.background = 'rgba(6, 229, 102, 1)';
-    if ((textarea.innerHTML === 'I am' && testStart === '0')&& (testStart < testVerbsArray.length)) {
+    if ((textarea.innerHTML === 'I am' && testStart === '0' && testStart < testVerbsArray.length) {
         speak.style.background = 'green';
         console.log('fucking blue'); 
-         testStart += 1;
+        testStart += 1;
         get_TestSubject();
         get_TestVerb();
         get_TestMark();
@@ -122,6 +122,7 @@ second_verb_question.addEventListener('click', () => {
     second_verb_question.classList.add('hidden');
     second_verb_prompt.style.opacity = 1;
     second_verb_prompt.classList.remove('hidden');
+   
 })
 second_verb_prompt.addEventListener('click', () => {
     second_verb_question.classList.remove('hidden');
@@ -163,6 +164,8 @@ buttonPrS.addEventListener('click', () => {
     secondVerb.style.boxShadow = PrSStyle;
     subject.style.boxShadow = PrSStyle;
     mark.style.boxShadow = PrSStyle;
+    textarea.classList.add('hidden');
+    speak.classList.add('hidden');
 })
 
 
@@ -176,6 +179,8 @@ buttonFS.addEventListener('click', () => {
     secondVerb.style.boxShadow = FSStyle;
     subject.style.boxShadow = FSStyle;
     mark.style.boxShadow = FSStyle;
+    textarea.classList.add('hidden');
+    speak.classList.add('hidden');
 })
 
 
