@@ -19,11 +19,14 @@ const second_verb_prompt = document.getElementById('secondVerb_prompt');
 
 
 const prompts = document.getElementsByClassName('prompt');
+const timeMarkers = document.getElementsByClassName('time_marker');
 const promptPrS = document.getElementById('prompt__pr__s')
 const promptFS = document.getElementById('prompt__f__s');
 const PrSStyle = 'rgb(19, 246, 49) 0px 0px 4px 15px, rgb(255, 255, 255) 0px 0px 20px 35px'
 const FSStyle =  'rgb(255, 5, 5) 0px 0px 4px 15px, white 0px 0px 20px 35px'
 
+const TM_PrS = document.getElementById('tm__pr__s')
+const TM_FS = document.getElementById('tm__f__s')
 
 let marks_array = ['1.png', '2.png', '3.png']
 let subject_array = ['he.jpg','it.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg',]
@@ -35,7 +38,12 @@ let testVerbsArray    = ['be.jpg', 'be.jpg', 'be.jpg',  'be.jpg',   'be.jpg', 'b
 let markTestArr = ['1.png', '1.png','1.png','1.png','1.png','2.png','2.png','3.png','3.png','1.png','1.png','2.png','1.png','3.png','3.png','2.png','3.png','1.png','3.png','2.png','2.png','1.png','2.png','1.png','3.png','3.png','2.png','1.png','3.png']
 let testStart = -1;
 
+function hideTest() {
+    textarea.classList.add('hidden');
+    speak.classList.add('hidden');
+}
 function get_random_subject() {
+    hideTest();
     random_subject = Math.floor(Math.random() * subject_array.length);
     selected_image = subject_array[random_subject]
     document.getElementById('subject').src = `./images-subject/${selected_image}`
@@ -67,10 +75,11 @@ buttonPrSTest.addEventListener('click', () => {
     get_TestSubject();
     get_TestVerb();
     get_TestMark();
+    hideAllPrompts();
     document.getElementById('secondVerb_prompt').innerHTML = "I am";    
     secondVerb.style.boxShadow = PrSStyle;
     subject.style.boxShadow = PrSStyle;
-    markPrS = PrSStyle;
+    mark.style.boxShadow = PrSStyle;
     textarea.classList.remove('hidden');
     speak.classList.remove('hidden');
 });
@@ -80,6 +89,7 @@ buttonFSTest.addEventListener('click', () => {
     get_TestSubject();
     get_TestVerb();
     get_TestMark();
+    hideAllPrompts();
          secondVerb.style.boxShadow = FSStyle;
         subject.style.boxShadow = FSStyle;
     mark.style.boxShadow = FSStyle;
@@ -101,12 +111,12 @@ speak.addEventListener('click', function () {
     textarea.innerHTML = '...speaking';
        
 }) 
-recognition.onresult = function (e) {
-    console.log(e);
-    var transcript = e.results[0][0].transcript;
+recognition.onresult = function (PrS) {
+    console.log(PrS);
+    var transcript = PrS.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
-     ; 
+     
     if (testStart === 0 && transcript === 'I am') {
         testForward()
         document.getElementById('secondVerb_prompt').innerHTML = 'he is'
@@ -158,7 +168,7 @@ recognition.onresult = function (e) {
     } else if (testStart === 16 && (transcript === "can she" || transcript === 'kenshi') && markPrS == PrSStyle) {
         testForward()
             document.getElementById('secondVerb_prompt').innerHTML = 'we can';
-    } else if (testStart === 17 && transcript === "we can" && markPrS == PrSStyle) {
+    } else if (testStart === 17 && (transcript === "we can" || transcript === 'weekend') && markPrS == PrSStyle) {
         testForward()
             document.getElementById('secondVerb_prompt').innerHTML = 'does he want';
     } else if (testStart === 18 && transcript === "does he want" && markPrS == PrSStyle) {
@@ -170,12 +180,12 @@ recognition.onresult = function (e) {
     } else if (testStart === 20 && (transcript === "we don't do" || transcript === 'we do not do') &&  markPrS == PrSStyle) {
         testForward()
             document.getElementById('secondVerb_prompt').innerHTML = 'I do';
-    } else if (testStart === 21 && transcript === "I do" &&  markPrS == PrSStyle) {
+    } else if (testStart === 21 && (transcript === "I do" || transcript === 'idle') &&  markPrS == PrSStyle) {
         testForward()
             document.getElementById('secondVerb_prompt').innerHTML = "he doesn't want";
     } else if (testStart === 22 && (transcript === "he doesn't want" || transcript === 'he does not want') &&  markPrS == PrSStyle) {
         testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'we want';
+            document.getElementById('secondVerb_prompt').innerHTML = 'it wants';
     } else if (testStart === 23 && transcript === "it wants" &&  markPrS == PrSStyle) {
         testForward()
             document.getElementById('secondVerb_prompt').innerHTML = 'do you want';
@@ -197,12 +207,14 @@ recognition.onresult = function (e) {
 }
 
 function get_random_mark() {
+    hideTest();
     random_mark = Math.floor(Math.random() * marks_array.length);
     selected_image = marks_array[random_mark]
     document.getElementById('mark').src = `./images-marks/${selected_image}`
 
 }
 function zero_level() {
+    hideTest();
     random_verb = Math.floor(Math.random() * zero_level_verbs.length);
     selected_image = zero_level_verbs[random_verb]
     document.getElementById('verb').src = `./images-verbs/${selected_image}`
@@ -225,12 +237,39 @@ function get_random_style() {
     subject.style.boxShadow = selected_style;
     mark.style.boxShadow = selected_style;
 }
-
+function PrSStyleAll() {
+    hideAllPrompts();
+    hideTest();
+    secondVerb.style.boxShadow = PrSStyle;
+    subject.style.boxShadow = PrSStyle;
+    mark.style.boxShadow = PrSStyle;
+    TM_PrS.classList.remove('hidden')
+    promptPrS.classList.remove('hidden');
+}
+function FSStyleAll() {
+    hideAllPrompts();
+    hideTest();
+    secondVerb.style.boxShadow = FSStyle;
+    subject.style.boxShadow = FSStyle;
+    mark.style.boxShadow = FSStyle;
+    TM_FS.classList.remove('hidden')
+    promptFS.classList.remove('hidden');
+}
 let hidePrompts = function() {
     for (let i = 0; i < prompts.length; i++) {
         let promptsClasses = prompts[i];
         promptsClasses.classList.add('hidden');
     }
+}
+let hideTimeMarkers = function() {
+    for (let i = 0; i < timeMarkers.length; i++) {
+        let TM_Classes = timeMarkers[i];
+        TM_Classes.classList.add('hidden');
+    }
+}
+function hideAllPrompts() {
+    hideTimeMarkers();
+    hidePrompts();
 }
 
 let button = document.getElementById('mark');
@@ -246,31 +285,21 @@ button.addEventListener('click', function () {
 
 buttonPrS.addEventListener('click', () => {
     secondVerb.style.boxShadow = 'rgb(19, 246, 49) 0px 0px 4px 15px, rgb(255, 255, 255) 0px 0px 20px 35px';
-    hidePrompts();
-    promptPrS.classList.remove('hidden');
+    
     get_random_mark();
     get_random_subject();
     zero_level();
-    secondVerb.style.boxShadow = PrSStyle;
-    subject.style.boxShadow = PrSStyle;
-    mark.style.boxShadow = PrSStyle;
-    textarea.classList.add('hidden');
-    speak.classList.add('hidden');
+    PrSStyleAll();
 })
 
 
 buttonFS.addEventListener('click', () => {
     secondVerb.style.boxShadow = 'rgb(255, 5, 5) 0px 0px 4px 15px, white 0px 0px 20px 35px';
-    hidePrompts();
+    FSStyleAll();
     promptFS.classList.remove('hidden');
     get_random_mark();
     get_random_subject();
     zero_level();
-    secondVerb.style.boxShadow = FSStyle;
-    subject.style.boxShadow = FSStyle;
-    mark.style.boxShadow = FSStyle;
-    textarea.classList.add('hidden');
-    speak.classList.add('hidden');
 })
 
 

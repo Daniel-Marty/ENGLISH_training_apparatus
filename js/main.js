@@ -145,7 +145,10 @@ let hideTimeMarkers = function() {
         TM_Classes.classList.add('hidden');
     }
 }
-
+function hideAllPrompts() {
+    hideAllPrompts()
+    hideTimeMarkers();
+}
 let button = document.getElementById('mark');
 button.addEventListener('click', function () {
     get_random_mark();
