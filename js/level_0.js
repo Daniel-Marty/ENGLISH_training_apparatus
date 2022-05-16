@@ -110,7 +110,7 @@ recognition.onresult = function (e) {
     if (testStart === 0 && transcript === 'I am') {
         testForward()
         document.getElementById('secondVerb_prompt').innerHTML = 'he is'
-    } else if (testStart === 1 && (transcript === 'he is' || transcript === "he's") && markPrS == PrSStyle) {
+    } else if (testStart === 1 && (transcript === 'he is' || transcript === "his" || transcript === "here's") && markPrS == PrSStyle) {
         testForward()
         document.getElementById('secondVerb_prompt').innerHTML = 'she is';
     } else if (testStart === 2 && (transcript === 'she is' || transcript === "she's") && markPrS == PrSStyle) {
@@ -155,7 +155,7 @@ recognition.onresult = function (e) {
     } else if (testStart === 15 && (transcript === "you can't" || transcript === 'you cannot' || transcript === 'you can not') && markPrS == PrSStyle) {
         testForward()
             document.getElementById('secondVerb_prompt').innerHTML = 'can she';
-    } else if (testStart === 16 && transcript === "can she" && markPrS == PrSStyle) {
+    } else if (testStart === 16 && (transcript === "can she" || transcript === 'kenshi') && markPrS == PrSStyle) {
         testForward()
             document.getElementById('secondVerb_prompt').innerHTML = 'we can';
     } else if (testStart === 17 && transcript === "we can" && markPrS == PrSStyle) {
@@ -176,13 +176,13 @@ recognition.onresult = function (e) {
     } else if (testStart === 22 && (transcript === "he doesn't want" || transcript === 'he does not want') &&  markPrS == PrSStyle) {
         testForward()
             document.getElementById('secondVerb_prompt').innerHTML = 'we want';
-    } else if (testStart === 23 && transcript === "we want" &&  markPrS == PrSStyle) {
+    } else if (testStart === 23 && transcript === "it wants" &&  markPrS == PrSStyle) {
         testForward()
             document.getElementById('secondVerb_prompt').innerHTML = 'do you want';
     } else if (testStart === 24 && transcript === "do you want" &&  markPrS == PrSStyle) {
         testForward()
             document.getElementById('secondVerb_prompt').innerHTML = 'do I see';
-    } else if (testStart === 25 && transcript === "do I see" &&  markPrS == PrSStyle) {
+    } else if (testStart === 25 && (transcript === "do I see" || transcript === 'do i c') &&  markPrS == PrSStyle) {
         testForward()
             document.getElementById('secondVerb_prompt').innerHTML = "she doesn't see";
     } else if (testStart === 26 && (transcript === "she doesn't see" || transcript === 'she does not see') &&  markPrS == PrSStyle) {
