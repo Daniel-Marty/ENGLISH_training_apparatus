@@ -106,66 +106,91 @@ recognition.onresult = function (e) {
     var transcript = e.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
-    let verbHTML = document.getElementById('secondVerb_prompt').innerHTML; 
+     ; 
     if (testStart === 0 && transcript === 'I am') {
         testForward()
-        verbHTML = 'he is'
+        document.getElementById('secondVerb_prompt').innerHTML = 'he is'
     } else if (testStart === 1 && (transcript === 'he is' || transcript === "he's") && markPrS == PrSStyle) {
         testForward()
-        verbHTML = 'she is';
+        document.getElementById('secondVerb_prompt').innerHTML = 'she is';
     } else if (testStart === 2 && (transcript === 'she is' || transcript === "she's") && markPrS == PrSStyle) {
         testForward()
-        verbHTML = 'they are';
+        document.getElementById('secondVerb_prompt').innerHTML = 'they are';
     } else if (testStart === 3 && transcript === 'they are' && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'it is';
     } else if (testStart === 4 && transcript === 'it is' && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = "we aren't";
     } else if (testStart === 5 && (transcript === "we aren't" || transcript === "we are not") && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = "you aren't";
     } else if (testStart === 6 && (transcript === "you aren't" || transcript === "you are not") && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'do I have';
     } else if (testStart === 7 && (transcript === "do I have" || transcript === "have I") && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'does he have';
     } else if (testStart === 8 && transcript === "does he have" && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+        document.getElementById('secondVerb_prompt').innerHTML = 'she has';
     } else if (testStart === 9 && transcript === "she has" && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'they have';
     } else if (testStart === 10 && transcript === "they have" && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = "it doesn't have";
     } else if (testStart === 11 && (transcript === "it doesn't have" || transcript === "it does not have") && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'we have';
     } else if (testStart === 12 && transcript === "we have" && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'do you have';
     } else if (testStart === 13 && transcript === "do you have" && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'do I have';
     } else if (testStart === 14 && transcript === "do I have" && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = "you can't";
     } else if (testStart === 15 && (transcript === "you can't" || transcript === 'you cannot' || transcript === 'you can not') && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'can she';
     } else if (testStart === 16 && transcript === "can she" && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'we can';
     } else if (testStart === 17 && transcript === "we can" && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'does he want';
     } else if (testStart === 18 && transcript === "does he want" && markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = "she doesn't see";
     } else if (testStart === 19 && (transcript === "she doesn't see" || transcript === 'she does not see') &&  markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = "we don't do";
     } else if (testStart === 20 && (transcript === "we don't do" || transcript === 'we do not do') &&  markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'I do';
     } else if (testStart === 21 && transcript === "I do" &&  markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = "he doesn't want";
     } else if (testStart === 22 && (transcript === "he doesn't want" || transcript === 'he does not want') &&  markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'we want';
     } else if (testStart === 23 && transcript === "we want" &&  markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'do you want';
     } else if (testStart === 24 && transcript === "do you want" &&  markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'do I see';
     } else if (testStart === 25 && transcript === "do I see" &&  markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = "she doesn't see";
     } else if (testStart === 26 && (transcript === "she doesn't see" || transcript === 'she does not see') &&  markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            document.getElementById('secondVerb_prompt').innerHTML = 'she sees';
     } else if (testStart === 27 && transcript === "she sees" &&  markPrS == PrSStyle) {
-        testForward();
+        testForward()
+            'does she see';
     } else if (testStart === 28 && transcript === "does she see" &&  markPrS == PrSStyle) {
  speak.style.background = 'rgba(6, 229, 102, 1)';
     }
