@@ -104,7 +104,6 @@ buttonFSTest.addEventListener('click', () => {
 
 function testForward (){
  speak.style.background = 'rgba(6, 229, 102, 1)';
-        console.log('fucking blue'); 
         testStart += 1;
         get_TestSubject();
         get_TestVerb();
@@ -176,7 +175,7 @@ recognition.onresult = function (e) {
         } else if (testStart === 17 && (transcript === "we can" || transcript === 'weekend')) {
             testForward()
             changePrompt('does he want')
-        } else if (testStart === 18 && transcript === "does he want" && markPrS == PrSStyle) {
+        } else if (testStart === 18 && transcript === "does he want") {
             testForward()
             changePrompt("she doesn't see")
         } else if (testStart === 19 && (transcript === "she doesn't see" || transcript === 'she does not see')) {
