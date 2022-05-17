@@ -49,26 +49,30 @@ function get_random_subject() {
     document.getElementById('subject').src = `./images-subject/${selected_image}`
 }
 function get_TestSubject() {
-    if (testStart < +testSubjectsArray.length) {
+    if (testStart <= testSubjectsArray.length) {
         selected_image = testSubjectsArray[`${testStart}`]
         document.getElementById('subject').src = `./images-subject/${selected_image}`
     }
 }
 var verbHTML = document.getElementById('secondVerb_prompt').innerHTML;
 function get_TestVerb() {
-    if (testStart < +testVerbsArray.length) {
+    if (testStart <= testVerbsArray.length) {
         selected_image = testVerbsArray[`${testStart}`]
         document.getElementById('verb').src = `./images-verbs/${selected_image}`
         verbHTML = `${selected_image.slice(0, -4)}`
     }
 }
-function get_TestMark( ) {
-    if (testStart < +markTestArr.length) {
+function get_TestMark() {
+    if (testStart <= markTestArr.length) {
         selected_image = markTestArr[`${testStart}`]
         document.getElementById('mark').src = `./images-marks/${selected_image}`
     }
 }
 let markPrS = mark.style.boxShadow;
+
+function changePrompt(text) {
+    document.getElementById('secondVerb_prompt').innerHTML = `${text}`; 
+}
 
 buttonPrSTest.addEventListener('click', () => {
     testStart = 0;
@@ -76,7 +80,7 @@ buttonPrSTest.addEventListener('click', () => {
     get_TestVerb();
     get_TestMark();
     hideAllPrompts();
-    document.getElementById('secondVerb_prompt').innerHTML = "I am";    
+    changePrompt('I am')
     secondVerb.style.boxShadow = PrSStyle;
     subject.style.boxShadow = PrSStyle;
     mark.style.boxShadow = PrSStyle;
@@ -90,6 +94,7 @@ buttonFSTest.addEventListener('click', () => {
     get_TestVerb();
     get_TestMark();
     hideAllPrompts();
+    changePrompt('I will be')
          secondVerb.style.boxShadow = FSStyle;
         subject.style.boxShadow = FSStyle;
     mark.style.boxShadow = FSStyle;
@@ -119,88 +124,88 @@ recognition.onresult = function (e) {
     if (mark.style.boxShadow === PrSStyle) {
         if (testStart === 0 && transcript === 'I am') {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'he is'
+            changePrompt('he is')
         } else if (testStart === 1 && (transcript === 'he is' || transcript === "his" || transcript === "here's")) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'she is';
+            changePrompt('she is')
         } else if (testStart === 2 && (transcript === 'she is' || transcript === "she's")) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'they are';
+            changePrompt('they are')
         } else if (testStart === 3 && transcript === 'they are') {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'it is';
+            changePrompt('it is')
         } else if (testStart === 4 && transcript === 'it is') {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = "we aren't";
+            changePrompt("we aren't")
         } else if (testStart === 5 && (transcript === "we aren't" || transcript === "we are not")) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = "you aren't";
+            changePrompt("you aren't")
         } else if (testStart === 6 && (transcript === "you aren't" || transcript === "you are not")) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'do I have';
+            changePrompt('do I have')
         } else if (testStart === 7 && (transcript === "do I have" || transcript === "have I")) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'does he have';
+            changePrompt('does he have')
         } else if (testStart === 8 && transcript === "does he have") {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'she has';
+            changePrompt('she has')
         } else if (testStart === 9 && transcript === "she has") {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'they have';
+            changePrompt('they have')
         } else if (testStart === 10 && transcript === "they have") {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = "it doesn't have";
+            changePrompt("it doesn't have")
         } else if (testStart === 11 && (transcript === "it doesn't have" || transcript === "it does not have")) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'we have';
+            changePrompt('we have')
         } else if (testStart === 12 && transcript === "we have") {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'do you have';
+            changePrompt('do you have')
         } else if (testStart === 13 && transcript === "do you have") {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'do I have';
+            changePrompt('do I have')
         } else if (testStart === 14 && transcript === "do I have") {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = "you can't";
+            changePrompt("you can't")
         } else if (testStart === 15 && (transcript === "you can't" || transcript === 'you cannot' || transcript === 'you can not')) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'can she';
+            changePrompt('can she')
         } else if (testStart === 16 && (transcript === "can she" || transcript === 'kenshi')) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'we can';
+            changePrompt('we can')
         } else if (testStart === 17 && (transcript === "we can" || transcript === 'weekend')) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'does he want';
+            changePrompt('does he want')
         } else if (testStart === 18 && transcript === "does he want" && markPrS == PrSStyle) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = "she doesn't see";
+            changePrompt("she doesn't see")
         } else if (testStart === 19 && (transcript === "she doesn't see" || transcript === 'she does not see')) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = "we don't do";
+            changePrompt("we don't do")
         } else if (testStart === 20 && (transcript === "we don't do" || transcript === 'we do not do')) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'I do';
+            changePrompt('I do')
         } else if (testStart === 21 && (transcript === "I do" || transcript === 'idle')) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = "he doesn't want";
+            changePrompt("he doesn't want")
         } else if (testStart === 22 && (transcript === "he doesn't want" || transcript === 'he does not want')) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'it wants';
+            changePrompt('it wants')
         } else if (testStart === 23 && transcript === "it wants") {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'do you want';
+            changePrompt('do you want')
         } else if (testStart === 24 && transcript === "do you want") {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'do I see';
+            changePrompt('do I see')
         } else if (testStart === 25 && (transcript === "do I see" || transcript === 'do i c')) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = "she doesn't see";
+            changePrompt("she doesn't see")
         } else if (testStart === 26 && (transcript === "she doesn't see" || transcript === 'she does not see')) {
             testForward()
-            document.getElementById('secondVerb_prompt').innerHTML = 'she sees';
+            changePrompt('she sees')
         } else if (testStart === 27 && transcript === "she sees") {
             testForward()
-            'does she see';
+            changePrompt('does she see')
         } else if (testStart === 28 && transcript === "does she see") {
             speak.style.background = 'rgba(6, 229, 102, 1)';
         }
@@ -209,89 +214,89 @@ recognition.onresult = function (e) {
         else if (mark.style.boxShadow === FSStyle) {
             if (testStart === 0 && transcript === 'I will be') {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = "he'll be"
+                changePrompt("he'll be")
             } else if (testStart === 1 && (transcript === "he'll be" || transcript === "he will be" || transcript === "she'll be")) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = "she'll be";
+                changePrompt("she'll be")
             } else if (testStart === 2 && (transcript === "she'll be" || transcript === "she will be")) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'they are';
-            } else if (testStart === 3 && transcript === 'they are') {
+                changePrompt("they'll be")
+            } else if (testStart === 3 && (transcript === 'they will be' || transcript === "they'll be")) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'it is';
-            } else if (testStart === 4 && transcript === 'it is') {
+                changePrompt('it will be')
+            } else if (testStart === 4 && (transcript === 'it will be' || transcript === "it'll be")) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = "we aren't";
-            } else if (testStart === 5 && (transcript === "we aren't" || transcript === "we are not")) {
+                changePrompt("we won't be")
+            } else if (testStart === 5 && (transcript === "we won't be" || transcript === "we will not be")) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = "you aren't";
-            } else if (testStart === 6 && (transcript === "you aren't" || transcript === "you are not")) {
+                changePrompt("you won't be")
+            } else if (testStart === 6 && (transcript === "you won't be" || transcript === "you will not be")) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'do I have';
-            } else if (testStart === 7 && (transcript === "do I have" || transcript === "have I")) {
+                changePrompt('will I have')
+            } else if (testStart === 7 && transcript === "will I have") {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'does he have';
-            } else if (testStart === 8 && transcript === "does he have") {
+                changePrompt('will he have')
+            } else if (testStart === 8 && transcript === "will he have") {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'she has';
-            } else if (testStart === 9 && transcript === "she has") {
+                changePrompt("she'll have")
+            } else if (testStart === 9 && (transcript === "she will have" || transcript === "she'll have")) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'they have';
-            } else if (testStart === 10 && transcript === "they have") {
+                changePrompt("they'll have")
+            } else if (testStart === 10 && (transcript === "they'll have" || transcript === 'they will have')) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = "it doesn't have";
-            } else if (testStart === 11 && (transcript === "it doesn't have" || transcript === "it does not have")) {
+                changePrompt("it won't have")
+            } else if (testStart === 11 && (transcript === "it won't have" || transcript === "it will not have")) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'we have';
-            } else if (testStart === 12 && transcript === "we have") {
+                changePrompt("we'll have")
+            } else if (testStart === 12 && (transcript === "we'll have" || transcript === 'we will have')) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'do you have';
-            } else if (testStart === 13 && transcript === "do you have") {
+                changePrompt('will you have')
+            } else if (testStart === 13 && transcript === "will you have") {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'do I have';
-            } else if (testStart === 14 && transcript === "do I have") {
+                changePrompt('will I have')
+            } else if (testStart === 14 && transcript === "will I have") {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = "you can't";
-            } else if (testStart === 15 && (transcript === "you can't" || transcript === 'you cannot' || transcript === 'you can not')) {
+                changePrompt("you won't be able")
+            } else if (testStart === 15 && (transcript === "you won't be able" || transcript === 'you will not be able')) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'can she';
-            } else if (testStart === 16 && (transcript === "can she" || transcript === 'kenshi')) {
+                changePrompt('will she be able')
+            } else if (testStart === 16 && transcript === "will she be able") {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'we can';
-            } else if (testStart === 17 && (transcript === "we can" || transcript === 'weekend')) {
+                changePrompt("we'll be able")
+            } else if (testStart === 17 && (transcript === "we'll be able" || transcript === 'we will be able')) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'does he want';
-            } else if (testStart === 18 && transcript === "does he want" && markPrS == PrSStyle) {
+                changePrompt('will he want')
+            } else if (testStart === 18 && transcript === "will he want") {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = "she doesn't see";
-            } else if (testStart === 19 && (transcript === "she doesn't see" || transcript === 'she does not see')) {
+                changePrompt("she won't see")
+            } else if (testStart === 19 && (transcript === "she won't see" || transcript === 'she will not see')) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = "we don't do";
-            } else if (testStart === 20 && (transcript === "we don't do" || transcript === 'we do not do')) {
+                changePrompt("we won't do")
+            } else if (testStart === 20 && (transcript === "we won't do" || transcript === 'we will not do')) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'I do';
-            } else if (testStart === 21 && (transcript === "I do" || transcript === 'idle')) {
+                changePrompt("I'll do")
+            } else if (testStart === 21 && (transcript === "I'll do" || transcript === 'I will do')) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = "he doesn't want";
-            } else if (testStart === 22 && (transcript === "he doesn't want" || transcript === 'he does not want')) {
+                changePrompt("he won't want")
+            } else if (testStart === 22 && (transcript === "he won't want" || transcript === 'he will not want')) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'it wants';
-            } else if (testStart === 23 && transcript === "it wants") {
+                changePrompt("it'll want")
+            } else if (testStart === 23 && (transcript === "it'll want" || transcript === 'it will want')) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'do you want';
-            } else if (testStart === 24 && transcript === "do you want") {
+                changePrompt('will you want')
+            } else if (testStart === 24 && transcript === "will you want") {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'do I see';
-            } else if (testStart === 25 && (transcript === "do I see" || transcript === 'do i c')) {
+                changePrompt('will I see')
+            } else if (testStart === 25 && transcript === "will I see") {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = "she doesn't see";
-            } else if (testStart === 26 && (transcript === "she doesn't see" || transcript === 'she does not see')) {
+                changePrompt("she won't see")
+            } else if (testStart === 26 && (transcript === "she won't see" || transcript === 'she will not see')) {
                 testForward()
-                document.getElementById('secondVerb_prompt').innerHTML = 'she sees';
-            } else if (testStart === 27 && transcript === "she sees") {
+                changePrompt("she'll see")
+            } else if (testStart === 27 && (transcript === "she'll see" || transcript === 'she will see')) {
                 testForward()
-                'does she see';
-            } else if (testStart === 28 && transcript === "does she see") {
+                changePrompt('will she see')
+            } else if (testStart === 28 && transcript === "will she see") {
                 speak.style.background = 'rgba(6, 229, 102, 1)';
             }
         }
