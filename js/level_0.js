@@ -190,7 +190,7 @@ recognition.onresult = function (e) {
         } else if (testStart === 22 && (transcript === "he doesn't want" || transcript === 'he does not want')) {
             testForward()
             changePrompt('it wants')
-        } else if (testStart === 23 && transcript === "it wants") {
+        } else if (testStart === 23 && (transcript === "it wants" || transcript === 'it once')) {
             testForward()
             changePrompt('do you want')
         } else if (testStart === 24 && transcript === "do you want") {
