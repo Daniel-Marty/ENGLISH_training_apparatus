@@ -33,9 +33,9 @@ let subject_array = ['he.jpg','it.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg
 let zero_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'be.jpg', 'do.gif']
 let zero_level_styles = [PrSStyle, FSStyle]
 
-let testSubjectsArray = ['me.jpg', 'he.jpg', 'she.jpg', 'they.jpg', 'it.jpg', 'we.jpg', 'you.jpg', 'me.jpg', 'he.jpg', 'she.jpg', 'they.jpg', 'it.jpg', 'we.jpg', 'you.jpg',                       'me.jpg',  'you.jpg', 'she.jpg', 'we.jpg',   'he.jpg', 'she.jpg', 'we.jpg', 'me.jpg',   'he.jpg',   'it.jpg',   'you.jpg', 'me.jpg', 'she.jpg']
+let testSubjectsArray = ['me.jpg', 'he.jpg', 'she.jpg', 'they.jpg', 'it.jpg', 'we.jpg', 'you.jpg', 'me.jpg', 'he.jpg', 'she.jpg', 'they.jpg', 'it.jpg', 'we.jpg', 'you.jpg',                       'me.jpg',  'you.jpg', 'she.jpg', 'we.jpg',   'he.jpg', 'she.jpg', 'we.jpg', 'me.jpg',   'he.jpg',   'it.jpg',   'you.jpg', 'me.jpg', 'she.jpg', 'she.jpg']
 let testVerbsArray    = ['be.jpg', 'be.jpg', 'be.jpg',  'be.jpg',   'be.jpg', 'be.jpg', 'be.jpg',  'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'can.jpg', 'can.jpg', 'can.jpg', 'want.jpg', 'see.gif', 'do.gif', 'do.gif', 'want.jpg', 'want.jpg', 'want.jpg', 'see.gif', 'see.gif', 'see.gif']
-let markTestArr = ['1.png', '1.png','1.png','1.png','1.png','2.png','2.png','3.png','3.png','1.png','1.png','2.png','1.png','3.png','3.png','2.png','3.png','1.png','3.png','2.png','2.png','1.png','2.png','1.png','3.png','3.png','2.png','1.png','3.png']
+let markTestArr = ['1.png', '1.png','1.png','1.png','1.png','2.png','2.png','3.png','3.png','1.png','1.png','2.png','1.png','3.png','3.png','2.png','3.png','1.png','3.png','2.png','2.png','1.png','2.png','1.png','3.png','3.png','2.png','3.png',]
 let testStart = -1;
 
 function hideTest() {
@@ -49,21 +49,21 @@ function get_random_subject() {
     document.getElementById('subject').src = `./images-subject/${selected_image}`
 }
 function get_TestSubject() {
-    if (testStart <= testSubjectsArray.length) {
+    if (testStart < testSubjectsArray.length) {
         selected_image = testSubjectsArray[`${testStart}`]
         document.getElementById('subject').src = `./images-subject/${selected_image}`
     }
 }
 var verbHTML = document.getElementById('secondVerb_prompt').innerHTML;
 function get_TestVerb() {
-    if (testStart <= testVerbsArray.length) {
+    if (testStart < testVerbsArray.length) {
         selected_image = testVerbsArray[`${testStart}`]
         document.getElementById('verb').src = `./images-verbs/${selected_image}`
         verbHTML = `${selected_image.slice(0, -4)}`
     }
 }
 function get_TestMark() {
-    if (testStart <= markTestArr.length) {
+    if (testStart < markTestArr.length) {
         selected_image = markTestArr[`${testStart}`]
         document.getElementById('mark').src = `./images-marks/${selected_image}`
     }
@@ -86,6 +86,7 @@ buttonPrSTest.addEventListener('click', () => {
     mark.style.boxShadow = PrSStyle;
     textarea.classList.remove('hidden');
     speak.classList.remove('hidden');
+    
 });
 
 buttonFSTest.addEventListener('click', () => {
@@ -113,6 +114,7 @@ speak.addEventListener('click', function () {
     speak.style.background = 'red';
     recognition.start();
     textarea.innerHTML = '...speaking';
+    console.log(testSubjectsArray);
        
 }) 
 recognition.onresult = function (e) {
@@ -201,11 +203,8 @@ recognition.onresult = function (e) {
             changePrompt("she doesn't see")
         } else if (testStart === 26 && (transcript === "she doesn't see" || transcript === 'she does not see')) {
             testForward()
-            changePrompt('she sees')
-        } else if (testStart === 27 && transcript === "she sees") {
-            testForward()
             changePrompt('does she see')
-        } else if (testStart === 28 && transcript === "does she see") {
+        } else if (testStart === 27 && transcript === "does she see") {
             speak.style.background = 'rgba(6, 229, 102, 1)';
         }
     }
@@ -262,7 +261,7 @@ recognition.onresult = function (e) {
             } else if (testStart === 16 && transcript === "will she be able") {
                 testForward()
                 changePrompt("we'll be able")
-            } else if (testStart === 17 && (transcript === "we'll be able" || transcript === 'we will be able')) {
+            } else if (testStart === 17 && (transcript === "we'll be able" || transcript === 'we will be able' || transcript === 'will be able')) {
                 testForward()
                 changePrompt('will he want')
             } else if (testStart === 18 && transcript === "will he want") {
@@ -289,13 +288,10 @@ recognition.onresult = function (e) {
             } else if (testStart === 25 && transcript === "will I see") {
                 testForward()
                 changePrompt("she won't see")
-            } else if (testStart === 26 && (transcript === "she won't see" || transcript === 'she will not see')) {
+            } else if (testStart === 26 && (transcript === "she won't see" || transcript === 'she will not see' || transcript === 'she want see')) {
                 testForward()
-                changePrompt("she'll see")
-            } else if (testStart === 27 && (transcript === "she'll see" || transcript === 'she will see')) {
-                testForward()
-                changePrompt('will she see')
-            } else if (testStart === 28 && transcript === "will she see") {
+                changePrompt("will she see")
+            } else if (testStart === 27 && transcript === "will she see") {
                 speak.style.background = 'rgba(6, 229, 102, 1)';
             }
         }
