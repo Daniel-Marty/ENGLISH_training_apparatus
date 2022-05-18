@@ -55,6 +55,7 @@ function get_TestSubject() {
     }
 }
 var verbHTML = document.getElementById('secondVerb_prompt').innerHTML;
+
 function get_TestVerb() {
     if (testStart < testVerbsArray.length) {
         selected_image = testVerbsArray[`${testStart}`]
@@ -206,6 +207,8 @@ recognition.onresult = function (e) {
             changePrompt('does she see')
         } else if (testStart === 27 && transcript === "does she see") {
             speak.style.background = 'rgba(6, 229, 102, 1)';
+            changePrompt('Yay! YOU DID IT!!')
+            changeVerb('encourage.gif')
         }
     }
             // ___________________________________________________________________________FUTURE________________________
@@ -293,6 +296,8 @@ recognition.onresult = function (e) {
                 changePrompt("will she see")
             } else if (testStart === 27 && transcript === "will she see") {
                 speak.style.background = 'rgba(6, 229, 102, 1)';
+                changePrompt('Yay! YOU DID IT!!')
+                changeVerb('encourage.gif')
             }
         }
 }
@@ -304,11 +309,15 @@ function get_random_mark() {
     document.getElementById('mark').src = `./images-marks/${selected_image}`
 
 }
+function changeVerb(verbName) {
+     document.getElementById('verb').src = `./images-verbs/${verbName}`
+}
 function zero_level() {
     hideTest();
     random_verb = Math.floor(Math.random() * zero_level_verbs.length);
     selected_image = zero_level_verbs[random_verb]
-    document.getElementById('verb').src = `./images-verbs/${selected_image}`
+    changeVerb(selected_image)
+    // document.getElementById('verb').src = `./images-verbs/${selected_image}`
     document.getElementById('secondVerb_prompt').innerHTML = `${selected_image.slice(0,-4)}`
 }
 second_verb_question.addEventListener('click', () => {
