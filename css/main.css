@@ -124,10 +124,10 @@ body {
 .text_area {
   z-index: 12;
   position: absolute;
-  left: 30%;
+  left: 20%;
   bottom: 12%;
   padding: 5px;
-  min-width: 50px;
+  min-width: 70px;
   font-weight: bold;
   font-size: 35px;
   line-height: 1.1;
@@ -141,6 +141,13 @@ body {
   border-radius: 5px;
   box-shadow: 0px 0px 25px 12px white;
   transition: color var(--transition-time) var(--cubic-bezier), background-color var(--transition-time) var(--cubic-bezier), background-transition 300ms, box-shadow 300ms var(--cubic-bezier);
+}
+
+.input {
+  z-index: 10;
+  position: absolute;
+  top: 25%;
+  left: 13%;
 }
 
 .buttons {

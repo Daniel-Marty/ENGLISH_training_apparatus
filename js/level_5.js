@@ -16,6 +16,16 @@ recognition.onresult = function (e) {
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
 }
+input.addEventListener('keydown', function (event) {
+    if (event.code === 'Enter') {
+        input.value = '';
+    }
+})
+input.addEventListener('input', ()=> {
+    transcript = input.value;
+    textarea.innerHTML = input.value;
+    // checkTest();
+})
 
 const buttonPS = document.getElementById('past__s');
 const buttonPrP = document.getElementById('present__p');

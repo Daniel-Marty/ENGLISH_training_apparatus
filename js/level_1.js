@@ -1,3 +1,22 @@
+const buttonPrS = document.getElementById('present__s');
+const buttonFS = document.getElementById('future__s');
+const buttonPS = document.getElementById('past__s');
+const buttonMain = document.getElementById('main_menu');
+const subject = document.getElementById('subject');
+const secondVerb = document.querySelector('.secondVerb');
+const mark = document.querySelector('.mark');
+const second_verb_question = document.getElementById('secondVerb_question');
+const second_verb_prompt = document.getElementById('secondVerb_prompt');
+const input = document.getElementById('input');
+
+const prompts = document.getElementsByClassName('prompt');
+const promptPrS = document.getElementById('prompt__pr__s')
+const promptFS = document.getElementById('prompt__f__s');
+const promptPS = document.getElementById('prompt__p__s')
+const PrSStyle = 'rgb(19, 246, 49) 0px 0px 4px 15px, rgb(255, 255, 255) 0px 0px 20px 35px'
+const FSStyle =  'rgb(255, 5, 5) 0px 0px 4px 15px, white 0px 0px 20px 35px'
+const PSStyle = 'rgb(0, 87, 250) 0px 0px 4px 15px, white 0px 0px 20px 35px'
+
 var speak = document.getElementById('speak');
 var textarea = document.getElementById('text_area');
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -13,25 +32,16 @@ recognition.onresult = function (e) {
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
 }
-
-
-const buttonPrS = document.getElementById('present__s');
-const buttonFS = document.getElementById('future__s');
-const buttonPS = document.getElementById('past__s');
-const buttonMain = document.getElementById('main_menu');
-const subject = document.getElementById('subject');
-const secondVerb = document.querySelector('.secondVerb');
-const mark = document.querySelector('.mark');
-const second_verb_question = document.getElementById('secondVerb_question');
-const second_verb_prompt = document.getElementById('secondVerb_prompt');
-
-const prompts = document.getElementsByClassName('prompt');
-const promptPrS = document.getElementById('prompt__pr__s')
-const promptFS = document.getElementById('prompt__f__s');
-const promptPS = document.getElementById('prompt__p__s')
-const PrSStyle = 'rgb(19, 246, 49) 0px 0px 4px 15px, rgb(255, 255, 255) 0px 0px 20px 35px'
-const FSStyle =  'rgb(255, 5, 5) 0px 0px 4px 15px, white 0px 0px 20px 35px'
-const PSStyle = 'rgb(0, 87, 250) 0px 0px 4px 15px, white 0px 0px 20px 35px'
+input.addEventListener('keydown', function (event) {
+    if (event.code === 'Enter') {
+        input.value = '';
+    }
+})
+input.addEventListener('input', ()=> {
+    transcript = input.value;
+    textarea.innerHTML = input.value;
+    // checkTest();
+})
 
 let marks_array = ['1.png', '2.png', '3.png']
 let subject_array = ['he.jpg','it.jpg', 'cat.jpg', 'dog.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg']
