@@ -228,18 +228,18 @@ speak.addEventListener('click', function () {
     }
 }
     
-const debounce(fn, ms) {
-    let timeout
-    return function () {
-        const fnCall = () => { fn.apply(this, arguments) }
-        clearTimeout(timeout)
-        timeout = setTimeout(fnCall, ms)
-    };
-}
-function onChangeDebounce(e) {
-    console.log('fuck');
-}
-onChangeDebounce = debounce(onChangeDebounce, 1000);
+// const debounce(fn, ms) {
+//     let timeout
+//     return function () {
+//         const fnCall = () => { fn.apply(this, arguments) }
+//         clearTimeout(timeout)
+//         timeout = setTimeout(fnCall, ms)
+//     };
+// }
+// function onChangeDebounce(e) {
+//     console.log('fuck');
+// }
+// onChangeDebounce = debounce(onChangeDebounce, 1000);
 
 // input.addEventListener('keydown', function (event) {
 //     if (event.code === 'Enter') {
