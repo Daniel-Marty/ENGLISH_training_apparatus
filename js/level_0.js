@@ -220,7 +220,7 @@ speak.addEventListener('click', function () {
         console.log(e);
         var transcript = e.results[0][0].transcript;
         transcript.innerHTML = transcript.toUpperCase();
-        textarea.innerHTML = transcript;
+        textarea.innerHTML = transcript.toUpperCase();
        if (secondVerb.style.boxShadow === PrSStyle) {
         checkPrSTest();
     } else {
