@@ -124,8 +124,9 @@ body {
 .text_area {
   z-index: 12;
   position: absolute;
-  left: 20%;
+  left: 50%;
   bottom: 12%;
+  transform: translate(-50%, 0);
   padding: 5px;
   min-width: 70px;
   font-weight: bold;
@@ -250,6 +251,11 @@ body {
 #future__s_test {
   top: 10%;
   left: 24%;
+}
+
+#past__s_test {
+  top: 8%;
+  left: 30.6%;
 }
 
 #past__s {

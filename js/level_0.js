@@ -39,7 +39,7 @@ let markTestArr = ['1.png', '1.png','1.png','1.png','1.png','2.png','2.png','3.p
 let testStart = -1;
 
 function hideTest() {
-    textarea.classList.add('hidden');
+    textarea.classList.add('hidden')
     speak.classList.add('hidden');
 }
 function get_random_subject() {
@@ -48,26 +48,7 @@ function get_random_subject() {
     selected_image = subject_array[random_subject]
     document.getElementById('subject').src = `./images-subject/${selected_image}`
 }
-function get_TestSubject() {
-    if (testStart < testSubjectsArray.length) {
-        selected_image = testSubjectsArray[`${testStart}`]
-        document.getElementById('subject').src = `./images-subject/${selected_image}`
-    }
-}
 
-function get_TestVerb() {
-    if (testStart < testVerbsArray.length) {
-        selected_image = testVerbsArray[`${testStart}`]
-        document.getElementById('verb').src = `./images-verbs/${selected_image}`
-        changePrompt(selected_image.slice(0, -4))
-    }
-}
-function get_TestMark() {
-    if (testStart < markTestArr.length) {
-        selected_image = markTestArr[`${testStart}`]
-        document.getElementById('mark').src = `./images-marks/${selected_image}`
-    }
-}
 let markPrS = mark.style.boxShadow;
 
 const changePrompt = text => document.getElementById('secondVerb_prompt').innerHTML = `${text}`; 
@@ -125,22 +106,6 @@ function FSStyleAll() {
     TM_FS.classList.remove('hidden')
     promptFS.classList.remove('hidden');
 }
-let hidePrompts = function() {
-    for (let i = 0; i < prompts.length; i++) {
-        let promptsClasses = prompts[i];
-        promptsClasses.classList.add('hidden');
-    }
-}
-let hideTimeMarkers = function() {
-    for (let i = 0; i < timeMarkers.length; i++) {
-        let TM_Classes = timeMarkers[i];
-        TM_Classes.classList.add('hidden');
-    }
-}
-function hideAllPrompts() {
-    hideTimeMarkers();
-    hidePrompts();
-}
 
 let button = document.getElementById('mark');
 button.addEventListener('click', function () {
@@ -153,7 +118,7 @@ button.addEventListener('click', function () {
         console.log('changing the mark');
 })
 
-const randomThree = () => {
+function randomThree (){
  get_random_mark();
     get_random_subject();
     zero_level();
@@ -171,6 +136,28 @@ buttonFS.addEventListener('click', () => {
     promptFS.classList.remove('hidden');
     randomThree();
 })
+
+// --------------------------------------------TESTS-----TESTS-------------------------------------
+function get_TestSubject() {
+    if (testStart < testSubjectsArray.length) {
+        selected_image = testSubjectsArray[`${testStart}`]
+        document.getElementById('subject').src = `./images-subject/${selected_image}`
+    }
+}
+function get_TestVerb() {
+    if (testStart < testVerbsArray.length) {
+        selected_image = testVerbsArray[`${testStart}`]
+        document.getElementById('verb').src = `./images-verbs/${selected_image}`
+        changePrompt(selected_image.slice(0, -4))
+    }
+}
+function get_TestMark() {
+    if (testStart < markTestArr.length) {
+        selected_image = markTestArr[`${testStart}`]
+        document.getElementById('mark').src = `./images-marks/${selected_image}`
+    }
+}
+
 buttonPrSTest.addEventListener('click', () => {
     testStart = 0;
     get_TestSubject();
@@ -187,225 +174,267 @@ buttonPrSTest.addEventListener('click', () => {
 });
 
 buttonFSTest.addEventListener('click', () => {
-     testStart = 0;
+    testStart = 0;
     get_TestSubject();
     get_TestVerb();
     get_TestMark();
     hideAllPrompts();
     changePrompt('I will be')
-         secondVerb.style.boxShadow = FSStyle;
-        subject.style.boxShadow = FSStyle;
+    secondVerb.style.boxShadow = FSStyle;
+    subject.style.boxShadow = FSStyle;
     mark.style.boxShadow = FSStyle;
-      textarea.classList.remove('hidden');
+    textarea.classList.remove('hidden');
     speak.classList.remove('hidden');
 })
+
+function hidePrompts () {
+    for (let prompt of prompts)
+        prompt.classList.add('hidden');
+};
+
+
+function hideTimeMarkers() {
+    for (let marker of timeMarkers)
+        marker.classList.add('hidden');
+};
+function hideAllPrompts() {
+    hideTimeMarkers();
+    hidePrompts();
+};
+
 
 function testForward (){
  speak.style.background = 'rgba(6, 229, 102, 1)';
         testStart += 1;
         get_TestSubject();
         get_TestVerb();
-        get_TestMark();
+    get_TestMark();
+    input.value = ''
 }
 speak.addEventListener('click', function () {
     speak.style.background = 'red';
     recognition.start();
     textarea.innerHTML = '...speaking';
-       
-}) 
+}); 
   recognition.onresult = function (e) {
         console.log(e);
         var transcript = e.results[0][0].transcript;
-        transcript.innerHTML = transcript;
+        transcript.innerHTML = transcript.toUpperCase();
         textarea.innerHTML = transcript;
-        checkTest();
+       if (secondVerb.style.boxShadow === PrSStyle) {
+        checkPrSTest();
+    } else {
+        checkFSTest();
     }
-        
+}
+    
+const debounce(fn, ms) {
+    let timeout
+    return function () {
+        const fnCall = () => { fn.apply(this, arguments) }
+        clearTimeout(timeout)
+        timeout = setTimeout(fnCall, ms)
+    };
+}
+function onChangeDebounce(e) {
+    console.log('fuck');
+}
+onChangeDebounce = debounce(onChangeDebounce, 1000);
+
+// input.addEventListener('keydown', function (event) {
+//     if (event.code === 'Enter') {
+//         input.value = '';
+       
+//     }
+// })
 input.addEventListener('keydown', function (event) {
     if (event.code === 'Enter') {
         input.value = '';
     }
 })
 input.addEventListener('input', ()=> {
-    transcript = input.value;
+    transcript = input.value.toUpperCase();
     textarea.innerHTML = input.value;
-    checkTest();
+    if (secondVerb.style.boxShadow === PrSStyle) {
+        checkPrSTest();
+    } else {
+        checkFSTest();
+    }
 } )
-function checkTest() {
-    if (mark.style.boxShadow === PrSStyle) {
-        if (testStart === 0 && transcript === 'I am') {
+
+function checkPrSTest() {
+        if (testStart === 0 && transcript === "I AM") {
             testForward()
             changePrompt('he is')
-        } else if (testStart === 1 && (transcript === 'he is' || transcript === "his" || transcript === "here's")) {
+        } else if (testStart === 1 && (transcript === 'HE IS' || transcript === "HIS" || transcript === "HERE'S")) {
             testForward()
             changePrompt('she is')
-        } else if (testStart === 2 && (transcript === 'she is' || transcript === "she's")) {
+        } else if (testStart === 2 && (transcript === 'SHE IS' || transcript === "SHE'S")) {
             testForward()
             changePrompt('they are')
-        } else if (testStart === 3 && transcript === 'they are') {
+        } else if (testStart === 3 && transcript === 'THEY ARE') {
             testForward()
             changePrompt('it is')
-        } else if (testStart === 4 && transcript === 'it is') {
+        } else if (testStart === 4 && transcript === 'IT IS') {
             testForward()
             changePrompt("we aren't")
-        } else if (testStart === 5 && (transcript === "we aren't" || transcript === "we are not")) {
+        } else if (testStart === 5 && (transcript === "WE AREN'T" || transcript === "WE ARE NOT")) {
             testForward()
             changePrompt("you aren't")
-        } else if (testStart === 6 && (transcript === "you aren't" || transcript === "you are not")) {
+        } else if (testStart === 6 && (transcript === "YOU AREN'T" || transcript === "YOU ARE NOT")) {
             testForward()
             changePrompt('do I have')
-        } else if (testStart === 7 && (transcript === "do I have" || transcript === "have I")) {
+        } else if (testStart === 7 && (transcript === "DO I HAVE" || transcript === "HAVE I")) {
             testForward()
             changePrompt('does he have')
-        } else if (testStart === 8 && transcript === "does he have") {
+        } else if (testStart === 8 && transcript === "DOES HE HAVE") {
             testForward()
             changePrompt('she has')
-        } else if (testStart === 9 && transcript === "she has") {
+        } else if (testStart === 9 && transcript === "SHE HAS") {
             testForward()
             changePrompt('they have')
-        } else if (testStart === 10 && transcript === "they have") {
+        } else if (testStart === 10 && transcript === "THEY HAVE") {
             testForward()
             changePrompt("it doesn't have")
-        } else if (testStart === 11 && (transcript === "it doesn't have" || transcript === "it does not have")) {
+        } else if (testStart === 11 && (transcript === "IT DOESN'T HAVE" || transcript === "IT DOES NOT HAVE")) {
             testForward()
             changePrompt('we have')
-        } else if (testStart === 12 && transcript === "we have") {
+        } else if (testStart === 12 && transcript === "WE HAVE") {
             testForward()
             changePrompt('do you have')
-        } else if (testStart === 13 && transcript === "do you have") {
+        } else if (testStart === 13 && transcript === "DO YOU HAVE") {
             testForward()
             changePrompt('do I have')
-        } else if (testStart === 14 && transcript === "do I have") {
+        } else if (testStart === 14 && transcript === "DO I HAVE") {
             testForward()
             changePrompt("you can't")
-        } else if (testStart === 15 && (transcript === "you can't" || transcript === 'you cannot' || transcript === 'you can not')) {
+        } else if (testStart === 15 && (transcript === "YOU CAN'T" || transcript === 'YOU CANNOT' || transcript === 'YOU CAN NOT')) {
             testForward()
             changePrompt('can she')
-        } else if (testStart === 16 && (transcript === "can she" || transcript === 'kenshi')) {
+        } else if (testStart === 16 && (transcript === "CAN SHE" || transcript === 'KENSHI')) {
             testForward()
             changePrompt('we can')
-        } else if (testStart === 17 && (transcript === "we can" || transcript === 'weekend')) {
+        } else if (testStart === 17 && (transcript === "WE CAN" || transcript === 'WEEKEND')) {
             testForward()
             changePrompt('does he want')
-        } else if (testStart === 18 && transcript === "does he want") {
+        } else if (testStart === 18 && transcript === "DOES HE WANT") {
             testForward()
             changePrompt("she doesn't see")
-        } else if (testStart === 19 && (transcript === "she doesn't see" || transcript === 'she does not see')) {
+        } else if (testStart === 19 && (transcript === "SHE DOESN'T SEE" || transcript === 'SHE DOES NOT SEE')) {
             testForward()
             changePrompt("we don't do")
-        } else if (testStart === 20 && (transcript === "we don't do" || transcript === 'we do not do')) {
+        } else if (testStart === 20 && (transcript === "WE DON'T DO" || transcript === 'WE DO NOT DO')) {
             testForward()
             changePrompt('I do')
-        } else if (testStart === 21 && (transcript === "I do" || transcript === 'idle')) {
+        } else if (testStart === 21 && (transcript === "I DO" || transcript === 'IDLE')) {
             testForward()
             changePrompt("he doesn't want")
-        } else if (testStart === 22 && (transcript === "he doesn't want" || transcript === 'he does not want')) {
+        } else if (testStart === 22 && (transcript === "HE DOESN'T WANT" || transcript === 'HE DOES NOT WANT')) {
             testForward()
             changePrompt('it wants')
-        } else if (testStart === 23 && (transcript === "it wants" || transcript === 'it once')) {
+        } else if (testStart === 23 && (transcript === "IT WANTS" || transcript === 'IT ONCE')) {
             testForward()
             changePrompt('do you want')
-        } else if (testStart === 24 && transcript === "do you want") {
+        } else if (testStart === 24 && transcript === "DO YOU WANT") {
             testForward()
             changePrompt('do I see')
-        } else if (testStart === 25 && (transcript === "do I see" || transcript === 'do i c')) {
+        } else if (testStart === 25 && (transcript === "DO I SEE" || transcript === 'DO I C')) {
             testForward()
             changePrompt("she doesn't see")
-        } else if (testStart === 26 && (transcript === "she doesn't see" || transcript === 'she does not see')) {
+        } else if (testStart === 26 && (transcript === "SHE DOESN'T SEE" || transcript === 'SHE DOES NOT SEE')) {
             testForward()
             changePrompt('does she see')
-        } else if (testStart === 27 && transcript === "does she see") {
+        } else if (testStart === 27 && transcript === "DOES SHE SEE") {
             speak.style.background = 'rgba(6, 229, 102, 1)';
             changePrompt('Yay! YOU DID IT!!')
             changeVerb('encourage.gif')
         }
-    }  // ___________________________________________________________________________FUTURE________________________
-        else if (mark.style.boxShadow === FSStyle) {
-            if (testStart === 0 && transcript === 'I will be') {
+}
+    function checkFSTest(){
+            if (testStart === 0 && transcript === 'I WILL BE' || transcript === "I'LL BE") {
                 testForward()
                 changePrompt("he'll be")
-            } else if (testStart === 1 && (transcript === "he'll be" || transcript === "he will be" || transcript === "she'll be")) {
+            } else if (testStart === 1 && (transcript === "HE'LL BE" || transcript === "HE WILL BE" || transcript === "SHE'LL BE")) {
                 testForward()
                 changePrompt("she'll be")
-            } else if (testStart === 2 && (transcript === "she'll be" || transcript === "she will be")) {
+            } else if (testStart === 2 && (transcript === "SHE'LL BE" || transcript === "SHE WILL BE")) {
                 testForward()
                 changePrompt("they'll be")
-            } else if (testStart === 3 && (transcript === 'they will be' || transcript === "they'll be")) {
+            } else if (testStart === 3 && (transcript === 'THEY WILL BE' || transcript === "THEY'LL BE")) {
                 testForward()
                 changePrompt('it will be')
-            } else if (testStart === 4 && (transcript === 'it will be' || transcript === "it'll be")) {
+            } else if (testStart === 4 && (transcript === 'IT WILL BE' || transcript === "IT'LL BE")) {
                 testForward()
                 changePrompt("we won't be")
-            } else if (testStart === 5 && (transcript === "we won't be" || transcript === "we will not be")) {
+            } else if (testStart === 5 && (transcript === "WE WON'T BE" || transcript === "WE WILL NOT BE")) {
                 testForward()
                 changePrompt("you won't be")
-            } else if (testStart === 6 && (transcript === "you won't be" || transcript === "you will not be")) {
+            } else if (testStart === 6 && (transcript === "YOU WON'T BE" || transcript === "YOU WILL NOT BE")) {
                 testForward()
                 changePrompt('will I have')
-            } else if (testStart === 7 && transcript === "will I have") {
+            } else if (testStart === 7 && transcript === "WILL I HAVE") {
                 testForward()
                 changePrompt('will he have')
-            } else if (testStart === 8 && transcript === "will he have") {
+            } else if (testStart === 8 && transcript === "WILL HE HAVE") {
                 testForward()
                 changePrompt("she'll have")
-            } else if (testStart === 9 && (transcript === "she will have" || transcript === "she'll have")) {
+            } else if (testStart === 9 && (transcript === "SHE WILL HAVE" || transcript === "SHE'LL HAVE")) {
                 testForward()
                 changePrompt("they'll have")
-            } else if (testStart === 10 && (transcript === "they'll have" || transcript === 'they will have')) {
+            } else if (testStart === 10 && (transcript === "THEY'LL HAVE" || transcript === 'THEY WILL HAVE')) {
                 testForward()
                 changePrompt("it won't have")
-            } else if (testStart === 11 && (transcript === "it won't have" || transcript === "it will not have")) {
+            } else if (testStart === 11 && (transcript === "IT WON'T HAVE" || transcript === "IT WILL NOT HAVE")) {
                 testForward()
                 changePrompt("we'll have")
-            } else if (testStart === 12 && (transcript === "we'll have" || transcript === 'we will have')) {
+            } else if (testStart === 12 && (transcript === "WE'LL HAVE" || transcript === 'WE WILL HAVE')) {
                 testForward()
                 changePrompt('will you have')
-            } else if (testStart === 13 && transcript === "will you have") {
+            } else if (testStart === 13 && transcript === "WILL YOU HAVE") {
                 testForward()
                 changePrompt('will I have')
-            } else if (testStart === 14 && transcript === "will I have") {
+            } else if (testStart === 14 && transcript === "WILL I HAVE") {
                 testForward()
                 changePrompt("you won't be able")
-            } else if (testStart === 15 && (transcript === "you won't be able" || transcript === 'you will not be able')) {
+            } else if (testStart === 15 && (transcript === "YOU WON'T BE ABLE" || transcript === 'YOU WILL NOT BE ABLE')) {
                 testForward()
                 changePrompt('will she be able')
-            } else if (testStart === 16 && transcript === "will she be able") {
+            } else if (testStart === 16 && transcript === "WILL SHE BE ABLE") {
                 testForward()
                 changePrompt("we'll be able")
-            } else if (testStart === 17 && (transcript === "we'll be able" || transcript === 'we will be able' || transcript === 'will be able')) {
+            } else if (testStart === 17 && (transcript === "WE'LL BE ABLE" || transcript === 'WE WILL BE ABLE' || transcript === "WILL BE ABLE")) {
                 testForward()
                 changePrompt('will he want')
-            } else if (testStart === 18 && transcript === "will he want") {
+            } else if (testStart === 18 && transcript === "WILL HE WANT") {
                 testForward()
                 changePrompt("she won't see")
-            } else if (testStart === 19 && (transcript === "she won't see" || transcript === 'she will not see')) {
+            } else if (testStart === 19 && (transcript === "SHE WON'T SEE" || transcript === 'SHE WILL NOT SEE')) {
                 testForward()
                 changePrompt("we won't do")
-            } else if (testStart === 20 && (transcript === "we won't do" || transcript === 'we will not do')) {
+            } else if (testStart === 20 && (transcript === "WE WON'T DO" || transcript === 'WE WILL NOT DO')) {
                 testForward()
                 changePrompt("I'll do")
-            } else if (testStart === 21 && (transcript === "I'll do" || transcript === 'I will do')) {
+            } else if (testStart === 21 && (transcript === "I'LL DO" || transcript === 'I WILL DO')) {
                 testForward()
                 changePrompt("he won't want")
-            } else if (testStart === 22 && (transcript === "he won't want" || transcript === 'he will not want')) {
+            } else if (testStart === 22 && (transcript === "HE WON'T WANT" || transcript === 'HE WILL NOT WANT')) {
                 testForward()
                 changePrompt("it'll want")
-            } else if (testStart === 23 && (transcript === "it'll want" || transcript === 'it will want')) {
+            } else if (testStart === 23 && (transcript === "IT'LL WANT" || transcript === 'IT WILL WANT')) {
                 testForward()
                 changePrompt('will you want')
-            } else if (testStart === 24 && transcript === "will you want") {
+            } else if (testStart === 24 && transcript === "WILL YOU WANT") {
                 testForward()
                 changePrompt('will I see')
-            } else if (testStart === 25 && transcript === "will I see") {
+            } else if (testStart === 25 && transcript === "WILL I SEE") {
                 testForward()
                 changePrompt("she won't see")
-            } else if (testStart === 26 && (transcript === "she won't see" || transcript === 'she will not see' || transcript === 'she want see')) {
+            } else if (testStart === 26 && (transcript === "SHE WON'T SEE" || transcript === 'SHE WILL NOT SEE' || transcript === 'SHE WANT SEE')) {
                 testForward()
                 changePrompt("will she see")
-            } else if (testStart === 27 && transcript === "will she see") {
+            } else if (testStart === 27 && transcript === "WILL SHE SEE") {
                 speak.style.background = 'rgba(6, 229, 102, 1)';
                 changePrompt('Yay! YOU DID IT!!')
                 changeVerb('encourage.gif')
             }
-        }
-}
+    };
