@@ -17,6 +17,7 @@ const mark = document.querySelector('.mark');
 const second_verb_question = document.getElementById('secondVerb_question');
 const second_verb_prompt = document.getElementById('secondVerb_prompt');
 const input = document.getElementById('input');
+const blah_blahBtn = document.getElementById('blah_blah');
 
 const prompts = document.getElementsByClassName('prompt');
 const timeMarkers = document.getElementsByClassName('time_marker');
@@ -137,6 +138,11 @@ buttonFS.addEventListener('click', () => {
     randomThree();
 })
 
+function talk() {
+    speechSynthesis.speak(
+        new SpeechSynthesisUtterance
+    )
+}
 // --------------------------------------------TESTS-----TESTS-------------------------------------
 function get_TestSubject() {
     if (testStart < testSubjectsArray.length) {

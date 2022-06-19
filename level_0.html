@@ -23,8 +23,9 @@
         <ul class="buttons">
             <li><a href="./index.html"><button id='main_menu' type="button"
                         class="button tense">main</button></a></li>
-            <li><button id='present__s' type="button" class="button tense"></button></li>
-            <li><button id='future__s' type="button" class="button tense"></button></li>
+            <li><span id='present__s' class=""><img src="./images-marks/triangle_cropped.png" alt="triangle" height="42" width="45"
+                        class="png__triangle"></span></li>
+            <li><button id='future__s' type="button" class="tense"></button></li>
             <li class="current"><a href="./level_0.html"><button id='zero_level' type="button" class="button tense">0</button></a></li>
             <li><a href="./level_1.html"><button id='first_level' type="button" class="button tense">1</button></a></li>
             <li><a href="./level_2.html"><button id='second_level' type="button" class="button tense">2</button></a></li>
@@ -36,6 +37,7 @@
     </header>
         <div>
             <div><img id="speak" class="button microphone" src="./images-marks/microphone.png" alt="OMG!"></div>
+            <div><span id="blah_blah" class="button" onclick="talk()">Say it!</span></div>
             <p class="text_area" id="text_area">your text is going to be here</p>
         </div>
         <div><input type="text" id="input" class="input"></div> 
