@@ -37,6 +37,11 @@
             <li><a href="./level_6.html"><button id='sixth_level' type="button" class="button tense">6</button></a></li>
         </ul>
     </header>
+    <div>
+        <div><img id="speak" class="button microphone" src="./images-marks/microphone.png" alt="OMG!"></div>
+        <div><img id="speakLeft" class="button microphone" src="./images-marks/microphone.png" alt="OMG!"></div>
+        <p class="text_area" id="text_area">your text is going to be here</p>
+    </div> 
     
     <ul class="conditional__list" id="circles">
     <li class=""><button type="button" id="circle_zero" class="conditional__circle zero"></button></li>
@@ -65,7 +70,7 @@
 <ul class="content__conditionals">
     <li class="conditionals__item">
         <div class="subject" onclick="get_random_subject()">
-            <img class="verb__pic" id='subject' src="./images-subject/Emilia.jpg" alt="subject" width="180">
+            <img class="verb__pic" id='subject' src="./images-subject/Emilia.jpg" alt="subject" width="150">
         </div>
     </li>
     <li class="conditionals__item">
@@ -75,7 +80,12 @@
     <li class="conditionals__item">
         
         <div class="first_verb" onclick="get_first_verb()">
-            <img class="verb__pic" id='firstVerbPic' src="./images-verbs/be annoyed.gif" alt="he" width="200">
+            <img class="verb__pic" id='firstVerbPic' src="./images-verbs/be annoyed.gif" alt="he" width="150">
+        </div>
+    </li>
+    <li class="conditionals__item">
+        <div class="subject" onclick="get_random_subject()">
+            <img class="verb__pic" id='subject2' src="./images-subject/Emilia.jpg" alt="subject" width="150">
         </div>
     </li>
     <li class="conditionals__item">
@@ -85,7 +95,7 @@
     <li class="conditionals__item">
         
         <div id="secondVerb" onclick="get_second_verb()" class="secondVerb__conditionals"><img id='secondVerbPic'
-                src="./images-verbs/argue.gif" alt="eat" width="200"></div>
+                src="./images-verbs/argue.gif" alt="eat" width="150"></div>
     </li>
 </ul>
 <div>
@@ -112,6 +122,7 @@
         </li>
     </ul>
 </div>
+<p class="text textArea__question" id="textAreaQuestion">?</p>
 
     <script src="./js/conditionals.js"></script>
 </body>

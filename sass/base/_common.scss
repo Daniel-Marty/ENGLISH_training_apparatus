@@ -64,8 +64,12 @@ body {
   transition: color var(--transition-time) var(--cubic-bezier),
     background-color var(--transition-time) var(--cubic-bezier),
     background-transition 300ms,
-    box-shadow 300ms var(--cubic-bezier);
-
+    box-shadow 300ms var(--cubic-bezier),
+    opacity 700ms var(--cubic-bezier);
+  &:hover,
+  &:focus {
+cursor: pointer;
+}
 }
 .input{
   z-index: 10;
