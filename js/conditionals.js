@@ -197,7 +197,7 @@ buttonPC.addEventListener('click', testPC)
 //     first_verb_prompt.innerHTML = `${prompt}`
 // }
 function testPC() {
-     let testRandomNumber = Math.floor(Math.random() * 35)
+     let testRandomNumber = Math.floor(Math.random() * 41)
      console.log(testRandomNumber);  
     if (testRandomNumber === 0) {
         testPCcallback('she.jpg', '2.png', 'sleep.gif', PCStyle, ' ', 'when', 'he.jpg', '1.png', 'come.gif', PSStyle, "She wasn't sleeping when he came"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden')
@@ -232,19 +232,19 @@ function testPC() {
      } else if (testRandomNumber === 15) {
         testPCcallback('it.jpg', '1.png', 'happen.gif', PSStyle, '', 'when', 'we.jpg', '1.png', 'pass exam.gif', PCStyle, "It happened when we were passing the exam"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden')
     } else if (testRandomNumber === 16) {
-        testPCcallback('me.jpg', '2.png', 'get embarrassed.gif', PSStyle, '', 'so', 'she.jpg', '2.png', 'get dressed.gif', PSStyle, "I didn't get embarrassed so she didn't get dressed"), firstWould.classList.add('hidden')
+        testPCcallback('me.jpg', '2.png', 'get embarrassed.gif', PSStyle, '', 'so', 'she.jpg', '2.png', 'get dressed.gif', PSStyle, "I didn't get embarrassed so she didn't get dressed"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden')
       } else if (testRandomNumber === 17) {
-        testPCcallback('we.jpg', '1.png', 'run out of time.gif', PCStyle, '', 'so', 'we.jpg', '1.png', 'run.gif', PSStyle, "We were running out of time so we ran"), firstWould.classList.add('hidden')
+        testPCcallback('we.jpg', '1.png', 'run out of time.gif', PCStyle, '', 'so', 'we.jpg', '1.png', 'run.gif', PSStyle, "We were running out of time so we ran"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden')
     } else if (testRandomNumber === 18) {
-        testPCcallback('he.jpg', '2.png', 'be late.gif', PSStyle, '', 'so', 'he.jpg', '2.png', 'panic.gif', PSStyle, "He wasn't late so he didn't panic"), firstWould.classList.add('hidden')
+        testPCcallback('he.jpg', '2.png', 'be late.gif', PSStyle, '', 'so', 'he.jpg', '2.png', 'panic.gif', PSStyle, "He wasn't late so he didn't panic"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden')
      } else if (testRandomNumber === 19) {
-        testPCcallback('we.jpg', '1.png', 'be late.gif', PSStyle, '', 'so', 'we.jpg', '1.png', 'rush.gif', PSStyle, "We were late so we rushed"), firstWould.classList.add('hidden')
+        testPCcallback('we.jpg', '1.png', 'be late.gif', PSStyle, '', 'so', 'we.jpg', '1.png', 'rush.gif', PSStyle, "We were late so we rushed"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden')
      } else if (testRandomNumber === 20) {
-        testPCcallback('you.jpg', '3.png', 'make coffee.gif', PCStyle, '', 'when', 'he.jpg', '1.png', 'pass by.gif', PSStyle, "Were you making coffee when he passed by?"), firstWould.classList.add('hidden')
+        testPCcallback('you.jpg', '3.png', 'make coffee.gif', PCStyle, '', 'when', 'he.jpg', '1.png', 'pass by.gif', PSStyle, "Were you making coffee when he passed by?"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden')
     } else if (testRandomNumber === 21) {
-        testPCcallback('you.jpg', '3.png', 'make coffee.gif', PCStyle, '', 'when', 'he.jpg', '1.png', 'pass by.gif', PSStyle, "Were you making coffee when he passed by?"), firstWould.classList.add('hidden')
+        testPCcallback('she.jpg', '1.png', 'attract attention.gif', PCStyle, '', 'but', 'nobody.jpg', '1.png', 'come.gif', PSStyle, "She was attracting attention but nobody came"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden')
     } else if (testRandomNumber === 22) {
-        testPCcallback('me.jpg', '2.png', 'interrupt.gif', PSStyle, '', 'when', 'you.jpg', '1.png', 'speak.gif', PCStyle, "I didn't interrupt when you were speaking"), firstWould.classList.add('hidden')
+        testPCcallback('me.jpg', '2.png', 'interrupt.gif', PSStyle, '', 'when', 'you.jpg', '1.png', 'speak.gif', PCStyle, "I didn't interrupt when you were speaking"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden')
      } else if (testRandomNumber === 23) {
         testPCcallback('you.jpg', '1.png', 'arrive.gif', PSStyle, 'when', '', 'he.jpg', '3.png', 'dance.gif', PCStyle, "When you arrived was he dancing?"), firstWould.classList.remove('hidden'), secondWould.classList.add('hidden');
     } else if (testRandomNumber === 24) {
@@ -254,7 +254,7 @@ function testPC() {
     } else if (testRandomNumber === 26) {
         testPCcallback('you.jpg', '3.png', 'go.gif', PCStyle, 'Where', 'when', 'me.jpg', '1.png', 'see.gif', PSStyle, "Where were you going when I saw you?"), firstWould.classList.remove('hidden'), secondWould.classList.remove('hidden');
      } else if (testRandomNumber === 27) {
-        testPCcallback('you.jpg', '3.png', 'go.gif', PCStyle, 'Where', 'when', 'me.jpg', '1.png', 'see.gif', PSStyle, "Where were you going when I saw you?"), firstWould.classList.remove('hidden'), secondWould.classList.remove('hidden');
+        testPCcallback('he.jpg', '1.png', 'point out.gif', PSStyle, '', 'because', 'she.jpg', '2.png', 'look.gif', PCStyle, "He pointed out because she wasn't looking"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden');
      } else if (testRandomNumber === 28) {
         testPCcallback('she.jpg', '3.png', 'wear.gif', PCStyle, 'What', 'when', 'you.jpg', '1.png', 'see.gif', PSStyle, "What was she wearing when you saw her?"), firstWould.classList.remove('hidden'), secondWould.classList.remove('hidden');
     } else if (testRandomNumber === 29) {
@@ -267,8 +267,20 @@ function testPC() {
         testPCcallback('she.jpg', '3.png', 'cry.gif', PCStyle, '', 'when', 'she.jpg', '1.png', 'miss train.gif', PSStyle, "Was she crying when she missed the train?"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden');
     } else if (testRandomNumber === 33) {
         testPCcallback('they.jpg', '3.png', 'look for.gif', PCStyle, 'What', 'when', 'cat.jpg', '1.png', 'come back.gif', PSStyle, "What were they looking for when the cat came back?"), firstWould.classList.remove('hidden'), secondWould.classList.remove('hidden');
-     } else if (testRandomNumber === 34) {
+    } else if (testRandomNumber === 34) {
         testPCcallback('he.jpg', '3.png', 'be sarcastic.gif', PSStyle, '', 'while', 'you.jpg', '1.png', 'explain.gif', PCStyle, "Was he sarcastic while you were explaining?"), firstWould.classList.remove('hidden'), secondWould.classList.remove('hidden');
+    } else if (testRandomNumber === 35) {
+        testPCcallback('nobody.jpg', '1.png', 'leave.gif', PCStyle, '', 'because', 'nobody.jpg', '1.png', 'have to.gif', PSStyle, "Nobody was leaving because nobody had to"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden');
+    } else if (testRandomNumber === 36) {
+        testPCcallback('nobody.jpg', '1.png', 'watch.gif', PCStyle, '', 'so', 'she.jpg', '1.png', 'take off clothes.gif', PSStyle, "Nobody was watching so she took off clothes"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden');
+     } else if (testRandomNumber === 37) {
+        testPCcallback('he.jpg', '1.png', 'teach.gif', PCStyle, '', 'because', 'nobody.jpg', '1.png', 'know.gif', PSStyle, "He was teaching because nobody knew"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden');
+    } else if (testRandomNumber === 38) {
+        testPCcallback('nobody.jpg', '1.png', 'be interested.gif', PSStyle, '', 'because', 'they.jpg', '2.png', 'win.gif', PCStyle, "Nobody was interested because they weren't winning"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden');
+    } else if (testRandomNumber === 39) {
+        testPCcallback('nobody.jpg', '1.png', 'throw up.gif', PCStyle, '', 'because', 'she.jpg', '2.png', 'drive.gif', PCStyle, "Nobody was throwing up because she wasn't driving"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden');
+    } else if (testRandomNumber === 40) {
+        testPCcallback('nobody.jpg', '1.png', 'hide.gif', PCStyle, '', 'because', 'they.jpg', '2.png', 'come in.gif', PSStyle, "Nobody was hiding because they didn't come in"), firstWould.classList.add('hidden'), secondWould.classList.remove('hidden');
     }
     
     
