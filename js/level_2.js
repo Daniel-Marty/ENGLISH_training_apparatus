@@ -9,11 +9,12 @@ speak.addEventListener('click', function () {
 })
 let outerTranscript = '';
 recognition.onresult = function (e) {
-    console.log(e);
+    // console.log(e);
     var transcript = e.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
     outerTranscript = transcript.toUpperCase();
+    isItCorrect();
 }
 input.addEventListener('keydown', function (event) {
     if (event.code === 'Enter') {
@@ -96,6 +97,7 @@ textAreaQuestion.addEventListener('click', () => {
     console.log(currentSentence);
 })
 function isItCorrect() {
+    outerTranscript = input.value;
     // console.log(transcript);
     if (input.value.toUpperCase() == `${currentSentence}`.toUpperCase() || outerTranscript == `${currentSentence}`.toUpperCase()) {
         testContinuous();
@@ -113,13 +115,13 @@ function testContinuous() {
     } else if (testRandomNumber === 1) {
         testPCcallback('', 'he.jpg', '1.png', 'sleep.gif', PCStyle, 'at that moment', "He was sleeping at that moment"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 2) {
-        testPCcallback('', 'me.jpg', '1.png', 'sleep.gif', FCStyle, "at 10 o'clock tomorrow", "I will be sleeping at o'clock tomorrow"), questionWord.style.opacity = '0';
+        testPCcallback('', 'me.jpg', '1.png', 'sleep.gif', FCStyle, "at 10 tomorrow", "I will be sleeping at 10 tomorrow"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 3) {
-        testPCcallback('', 'they.jpg', '3.png', 'argue.gif', PrCStyle, "now", "Are they arguing now?"), questionWord.style.opacity = '0';
+        testPCcallback('', 'they.jpg', '3.png', 'argue.gif', PrCStyle, "now", "Are they arguing now"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 4) {
-        testPCcallback('', 'they.jpg', '3.png', 'argue.gif', PCStyle, "at 9 o'clock", "Were they arguing at 9 o'clock"), questionWord.style.opacity = '0';
+        testPCcallback('', 'they.jpg', '3.png', 'argue.gif', PCStyle, "at 9 yesterday", "Were they arguing at 9"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 5) {
-        testPCcallback('', 'they.jpg', '3.png', 'argue.gif', FCStyle, "at 9 o'clock tomorrow", "Will they be arguing at 9 o'clock tomorrow"), questionWord.style.opacity = '0';
+        testPCcallback('', 'they.jpg', '3.png', 'argue.gif', FCStyle, "at 9 tomorrow", "Will they be arguing at 9 tomorrow"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 6) {
         testPCcallback('What', 'you.jpg', '3.png', 'do.gif', PrCStyle, "tonight", "What are you doing tonight"), questionWord.style.opacity = '1';
     } else if (testRandomNumber === 7) {
