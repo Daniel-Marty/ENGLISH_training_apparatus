@@ -14,6 +14,7 @@ recognition.onresult = function (e) {
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
     outerTranscript = transcript.toUpperCase();
+    input.value = outerTranscript;
     isItCorrect();
 }
 input.addEventListener('keydown', function (event) {
@@ -97,8 +98,7 @@ textAreaQuestion.addEventListener('click', () => {
     console.log(currentSentence);
 })
 function isItCorrect() {
-    outerTranscript = input.value;
-    // console.log(transcript);
+    console.log(outerTranscript);
     if (input.value.toUpperCase() == `${currentSentence}`.toUpperCase() || outerTranscript == `${currentSentence}`.toUpperCase()) {
         testContinuous();
         console.log('SUPERFUCK!!');
