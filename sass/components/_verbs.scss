@@ -1,11 +1,14 @@
 .first_verb {
+    cursor: pointer;
     border-radius: 40px;
 }
 .secondVerb {
+    cursor: pointer;
     border-radius: 40px;
     margin-left: 100px;
 }
 .secondVerb_question {
+    cursor: pointer;
     position: absolute;
     z-index: 8;
     left:63%;
@@ -15,6 +18,7 @@
     min-width: 43px;
 }
 .secondVerb_prompt{
+    cursor: pointer;
     position: absolute;
     z-index: 10;
     left:58%;
@@ -22,4 +26,5 @@
     min-width: 60px;
     opacity: 0;
     text-align: center;
+    // transition: 500ms var(cubic-bezier);
 }

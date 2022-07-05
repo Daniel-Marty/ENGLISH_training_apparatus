@@ -66,11 +66,14 @@
 }
 .first_if {
     position: absolute;
-    left: 18%;
+    left: 3%;
+    top:37%;
+    transition: 500ms var(--cubic-bezier);
 }
 .second_if{
     position: absolute;
     right: 41%;
+    transition: 500ms var(--cubic-bezier);
 }
 .would {
     position: absolute;
