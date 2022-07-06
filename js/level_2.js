@@ -37,10 +37,16 @@ const verbPic = document.getElementById('verbPic');
 const mark = document.querySelector('.mark');
 const second_verb_question = document.getElementById('secondVerb_question');
 const second_verb_prompt = document.getElementById('secondVerb_prompt');
-const questionWord = document.getElementById('questionWord')
+const questionWord = document.getElementById('questionWord');
 const textAreaBelow = document.getElementById('text_area');
 const textAreaQuestion = document.getElementById('textAreaQuestion');
-const timeMaker = document.getElementById('timeMarker')
+const timeMaker = document.getElementById('timeMarker');
+const correctAnswersText = document.getElementById('correctAnwers');
+const countdown = document.getElementById('countdown');
+const flipPic = document.getElementById('flipPic');
+
+const startingMinutes = 5;
+let time = startingMinutes * 60;
 
 const PrCStyle = 'rgb(19, 246, 49) 0px 0px 4px 10px, yellow 0px 0px 15px 20px'
 const PCStyle = 'rgb(0, 87, 250) 0px 0px 4px 10px, yellow 0px 0px 15px 20px'
@@ -52,6 +58,7 @@ const prompts = document.getElementsByClassName('prompt');
 const marksFolder = './images-marks/'
 const subjectFolder = './images-subject/'
 const verbsFolder = './images-verbs/'
+const flipsFolder = './images-flips/'
 
 let marks_array = ['1.png', '2.png', '3.png']
 let subject_array = ['he.jpg', 'it.jpg', 'me.jpg', 'cat.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg', 'Emilia.jpg', 'Charlie.jpg', 'David.jpg']
@@ -88,8 +95,20 @@ let hidePrompts = function () {
 
 let markButton = document.getElementById('mark');
 markButton.addEventListener('click', testContinuous)
-//   ============================================TEST=================================
+//   ==========================================COUNTDOWN TIMER=============================
+
+setInterval(updateCountdown, 1000)
+function updateCountdown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    countdown.innerHTML = `${minutes}: ${seconds}`;
+    time--;
+}
+// ============================================TEST================================
 let currentSentence = '';
+let totalCorrectSentences = 0;
+
 textAreaBelow.addEventListener('click', () => {
     textAreaBelow.style.opacity = '0', textAreaQuestion.style.opacity = '1';
 });
@@ -97,16 +116,25 @@ textAreaQuestion.addEventListener('click', () => {
     textAreaQuestion.style.opacity = '0', textAreaBelow.style.opacity = '1';
     console.log(currentSentence);
 })
+// let flipNumber = 0;
+// function flipPiChange() {
+//     if (flipNumber < 10) {
+//         flipPic.src = `${flipsFolder}${flipNumber}.jpg`
+//         setInterval(flipPiChange, 2000, flipNumber++)
+//         console.log('what the fuck!');
+//     }
+// }
 function isItCorrect() {
+    console.log(totalCorrectSentences);
     console.log(outerTranscript);
     if (input.value.toUpperCase() == `${currentSentence}`.toUpperCase() || outerTranscript == `${currentSentence}`.toUpperCase()) {
         testContinuous();
-        console.log('SUPERFUCK!!');
+        totalCorrectSentences += 1;
+        correctAnswersText.innerHTML = `Correct answers: ${totalCorrectSentences}`;
+        flipPiChange();
     }
-
 }
 
-// || 
 function testContinuous() {
     let testRandomNumber = Math.floor(Math.random() * 13)
     console.log(testRandomNumber);
@@ -119,7 +147,7 @@ function testContinuous() {
     } else if (testRandomNumber === 3) {
         testPCcallback('', 'they.jpg', '3.png', 'argue.gif', PrCStyle, "now", "Are they arguing now"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 4) {
-        testPCcallback('', 'they.jpg', '3.png', 'argue.gif', PCStyle, "at 9 yesterday", "Were they arguing at 9"), questionWord.style.opacity = '0';
+        testPCcallback('', 'they.jpg', '3.png', 'argue.gif', PCStyle, "at 9 yesterday", "Were they arguing at 9 yesterday"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 5) {
         testPCcallback('', 'they.jpg', '3.png', 'argue.gif', FCStyle, "at 9 tomorrow", "Will they be arguing at 9 tomorrow"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 6) {
@@ -133,27 +161,67 @@ function testContinuous() {
     } else if (testRandomNumber === 10) {
         testPCcallback('Where', 'you.jpg', '3.png', 'go.gif', FCStyle, "at 8 tomorrow", "Where will you be going at 8 tomorrow"), questionWord.style.opacity = '1';
     } else if (testRandomNumber === 11) {
-        testPCcallback('', 'me.jpg', '2.png', 'work.gif', PrCStyle, "today", "I'm not working today"), questionWord.style.opacity = '0'
+        testPCcallback('', 'me.jpg', '2.png', 'work.gif', PrCStyle, "today", "I'm not working today"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 12) {
-        testPCcallback('', 'me.jpg', '2.png', 'work.gif', PCStyle, "from 12 till 1 yesterday", "I wasn't working from 12 till 1 yesterday"), questionWord.style.opacity = '0'
+        testPCcallback('', 'me.jpg', '2.png', 'work.gif', PCStyle, "from 12 till 1 yesterday", "I wasn't working from 12 till 1 yesterday"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 13) {
+        testPCcallback('', 'nobody.jpg', '1.png', 'cook.gif', PrCStyle, "right now", "Nobody is cooking right now"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 14) {
+        testPCcallback('', 'nobody.jpg', '1.png', 'cook.gif', PCStyle, "all week", "Nobody was cooking all week"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 15) {
+        testPCcallback('', 'nobody.jpg', '1.png', 'cook.gif', FCStyle, "in the distant future", "Nobody will be cooking in the distant future"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 16) {
+        testPCcallback('', 'we.jpg', '2.png', 'come.gif', PrCStyle, "tonight", "We're not coming tonight"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 17) {
+        testPCcallback('', 'you.jpg', '3.png', 'come.gif', PrCStyle, "tomorrow", "Are you coming tomorrow"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 18) {
+        testPCcallback('', 'you.jpg', '3.png', 'clean.gif', PCStyle, "in the evening", "Were you cleaning in the evening"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 19) {
+        testPCcallback('', 'you.jpg', '3.png', 'clean.gif', FCStyle, "in the nearest future", "Will you be cleaning in the nearest future"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 20) {
+        testPCcallback('What', 'she.jpg', '3.png', 'draw.gif', PrCStyle, "", "What is she drawing"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 21) {
+        testPCcallback('What', 'she.jpg', '3.png', 'draw.gif', PCStyle, "", "What was she drawing"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 22) {
+        testPCcallback('What', 'she.jpg', '3.png', 'draw.gif', FCStyle, "", "What will she be drawing"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 23) {
+        testPCcallback('What', 'you.jpg', '3.png', 'drink.gif', PrCStyle, "", "What are you drinking"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 24) {
+        testPCcallback('What', 'you.jpg', '3.png', 'drink.gif', PCStyle, "", "What were you drinking"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 25) {
+        testPCcallback('What', 'you.jpg', '3.png', 'drink.gif', FCStyle, "", "What will you be drinking"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 26) {
+        testPCcallback('Why', 'she.jpg', '3.png', 'drive.gif', PrCStyle, "", "Why is she driving"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 27) {
+        testPCcallback('Why', 'she.jpg', '3.png', 'drive.gif', PCStyle, "the entire time", "Why was she driving the entire time"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 28) {
+        testPCcallback('', 'me.jpg', '1.png', 'eat.gif', PrCStyle, "now", "I'm eating now"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 29) {
+        testPCcallback('', 'he.jpg', '1.png', 'eat.gif', PCStyle, "all day", "He was eating all day"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 30) {
+        testPCcallback('Maybe', 'he.jpg', '1.png', 'eat.gif', FCStyle, "all day", "He was eating all day"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 31) {
+        testPCcallback('What', 'she.jpg', '3.png', 'explain.gif', PCStyle, "", "What was she explaining"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 32) {
+        testPCcallback('Who', 'she.jpg', '3.png', 'feed.gif', PCStyle, "", "Who was she feeding"), questionWord.style.opacity = '1';
     }
-}
 
 
 
-function testPCcallback(question, who, mark1, verb, style, time, sentence) {
-    questionWord.style.opacity = '0';
-    questionWord.innerHTML = `${question}`
-    timeMarker.style.opacity = '1';
-    subject.src = `${subjectFolder}${who}`
-    mark.src = `${marksFolder}${mark1}`
-    verbPic.src = `${verbsFolder}${verb}`
-    secondVerb.style.boxShadow = style
-    second_verb_prompt.innerHTML = `${verb.slice(0, -4)}`
-    timeMaker.innerHTML = `${time}`
-    textAreaBelow.innerHTML = `${sentence}`
-    currentSentence = sentence;
-}
+
+    function testPCcallback(question, who, mark1, verb, style, time, sentence) {
+        questionWord.style.opacity = '0';
+        questionWord.innerHTML = `${question}`
+        timeMarker.style.opacity = '1';
+        subject.src = `${subjectFolder}${who}`
+        mark.src = `${marksFolder}${mark1}`
+        verbPic.src = `${verbsFolder}${verb}`
+        secondVerb.style.boxShadow = style
+        second_verb_prompt.innerHTML = `${verb.slice(0, -4)}`
+        timeMaker.innerHTML = `${time}`
+        textAreaBelow.innerHTML = `${sentence}`
+        currentSentence = sentence;
+    }
 
 
 

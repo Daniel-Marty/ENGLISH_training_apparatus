@@ -59,6 +59,7 @@ cursor: pointer;
 }
 .input{
   z-index: 10;
+  width:300px;
   position: absolute;
   top:29%;
   left: 36%;
@@ -79,4 +80,21 @@ cursor: pointer;
   left:10%;
   top: 33%;
   font-size: 40px;
+}
+.correctAnswersnumber{
+position: absolute;
+right:5%;
+top:23%;
+font-size: normal;
+}
+
+.countdown{
+  position: absolute;
+  top:12%;
+  right:5%;
+}
+.flipPic{
+  position: absolute;
+  top: 13%;
+  left: 5%;
 }
