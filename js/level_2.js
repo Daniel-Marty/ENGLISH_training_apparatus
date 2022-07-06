@@ -131,7 +131,7 @@ function isItCorrect() {
         testContinuous();
         totalCorrectSentences += 1;
         correctAnswersText.innerHTML = `Correct answers: ${totalCorrectSentences}`;
-        flipPiChange();
+        // flipPiChange();
     }
 }
 
@@ -205,23 +205,23 @@ function testContinuous() {
     } else if (testRandomNumber === 32) {
         testPCcallback('Who', 'she.jpg', '3.png', 'feed.gif', PCStyle, "", "Who was she feeding"), questionWord.style.opacity = '1';
     }
+}
 
 
 
-
-    function testPCcallback(question, who, mark1, verb, style, time, sentence) {
-        questionWord.style.opacity = '0';
-        questionWord.innerHTML = `${question}`
-        timeMarker.style.opacity = '1';
-        subject.src = `${subjectFolder}${who}`
-        mark.src = `${marksFolder}${mark1}`
-        verbPic.src = `${verbsFolder}${verb}`
-        secondVerb.style.boxShadow = style
-        second_verb_prompt.innerHTML = `${verb.slice(0, -4)}`
-        timeMaker.innerHTML = `${time}`
-        textAreaBelow.innerHTML = `${sentence}`
-        currentSentence = sentence;
-    }
+function testPCcallback(question, who, mark1, verb, style, time, sentence) {
+    questionWord.style.opacity = '0';
+    questionWord.innerHTML = `${question}`
+    timeMarker.style.opacity = '1';
+    subject.src = `${subjectFolder}${who}`
+    mark.src = `${marksFolder}${mark1}`
+    verbPic.src = `${verbsFolder}${verb}`
+    secondVerb.style.boxShadow = style
+    second_verb_prompt.innerHTML = `${verb.slice(0, -4)}`
+    timeMaker.innerHTML = `${time}`
+    textAreaBelow.innerHTML = `${sentence}`
+    currentSentence = sentence;
+}
 
 
 
