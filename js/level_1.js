@@ -5,10 +5,20 @@ const buttonPSTest = document.getElementById('past__s_test');
 const buttonMain = document.getElementById('main_menu');
 const subject = document.getElementById('subject');
 const secondVerb = document.querySelector('.secondVerb');
-const mark = document.querySelector('.mark');
 const second_verb_question = document.getElementById('secondVerb_question');
 const second_verb_prompt = document.getElementById('secondVerb_prompt');
 const input = document.getElementById('input');
+const questionWord = document.getElementById('questionWord');
+const textAreaBelow = document.getElementById('text_area');
+const textAreaQuestion = document.getElementById('textAreaQuestion');
+const timeMaker = document.getElementById('timeMarker');
+const correctAnswersText = document.getElementById('correctAnwers');
+const countdown = document.getElementById('countdown');
+const flipPic = document.getElementById('flipPic');
+
+const startingMinutes = 5;
+let time = startingMinutes * 60;
+
 
 const prompts = document.getElementsByClassName('prompt');
 const timeMarkers = document.getElementsByClassName('time_marker');
@@ -16,8 +26,13 @@ const promptPrS = document.getElementById('prompt__pr__s')
 const promptFS = document.getElementById('prompt__f__s');
 const promptPS = document.getElementById('prompt__p__s')
 const PrSStyle = 'rgb(19, 246, 49) 0px 0px 4px 15px, rgb(255, 255, 255) 0px 0px 20px 35px'
-const FSStyle =  'rgb(255, 5, 5) 0px 0px 4px 15px, white 0px 0px 20px 35px'
+const FSStyle = 'rgb(255, 5, 5) 0px 0px 4px 15px, white 0px 0px 20px 35px'
 const PSStyle = 'rgb(0, 87, 250) 0px 0px 4px 15px, white 0px 0px 20px 35px'
+
+const marksFolder = './images-marks/'
+const subjectFolder = './images-subject/'
+const verbsFolder = './images-verbs/'
+const flipsFolder = './images-flips/'
 
 var speak = document.getElementById('speak');
 var textarea = document.getElementById('text_area');
@@ -25,9 +40,9 @@ var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogniti
 var recognition = new SpeechRecognition();
 recognition.lang = 'en-En';
 
-let testSubjectsArray = ['me.jpg', 'he.jpg', 'she.jpg', 'they.jpg', 'it.jpg', 'we.jpg', 'you.jpg', 'me.jpg', 'he.jpg', 'she.jpg', 'they.jpg', 'it.jpg', 'we.jpg', 'you.jpg',                       'me.jpg',  'you.jpg', 'she.jpg', 'we.jpg',   'he.jpg', 'she.jpg', 'we.jpg', 'me.jpg',   'he.jpg',   'it.jpg',   'you.jpg', 'me.jpg', 'she.jpg', 'she.jpg']
-let testVerbsArray    = ['be.jpg', 'be.jpg', 'be.jpg',  'be.jpg',   'be.jpg', 'be.jpg', 'be.jpg',  'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'can.jpg', 'can.jpg', 'can.jpg', 'want.jpg', 'see.gif', 'do.gif', 'do.gif', 'want.jpg', 'want.jpg', 'want.jpg', 'see.gif', 'see.gif', 'see.gif']
-let markTestArr = ['1.png', '1.png','1.png','1.png','1.png','2.png','2.png','3.png','3.png','1.png','1.png','2.png','1.png','3.png','3.png','2.png','3.png','1.png','3.png','2.png','2.png','1.png','2.png','1.png','3.png','3.png','2.png','3.png',]
+let testSubjectsArray = ['me.jpg', 'he.jpg', 'she.jpg', 'they.jpg', 'it.jpg', 'we.jpg', 'you.jpg', 'me.jpg', 'he.jpg', 'she.jpg', 'they.jpg', 'it.jpg', 'we.jpg', 'you.jpg', 'me.jpg', 'you.jpg', 'she.jpg', 'we.jpg', 'he.jpg', 'she.jpg', 'we.jpg', 'me.jpg', 'he.jpg', 'it.jpg', 'you.jpg', 'me.jpg', 'she.jpg', 'she.jpg']
+let testVerbsArray = ['be.jpg', 'be.jpg', 'be.jpg', 'be.jpg', 'be.jpg', 'be.jpg', 'be.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'have.jpg', 'can.jpg', 'can.jpg', 'can.jpg', 'want.jpg', 'see.gif', 'do.gif', 'do.gif', 'want.jpg', 'want.jpg', 'want.jpg', 'see.gif', 'see.gif', 'see.gif']
+let markTestArr = ['1.png', '1.png', '1.png', '1.png', '1.png', '2.png', '2.png', '3.png', '3.png', '1.png', '1.png', '2.png', '1.png', '3.png', '3.png', '2.png', '3.png', '1.png', '3.png', '2.png', '2.png', '1.png', '2.png', '1.png', '3.png', '3.png', '2.png', '3.png',]
 let testStart = -1;
 
 buttonPrS.addEventListener('click', () => {
@@ -62,14 +77,14 @@ buttonPS.addEventListener('click', () => {
     secondVerb.style.boxShadow = PSStyle;
     subject.style.boxShadow = PSStyle;
     mark.style.boxShadow = PSStyle;
-}) 
+})
 
 let button = document.getElementById('mark');
 button.addEventListener('click', function () {
     randomThree();
     get_random_style();
     hidePrompts();
-        console.log('changing the mark');
+    console.log('changing the mark');
 })
 
 function hideTest() {
@@ -78,7 +93,7 @@ function hideTest() {
 }
 
 
-const changePrompt = text => document.getElementById('secondVerb_prompt').innerHTML = `${text}`; 
+const changePrompt = text => document.getElementById('secondVerb_prompt').innerHTML = `${text}`;
 
 const changeVerb = verbName => document.getElementById('verb').src = `./images-verbs/${verbName}`
 
@@ -86,12 +101,15 @@ const changeVerb = verbName => document.getElementById('verb').src = `./images-v
 speak.addEventListener('click', function () {
     recognition.start();
     textarea.innerHTML = '...speaking';
-}) 
+})
 recognition.onresult = function (e) {
     console.log(e);
     var transcript = e.results[0][0].transcript;
     transcript.innerHTML = transcript;
     textarea.innerHTML = transcript;
+    outerTranscript = transcript.toUpperCase();
+    input.value = outerTranscript;
+    isItCorrect();
 }
 input.addEventListener('keydown', function (event) {
     if (event.code === 'Enter') {
@@ -105,7 +123,7 @@ input.addEventListener('input', () => {
 });
 
 let marks_array = ['1.png', '2.png', '3.png']
-let subject_array = ['he.jpg','it.jpg', 'cat.jpg', 'dog.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg']
+let subject_array = ['he.jpg', 'it.jpg', 'cat.jpg', 'dog.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg']
 let first_level_verbs = ['can.jpg', 'want.jpg', 'have.jpg', 'see.gif', 'be.jpg', 'do.gif', 'eat.gif', 'drink.gif', 'draw.gif', 'go.gif', 'like.gif', 'cook.gif', 'read.gif', 'listen.gif', 'say.gif', 'write.gif', 'look.gif', 'sleep.gif']
 let first_level_styles = [PrSStyle, FSStyle, PSStyle]
 
@@ -126,7 +144,7 @@ function first_level() {
     random_verb = Math.floor(Math.random() * first_level_verbs.length);
     selected_image = first_level_verbs[random_verb]
     document.getElementById('verb').src = `./images-verbs/${selected_image}`
-    document.getElementById('secondVerb_prompt').innerHTML = `${selected_image.slice(0,-4)}`
+    document.getElementById('secondVerb_prompt').innerHTML = `${selected_image.slice(0, -4)}`
 }
 second_verb_question.addEventListener('click', () => {
     second_verb_question.classList.add('hidden');
@@ -145,7 +163,7 @@ function get_random_style() {
     subject.style.boxShadow = selected_style;
     mark.style.boxShadow = selected_style;
 }
-function hidePrompts () {
+function hidePrompts() {
     for (let prompt of prompts)
         prompt.classList.add('hidden');
 };
@@ -159,8 +177,8 @@ function hideAllPrompts() {
     hideTimeMarkers();
     hidePrompts();
 }
-function randomThree (){
- get_random_mark();
+function randomThree() {
+    get_random_mark();
     get_random_subject();
     first_level();
 }
@@ -174,10 +192,10 @@ buttonPSTest.addEventListener('click', () => {
     get_TestMark();
     hideAllPrompts();
     changePrompt('I was')
-         secondVerb.style.boxShadow = PSStyle;
-        subject.style.boxShadow = PSStyle;
+    secondVerb.style.boxShadow = PSStyle;
+    subject.style.boxShadow = PSStyle;
     mark.style.boxShadow = PSStyle;
-      textarea.classList.remove('hidden');
+    textarea.classList.remove('hidden');
     speak.classList.remove('hidden');
 })
 function get_TestSubject() {
@@ -186,11 +204,11 @@ function get_TestSubject() {
         document.getElementById('subject').src = `./images-subject/${selected_image}`
     }
 }
-function testForward (){
- speak.style.background = 'rgba(6, 229, 102, 1)';
-        testStart += 1;
-        get_TestSubject();
-        get_TestVerb();
+function testForward() {
+    speak.style.background = 'rgba(6, 229, 102, 1)';
+    testStart += 1;
+    get_TestSubject();
+    get_TestVerb();
     get_TestMark();
     input.value = ''
 }
@@ -296,4 +314,45 @@ function checkPSTest() {
         changePrompt('Yay! YOU DID IT!!')
         changeVerb('encourage.gif')
     }
+}
+// ============================================TEST================================
+let currentSentence = '';
+let totalCorrectSentences = 0;
+
+textAreaBelow.addEventListener('click', () => {
+    textAreaBelow.style.opacity = '0', textAreaQuestion.style.opacity = '1';
+});
+textAreaQuestion.addEventListener('click', () => {
+    textAreaQuestion.style.opacity = '0', textAreaBelow.style.opacity = '1';
+    console.log(currentSentence);
+})
+function isItCorrect() {
+    console.log(totalCorrectSentences);
+    console.log(outerTranscript);
+    if (input.value.toUpperCase() == `${currentSentence}`.toUpperCase() || outerTranscript == `${currentSentence}`.toUpperCase()) {
+        testSimple();
+        totalCorrectSentences += 1;
+        correctAnswersText.innerHTML = `Correct answers: ${totalCorrectSentences}`;
+        // flipPiChange();
+    }
+}
+function testSimple() {
+    let testRandomNumber = Math.floor(Math.random() * 13)
+    console.log(testRandomNumber);
+    if (testRandomNumber === 0) {
+        testPCcallback('', 'she.jpg', '1.png', 'sleep.gif', PrCStyle, 'at the moment', "She is sleeping at the moment"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 1) {
+        testCallback('', 'he.jpg', '1.png', 'sleep.gif', PCStyle, 'at that moment', "He was sleeping at that moment"), questionWord.style.opacity = '0';
+    }
+}
+function testCallback(question, who, mark1, verb, style, time, sentence) {
+    questionWord.innerHTML = `${question}`
+    subject.src = `${subjectFolder}${who}`
+    mark.src = `${marksFolder}${mark1}`
+    verbPic.src = `${verbsFolder}${verb}`
+    secondVerb.style.boxShadow = style
+    second_verb_prompt.innerHTML = `${verb.slice(0, -4)}`
+    timeMaker.innerHTML = `${time}`
+    textAreaBelow.innerHTML = `${sentence}`
+    currentSentence = sentence;
 }

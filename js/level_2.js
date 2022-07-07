@@ -136,7 +136,7 @@ function isItCorrect() {
 }
 
 function testContinuous() {
-    let testRandomNumber = Math.floor(Math.random() * 13)
+    let testRandomNumber = Math.floor(Math.random() * 33)
     console.log(testRandomNumber);
     if (testRandomNumber === 0) {
         testPCcallback('', 'she.jpg', '1.png', 'sleep.gif', PrCStyle, 'at the moment', "She is sleeping at the moment"), questionWord.style.opacity = '0';
@@ -210,9 +210,7 @@ function testContinuous() {
 
 
 function testPCcallback(question, who, mark1, verb, style, time, sentence) {
-    questionWord.style.opacity = '0';
     questionWord.innerHTML = `${question}`
-    timeMarker.style.opacity = '1';
     subject.src = `${subjectFolder}${who}`
     mark.src = `${marksFolder}${mark1}`
     verbPic.src = `${verbsFolder}${verb}`
