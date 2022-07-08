@@ -8,6 +8,7 @@ const secondVerb = document.querySelector('.secondVerb');
 const second_verb_question = document.getElementById('secondVerb_question');
 const second_verb_prompt = document.getElementById('secondVerb_prompt');
 const input = document.getElementById('input');
+const firstConnection = document.getElementById('firstConnection');
 const questionWord = document.getElementById('questionWord');
 const textAreaBelow = document.getElementById('text_area');
 const textAreaQuestion = document.getElementById('textAreaQuestion');
@@ -79,13 +80,7 @@ buttonPS.addEventListener('click', () => {
     mark.style.boxShadow = PSStyle;
 })
 
-let button = document.getElementById('mark');
-button.addEventListener('click', function () {
-    randomThree();
-    get_random_style();
-    hidePrompts();
-    console.log('changing the mark');
-})
+
 
 function hideTest() {
     textarea.classList.add('hidden');
@@ -216,7 +211,7 @@ function testForward() {
 function get_TestVerb() {
     if (testStart < testVerbsArray.length) {
         selected_image = testVerbsArray[`${testStart}`]
-        document.getElementById('verb').src = `./images-verbs/${selected_image}`
+        document.getElementById('verbPic').src = `./images-verbs/${selected_image}`
         changePrompt(selected_image.slice(0, -4))
     }
 }
@@ -318,6 +313,8 @@ function checkPSTest() {
 // ============================================TEST================================
 let currentSentence = '';
 let totalCorrectSentences = 0;
+let button = document.getElementById('mark');
+button.addEventListener('click', testSimple)
 
 textAreaBelow.addEventListener('click', () => {
     textAreaBelow.style.opacity = '0', textAreaQuestion.style.opacity = '1';
@@ -337,17 +334,68 @@ function isItCorrect() {
     }
 }
 function testSimple() {
-    let testRandomNumber = Math.floor(Math.random() * 13)
+    let testRandomNumber = Math.floor(Math.random() * 25)
     console.log(testRandomNumber);
+    hidePrompts();
     if (testRandomNumber === 0) {
-        testPCcallback('', 'she.jpg', '1.png', 'sleep.gif', PrCStyle, 'at the moment', "She is sleeping at the moment"), questionWord.style.opacity = '0';
+        testCallback('Usually', 'she.jpg', '', '1.png', 'walk.gif', PrSStyle, 'to school', "Usually she walks to school"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
     } else if (testRandomNumber === 1) {
-        testCallback('', 'he.jpg', '1.png', 'sleep.gif', PCStyle, 'at that moment', "He was sleeping at that moment"), questionWord.style.opacity = '0';
+        testCallback('Usually', 'he.jpg', '', '2.png', 'cook.gif', PrSStyle, '', "Usually he doesn't cook"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 2) {
+        testCallback('', 'he.jpg', '', '1.png', 'cook.gif', PSStyle, ' fish last time', "He cooked fish last time"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 3) {
+        testCallback('', 'he.jpg', '', '2.png', 'cook.gif', PSStyle, 'anything yesterday', "He didn't cook anything yesterday"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 4) {
+        testCallback('', 'she.jpg', '', '3.png', 'cook.gif', PSStyle, 'anything yesterday', "Did she cook anything yesterday"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 5) {
+        testCallback('I promise', 'me.jpg', '', '1.png', 'cook.gif', FSStyle, 'something tomorrow', "I promise I'll cook something tomorrow"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 6) {
+        testCallback('', 'me.jpg', '', '1.png', 'cook.gif', PrSStyle, 'from time to time', "I cook from time to time"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 7) {
+        testCallback('', 'me.jpg', '', '2.png', 'like.gif', PrSStyle, 'cooking at all', "I don't like cooking at all"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 8) {
+        testCallback('', 'she.jpg', '', '3.png', 'like.gif', PrSStyle, 'cooking at all', "Does she like cooking at all"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 9) {
+        testCallback('', 'she.jpg', 'never', '1.png', 'like.gif', PSStyle, 'cooking', "She never liked cooking"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 10) {
+        testCallback('', 'he.jpg', 'ever', '3.png', 'cry.gif', PrSStyle, '', "Does he ever cry"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 11) {
+        testCallback('', 'he.jpg', 'never', '1.png', 'cry.gif', PrSStyle, '', "He never cries"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 12) {
+        testCallback('', 'he.jpg', 'never', '1.png', 'fight.gif', PrSStyle, 'at school', "He never fights at school"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 13) {
+        testCallback('Can', 'she.jpg', '', '3.png', 'fight.gif', PrSStyle, '', "Can she fight"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 14) {
+        testCallback('', 'she.jpg', "can", '2.png', 'fight.gif', PrSStyle, '', "She can't fight"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 15) {
+        testCallback('', 'she.jpg', "can", '1.png', 'sing.gif', PrSStyle, '', "She can sing"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 16) {
+        testCallback('', 'he.jpg', "can", '1.png', 'sing.gif', PSStyle, 'when he was 9', "He could sing when he was 9"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 17) {
+        testCallback('', 'me.jpg', "", '1.png', 'explain.gif', PSStyle, 'twice', "I explained twice"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 18) {
+        testCallback('', 'he.jpg', "", '2.png', 'explain.gif', PSStyle, 'anything', "He didn't explain anything"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 18) {
+        testCallback('', 'me.jpg', "can", '1.png', 'explain.gif', PrSStyle, 'it', "I can explain it"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 19) {
+        testCallback('', 'you.jpg', "need to", '2.png', 'explain.gif', PrSStyle, 'it', "You don't need to explain it"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 20) {
+        testCallback('', 'you.jpg', "need to", '2.png', 'explain.gif', PrSStyle, 'it', "You don't need to explain it"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 21) {
+        testCallback('Can', 'you.jpg', "", '3.png', 'explain.gif', PrSStyle, 'it', "Can you explain it"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 22) {
+        testCallback('', 'you.jpg', "have to", '1.png', 'do.gif', PrSStyle, 'it', "You have to do it"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 23) {
+        testCallback('', 'you.jpg', "have to", '2.png', 'do.gif', PrSStyle, 'it', "You don't have to do it"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 24) {
+        testCallback('', 'you.jpg', "", '3.png', 'need.gif', PrSStyle, 'it now', "Do you need it now"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
     }
+
 }
-function testCallback(question, who, mark1, verb, style, time, sentence) {
+function testCallback(question, who, connection, mark1, verb, style, time, sentence) {
     questionWord.innerHTML = `${question}`
     subject.src = `${subjectFolder}${who}`
+    firstConnection.innerHTML = `${connection}`
     mark.src = `${marksFolder}${mark1}`
     verbPic.src = `${verbsFolder}${verb}`
     secondVerb.style.boxShadow = style

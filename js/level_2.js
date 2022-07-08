@@ -136,7 +136,7 @@ function isItCorrect() {
 }
 
 function testContinuous() {
-    let testRandomNumber = Math.floor(Math.random() * 33)
+    let testRandomNumber = Math.floor(Math.random() * 61)
     console.log(testRandomNumber);
     if (testRandomNumber === 0) {
         testPCcallback('', 'she.jpg', '1.png', 'sleep.gif', PrCStyle, 'at the moment', "She is sleeping at the moment"), questionWord.style.opacity = '0';
@@ -199,11 +199,67 @@ function testContinuous() {
     } else if (testRandomNumber === 29) {
         testPCcallback('', 'he.jpg', '1.png', 'eat.gif', PCStyle, "all day", "He was eating all day"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 30) {
-        testPCcallback('Maybe', 'he.jpg', '1.png', 'eat.gif', FCStyle, "all day", "He was eating all day"), questionWord.style.opacity = '1';
+        testPCcallback('Maybe', 'he.jpg', '1.png', 'eat.gif', FCStyle, "all day", "Maybe he will be eating all day"), questionWord.style.opacity = '1';
     } else if (testRandomNumber === 31) {
         testPCcallback('What', 'she.jpg', '3.png', 'explain.gif', PCStyle, "", "What was she explaining"), questionWord.style.opacity = '1';
     } else if (testRandomNumber === 32) {
         testPCcallback('Who', 'she.jpg', '3.png', 'feed.gif', PCStyle, "", "Who was she feeding"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 33) {
+        testPCcallback('What', 'you.jpg', '3.png', 'discuss.gif', PCStyle, "yesterday", "What were you discussing yesterday"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 34) {
+        testPCcallback('What', 'we.jpg', '3.png', 'discuss.gif', PrCStyle, "these days", "What are we discussing these days"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 35) {
+        testPCcallback('', 'nobody.jpg', '1.png', 'discuss.gif', PrCStyle, "you", "Nobody is discussing you"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 36) {
+        testPCcallback('', 'me.jpg', '1.png', 'write.gif', PrCStyle, "a letter", "I'm writing a letter"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 37) {
+        testPCcallback('', 'she.jpg', '2.png', 'write.gif', PrCStyle, "a letter", "She is not writing a letter"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 38) {
+        testPCcallback('', 'he.jpg', '3.png', 'write.gif', PrCStyle, "a letter", "Is he writing a letter"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 39) {
+        testPCcallback('', 'they.jpg', '1.png', 'decide.gif', PrCStyle, "now", "They are deciding now"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 40) {
+        testPCcallback('What', 'he.jpg', '3.png', 'go.gif', PrCStyle, "to do", "What is he going to do"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 41) {
+        testPCcallback('What', 'she.jpg', '3.png', 'go.gif', PrCStyle, "to say", "What is she going to say"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 42) {
+        testPCcallback('What', 'you.jpg', '3.png', 'go.gif', PrCStyle, "to do", "What are you going to do"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 43) {
+        testPCcallback('What', 'she.jpg', '3.png', 'go.gif', PrCStyle, "to cook", "What is she going to cook"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 44) {
+        testPCcallback('Where', 'you.jpg', '3.png', 'go.gif', PrCStyle, "to go", "Where are you going to go"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 45) {
+        testPCcallback('Why', 'you.jpg', '3.png', 'come back.gif', PrCStyle, "", "Why are you coming back"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 46) {
+        testPCcallback('What', 'we.jpg', '3.png', 'go.gif', PrCStyle, "to do", "What are we going to do"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 47) {
+        testPCcallback('Look', 'he.jpg', '1.png', 'do.gif', PrCStyle, "homework", "Look he is doing his homework"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 48) {
+        testPCcallback('Listen', 'somebody.jpg', '1.png', 'sing.gif', PrCStyle, "", "Listen somebody is singing"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 49) {
+        testPCcallback('Look', 'somebody.jpg', '1.png', 'run.gif', PrCStyle, "over there", "Look somebody is running over there"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 50) {
+        testPCcallback('Look', 'it.jpg', '1.png', 'rain.gif', PrCStyle, "", "Look it is raining"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 51) {
+        testPCcallback('Look', 'it.jpg', '1.png', 'rain.gif', PrCStyle, "", "Look it is raining"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 52) {
+        testPCcallback('', 'she.jpg', '2.png', 'read.gif', PCStyle, "all day", "She wasn't reading all day"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 53) {
+        testPCcallback('What', 'you.jpg', '3.png', 'read.gif', PrCStyle, "", "What are you reading"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 54) {
+        testPCcallback('Maybe', 'me.jpg', '2.png', 'read.gif', FCStyle, "in the near future", "Maybe I won't be reading in the near future"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 55) {
+        testPCcallback('', 'me.jpg', '1.png', 'drink.gif', FCStyle, "tea in the morning", "I will be drinking tea in the morning"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 56) {
+        testPCcallback('', 'she.jpg', '1.png', 'read.gif', PCStyle, "the whole evening yesterday", "She was reading the whole evening yesterday"), questionWord.style.opacity = '0';
+    } else if (testRandomNumber === 57) {
+        testPCcallback('Look', 'cat.jpg', '1.png', 'play.gif', PrCStyle, "with a ball", "Look the cat is playing with a ball"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 58) {
+        testPCcallback('Why', 'she.jpg', '3.png', 'cry.gif', PrCStyle, "", "Why is she crying"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 59) {
+        testPCcallback('Why', 'she.jpg', '3.png', 'cry.gif', PCStyle, "", "Why was she crying"), questionWord.style.opacity = '1';
+    } else if (testRandomNumber === 60) {
+        testPCcallback("He isn't here", 'he.jpg', '1.png', 'do.gif', PrCStyle, "his homework", "He isn't here he is doing his homework"), questionWord.style.opacity = '1';
     }
 }
 

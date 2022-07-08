@@ -180,6 +180,12 @@ body {
   left: 5%;
 }
 
+.firstConnectionWord {
+  margin-left: 35px;
+  font-size: 35px;
+  transition: 500ms var(--cubic-bezier);
+}
+
 .tense {
   cursor: pointer;
   border-radius: 7px;
@@ -344,8 +350,8 @@ body {
 }
 
 #past__s_test {
-  top: 8%;
-  left: 33%;
+  top: 9%;
+  left: 13.2%;
   transition: 500ms var(--cubic-bezier);
 }
 

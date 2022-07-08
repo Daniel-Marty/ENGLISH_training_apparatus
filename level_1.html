@@ -21,15 +21,16 @@
 <body>
     <header>
         <ul class="buttons">
-            <li><a href="./index.html"><button id='main_menu' onclick="zero_level()" type="button"
+            <li><a href="./index.html"><button id='main_menu' type="button"
                         class="button tense">main</button></a></li>
-            <li><span id='present__s' class=""><img src="./images-marks/triangle_cropped.png" alt="triangle" height="42" width="45"
+            <li><button id='past__s' type="button" class="tense"></button></li>
+                        <li><span id='present__s' class=""><img src="./images-marks/triangle_cropped.png" alt="triangle" height="42" width="45"
                         class="png__triangle"></span></li>
             <li><button id='future__s' type="button" class="tense"></button></li>
-            <li><button id='past__s' type="button" class="tense"></button></li>
+            
             <li><a href="./level_0.html"><button id='zero_level' type="button" class="button tense">0</button></a></li>
-            <li><a href="./level_1.html" class="current"><button id='first_level' type="button" class="button tense current">1</button></a></li>
-            <li><a href="./level_2.html"><button id='second_level' type="button" class="button tense">2</button></a></li>
+            <li><a href="./level_1.html" class="current"><button id='first_level' type="button" class="button tense current">S</button></a></li>
+            <li><a href="./level_2.html"><button id='second_level' type="button" class="button tense">C</button></a></li>
             <li><a href="./level_3.html"><button id='third_level' type="button" class="button tense">3</button></a></li>
             <li><a href="./level_4.html"><button id='fourth_level' type="button" class="button tense">4</button></a></li>
             <li><a href="./level_5.html"><button id='fifth_level' type="button" class="button tense">5</button></a></li>
@@ -57,13 +58,20 @@
     <img onclick="get_random_mark" class="mark" id="mark" src="images-marks/1.png" alt="mark" height="160">
     <ul class="content">
         <li>
+            <p class="text questionWord" id="questionWord"></p>
+        </li>
+        <li>
             <div class="subject" onclick="get_random_subject()">
                 <img class="verb__pic" id='subject' src="./images-subject/Emilia.jpg" alt="subject" height="180">
             </div>
         </li>
+        <li><p class="text firstConnectionWord" id="firstConnection">never</p></li>
         <li>
-            <div id="secondVerb" onclick="first_level()" class="secondVerb"><img class="verb__pic" id='verb'
+            <div id="secondVerb" onclick="first_level()" class="secondVerb"><img class="verb__pic" id='verbPic'
                     src="./images-verbs/argue.gif" alt="eat" width="250"></div>
+        </li>
+        <li>
+            <p class="text timeMarker" id="timeMarker"></p>
         </li>
     </ul>
     <div>
@@ -78,5 +86,6 @@
             </li>
         </ul>
     </div>
+    <p class="text textArea__question" id="textAreaQuestion">?</p>
     <script src="./js/level_1.js"></script>
 </body>
