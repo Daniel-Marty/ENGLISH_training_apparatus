@@ -22,10 +22,14 @@ input.addEventListener('keydown', function (event) {
         input.value = '';
     }
 })
-input.addEventListener('keydown', isItCorrect);
 input.addEventListener('input', () => {
     textarea.innerHTML = input.value;
 })
+input.addEventListener('input', () => {
+    transcript = input.value.toUpperCase();
+    textarea.innerHTML = input.value;
+    isItCorrect();
+});
 
 const buttonMain = document.getElementById('main_menu');
 const buttonPC = document.getElementById('past__c');
@@ -171,7 +175,7 @@ function testContinuous() {
     } else if (testRandomNumber === 15) {
         testPCcallback('', 'nobody.jpg', '1.png', 'cook.gif', FCStyle, "in the distant future", "Nobody will be cooking in the distant future"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 16) {
-        testPCcallback('', 'we.jpg', '2.png', 'come.gif', PrCStyle, "tonight", "We're not coming tonight"), questionWord.style.opacity = '0';
+        testPCcallback('', 'we.jpg', '2.png', 'come.gif', PrCStyle, "tonight", "We are not coming tonight"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 17) {
         testPCcallback('', 'you.jpg', '3.png', 'come.gif', PrCStyle, "tomorrow", "Are you coming tomorrow"), questionWord.style.opacity = '0';
     } else if (testRandomNumber === 18) {

@@ -97,6 +97,7 @@ speak.addEventListener('click', function () {
     recognition.start();
     textarea.innerHTML = '...speaking';
 })
+let outerTranscript = '';
 recognition.onresult = function (e) {
     console.log(e);
     var transcript = e.results[0][0].transcript;
@@ -106,6 +107,7 @@ recognition.onresult = function (e) {
     input.value = outerTranscript;
     isItCorrect();
 }
+
 input.addEventListener('keydown', function (event) {
     if (event.code === 'Enter') {
         input.value = '';
@@ -115,6 +117,7 @@ input.addEventListener('input', () => {
     transcript = input.value.toUpperCase();
     textarea.innerHTML = input.value;
     checkPSTest();
+    isItCorrect();
 });
 
 let marks_array = ['1.png', '2.png', '3.png']
@@ -310,6 +313,16 @@ function checkPSTest() {
         changeVerb('encourage.gif')
     }
 }
+//   ==========================================COUNTDOWN TIMER=============================
+
+setInterval(updateCountdown, 1000)
+function updateCountdown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    countdown.innerHTML = `${minutes}: ${seconds}`;
+    time--;
+}
 // ============================================TEST================================
 let currentSentence = '';
 let totalCorrectSentences = 0;
@@ -324,7 +337,6 @@ textAreaQuestion.addEventListener('click', () => {
     console.log(currentSentence);
 })
 function isItCorrect() {
-    console.log(totalCorrectSentences);
     console.log(outerTranscript);
     if (input.value.toUpperCase() == `${currentSentence}`.toUpperCase() || outerTranscript == `${currentSentence}`.toUpperCase()) {
         testSimple();
@@ -333,8 +345,9 @@ function isItCorrect() {
         // flipPiChange();
     }
 }
+
 function testSimple() {
-    let testRandomNumber = Math.floor(Math.random() * 25)
+    let testRandomNumber = Math.floor(Math.random() * 70)
     console.log(testRandomNumber);
     hidePrompts();
     if (testRandomNumber === 0) {
@@ -389,7 +402,78 @@ function testSimple() {
         testCallback('', 'you.jpg', "have to", '2.png', 'do.gif', PrSStyle, 'it', "You don't have to do it"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
     } else if (testRandomNumber === 24) {
         testCallback('', 'you.jpg', "", '3.png', 'need.gif', PrSStyle, 'it now', "Do you need it now"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 25) {
+        testCallback('', 'you.jpg', "", '3.png', 'need.gif', PrSStyle, 'it now', "Do you need it now"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 26) {
+        testCallback('', 'me.jpg', "", '1.png', 'need.gif', PrSStyle, 'your help', "I need your help"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 27) {
+        testCallback('', 'she.jpg', "", '2.png', 'need.gif', PrSStyle, 'your help', "She doesn't need your help"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 28) {
+        testCallback('', 'she.jpg', "", '1.png', 'need.gif', PSStyle, 'your help yesterday', "She needed your help yesterday"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 29) {
+        testCallback('', 'she.jpg', "never", '1.png', 'need.gif', PrSStyle, '', "She never helps"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 30) {
+        testCallback('', 'me.jpg', "", '1.png', 'help.gif', FSStyle, '', "I'll help"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 31) {
+        testCallback('', 'he.jpg', "usually", '1.png', 'help.gif', PrSStyle, '', "He usually helps"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 32) {
+        testCallback('', 'he.jpg', "usually", '1.png', 'go.gif', PrSStyle, 'there on Sundays', "He usually goes there on Sundays"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 33) {
+        testCallback('', 'he.jpg', "", '1.png', 'go.gif', PSStyle, 'there a day ago', "He went there a day ago"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 34) {
+        testCallback('', 'somebody.jpg', "", '1.png', 'go.gif', FSStyle, 'there some day', "Somebody will go there some day"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 35) {
+        testCallback('', 'me.jpg', "", '2.png', 'go.gif', FSStyle, 'there', "I won't go there"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 36) {
+        testCallback('', 'she.jpg', "", '3.png', 'go.gif', PSStyle, 'there alone', "Did she go there alone"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 37) {
+        testCallback('', 'she.jpg', "", '3.png', 'go.gif', PSStyle, 'there alone', "Did she go there alone"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 38) {
+        testCallback('', 'me.jpg', "normally", '1.png', 'drink.gif', PrSStyle, 'coffee in the morning', "I normally drink coffee in the morning"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 39) {
+        testCallback('', 'she.jpg', "never", '1.png', 'drink.gif', PrSStyle, 'vodka in the morning', "She never drinks vodka in the morning"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 40) {
+        testCallback('There is', 'nobody.jpg', "to", '1.png', 'help.gif', PrSStyle, 'you', "There is nobody to help you"), questionWord.style.opacity = '1', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 41) {
+        testCallback('There was', 'nobody.jpg', "to", '1.png', 'help.gif', PSStyle, 'you yesterday', "There was nobody to help you yesterday"), questionWord.style.opacity = '1', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 42) {
+        testCallback('', 'somebody.jpg', "", '1.png', 'be.gif', PSStyle, 'here 5 minutes ago', "Somebody was here 5 minutes ago"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 43) {
+        testCallback('', 'it.jpg', "", '1.png', 'be.jpg', PSStyle, 'empty in 1995', "It was empty in 1995"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 44) {
+        testCallback('', 'it.jpg', "", '1.png', 'be.jpg', PSStyle, 'empty in 1995', "It was empty in 1995"), questionWord.style.opacity = '0', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 45) {
+        testCallback('', 'me.jpg', "just", '1.png', 'arrive.gif', PSStyle, 'yesterday', "I just arrived yesterday"), questionWord.style.opacity = '0', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 46) {
+        testCallback('When', 'he.jpg', "", '3.png', 'arrive.gif', PSStyle, '', "When did he arrive"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 47) {
+        testCallback('I think', 'she.jpg', "", '1.png', 'arrive.gif', FSStyle, 'on Friday', "I think she will arrive on Friday"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 48) {
+        testCallback('Where', 'he.jpg', "", '1.png', 'work.gif', PSStyle, 'last year', "Where did he work last year"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 49) {
+        testCallback('Where', 'he.jpg', "", '3.png', 'work.gif', PSStyle, 'last year', "Where did he work last year"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 50) {
+        testCallback('Where', 'she.jpg', "", '3.png', 'work.gif', PrSStyle, '', "Where does she work"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 51) {
+        testCallback('I think', 'you.jpg', "", '1.png', 'quit.gif', FSStyle, '', "I think you'll quit"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 52) {
+        testCallback('I think', 'she.jpg', "definitely", '1.png', 'tell.gif', FSStyle, 'you', "I think she'll definitely tell you"), questionWord.style.opacity = '1', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 53) {
+        testCallback('I think', 'dog.jpg', "surely", '1.png', 'come back.gif', FSStyle, 'to you', "I think the dog will surely come back to you"), questionWord.style.opacity = '1', firstConnection.classList.remove('hidden');
+    } else if (testRandomNumber === 54) {
+        testCallback('It seems like', 'dog.jpg', "", '1.png', 'be.jpg', PSStyle, 'here a moment ago', "I think the dog was here a moment ago"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 55) {
+        testCallback('It seems like', 'he.jpg', "", '2.png', 'understand.gif', PrSStyle, 'what his job is', "I seems like he doesn't understand what his job is"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 56) {
+        testCallback("It doesn't seem like", 'she.jpg', "", '1.png', 'understand.gif', PrSStyle, "what's going on", "I doesn't seem like she understands what's going on"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 57) {
+        testCallback("It doesn't seem like", 'you.jpg', "", '1.png', 'understand.gif', PrSStyle, "what it is", "I doesn't seem like you understand what it is"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 58) {
+        testCallback("It doesn't seem like", 'you.jpg', "", '1.png', 'know.gif', PrSStyle, "him", "I doesn't seem like you know him"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
+    } else if (testRandomNumber === 59) {
+        testCallback("It seems like", 'she.jpg', "", '2.png', 'can.jpg', PrSStyle, "drive", "I seems like she can't drive"), questionWord.style.opacity = '1', firstConnection.classList.add('hidden');
     }
+
 
 }
 function testCallback(question, who, connection, mark1, verb, style, time, sentence) {
