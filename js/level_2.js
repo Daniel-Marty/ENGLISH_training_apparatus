@@ -23,11 +23,8 @@ input.addEventListener('keydown', function (event) {
     }
 })
 input.addEventListener('input', () => {
-    textarea.innerHTML = input.value;
-})
-input.addEventListener('input', () => {
     transcript = input.value.toUpperCase();
-    textarea.innerHTML = input.value;
+    textAreaFeedback.innerHTML = input.value;
     isItCorrect();
 });
 
@@ -48,6 +45,7 @@ const timeMaker = document.getElementById('timeMarker');
 const correctAnswersText = document.getElementById('correctAnwers');
 const countdown = document.getElementById('countdown');
 const flipPic = document.getElementById('flipPic');
+const textAreaFeedback = document.getElementById('textAreaFeedback');
 
 const startingMinutes = 5;
 let time = startingMinutes * 60;

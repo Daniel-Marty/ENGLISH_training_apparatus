@@ -22,8 +22,9 @@
   --accent-shadow-tense: 0px 0px 5px 10px white;
 }
 
-html {
+html, body {
   box-sizing: border-box;
+  height: 100%;
 }
 
 *,
@@ -34,7 +35,7 @@ html {
 
 img {
   display: block;
-  border-radius: 20px;
+  border-radius: 40px;
 }
 
 li {
@@ -90,11 +91,13 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: space-around;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(138, 138, 138) 55%, rgba(0, 0, 0, 0.8465511204) 100%);
 }
 
 .text {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 32px;
   line-height: 1.16;
   letter-spacing: 0.03em;
   color: transparent;
@@ -113,22 +116,22 @@ body {
   z-index: 12;
   position: absolute;
   left: 50%;
-  bottom: 7%;
+  bottom: 3%;
   transform: translate(-50%, 0);
   padding: 5px;
   text-align: center;
-  min-width: 60%;
+  min-width: 80%;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 60px;
   line-height: 1.1;
   letter-spacing: 0.03em;
   color: transparent;
-  background: #333131;
+  background: #000000;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-  text-shadow: 0px 3px 2px rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
+  text-shadow: 0px 0px 30px rgb(255, 255, 255);
+  border-radius: 35px;
   box-shadow: 0px 0px 25px 12px white;
   transition: 700ms var(--cubic-bezier);
 }
@@ -140,8 +143,8 @@ body {
   z-index: 10;
   width: 300px;
   position: absolute;
-  top: 29%;
-  left: 36%;
+  top: 10%;
+  left: 16%;
   transform: translate(-50%, 0);
 }
 
@@ -184,6 +187,13 @@ body {
   margin-left: 35px;
   font-size: 35px;
   transition: 500ms var(--cubic-bezier);
+}
+
+.textArea__feedback {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .tense {
@@ -234,8 +244,8 @@ body {
 #speak {
   z-index: 13;
   position: absolute;
-  left: 33%;
-  top: 14%;
+  left: 34%;
+  top: 13%;
   transition: 500ms var(--cubic-bezier);
 }
 
@@ -537,15 +547,15 @@ body {
 .prompt {
   z-index: 9;
   position: absolute;
-  left: 10%;
-  top: 100px;
+  left: 5%;
+  top: 90px;
 }
 
 .time_marker {
   z-index: 9;
   position: absolute;
   right: 2%;
-  top: 30%;
+  top: 9%;
   font-weight: bold;
   font-size: 20px;
   line-height: 1.16;
@@ -742,7 +752,7 @@ body {
   line-height: 0.6;
   height: 35px;
   left: 50%;
-  bottom: 12%;
+  bottom: 4%;
   transform: translate(-50%, 0);
   transition: 500ms var(--cubic-bezier);
 }
@@ -755,15 +765,15 @@ body {
 .secondVerb {
   cursor: pointer;
   border-radius: 40px;
-  margin-left: 40px;
+  margin-left: 150px;
 }
 
 .secondVerb_question {
   cursor: pointer;
   position: absolute;
   z-index: 8;
-  left: 63%;
-  top: 20%;
+  left: 54%;
+  top: 13%;
   opacity: 1;
   text-align: center;
   min-width: 43px;
@@ -773,8 +783,8 @@ body {
   cursor: pointer;
   position: absolute;
   z-index: 10;
-  left: 58%;
-  top: 20%;
+  left: 54%;
+  top: 13%;
   min-width: 60px;
   opacity: 0;
   text-align: center;
@@ -795,9 +805,8 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  top: 30%;
+  top: 20%;
   align-items: center;
-  box-shadow: 2px 0px 23px 12px white;
 }
 
 .there_is {
@@ -812,4 +821,46 @@ body {
   max-height: 80px;
   max-width: 150px;
   border-radius: 80px;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 50;
+}
+
+.header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background-color: grey;
+}
+
+.header__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+}
+
+.header__list {
+  display: flex;
+}
+
+.header__link {
+  text-transform: uppercase;
+  color: black;
+  margin-left: 20px;
 }/*# sourceMappingURL=main.css.map */

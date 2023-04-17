@@ -82,18 +82,18 @@ const TM_FC = document.getElementById('tm__f__c')
 const TM_FP = document.getElementById('tm__f__p')
 const TM_FPC = document.getElementById('tm__f__pc')
 
-const PrSStyle = 'rgb(19, 246, 49) 0px 0px 4px 15px, rgb(255, 255, 255) 0px 0px 20px 35px'
-const FSStyle = 'rgb(255, 5, 5) 0px 0px 4px 15px, white 0px 0px 20px 35px'
-const PSStyle = 'rgb(0, 87, 250) 0px 0px 4px 15px, white 0px 0px 20px 35px'
-const PrPStyle = 'rgb(19, 246, 49) 0px 0px 4px 15px, black 0px 0px 20px 30px'
-const PrCStyle = 'rgb(19, 246, 49) 0px 0px 4px 15px, yellow 0px 0px 20px 35px'
-const PCStyle = 'rgb(0, 87, 250) 0px 0px 4px 15px, yellow 0px 0px 20px 35px'
-const FCStyle = 'rgb(255, 5, 5) 0px 0px 4px 15px, yellow 0px 0px 20px 35px'
-const PrPCStyle = 'rgb(19, 246, 49) 0px 0px 4px 14px, black 0px 0px 0px 18px, yellow 0px 0px 20px 35px'
-const PPStyle = 'rgb(0, 87, 250) 0px 0px 4px 15px, black 0px 0px 20px 35px'
-const PPCStyle = 'rgb(0, 87, 250) 0px 0px 4px 14px, black 0px 0px 0px 18px, yellow 0px 0px 20px 35px'
-const FPCStyle = 'rgb(255, 5, 5) 0px 0px 4px 15px, black 0px 0px 0px 18px, yellow 0px 0px 20px 35px'
-const FPStyle = 'rgb(255, 5, 5) 0px 0px 4px 15px, black 0px 0px 20px 30px'
+const PrSStyle = 'rgb(19, 246, 49) 0px 0px 2px 5px, rgb(255, 255, 255) 0px 0px 10px 15px'
+const FSStyle = 'rgb(255, 5, 5) 0px 0px 2px 4px, white 0px 0px 10px 15px'
+const PSStyle = 'rgb(0, 87, 250) 0px 0px 2px 4px, white 0px 0px 10px 15px'
+const PrPStyle = 'rgb(19, 246, 49) 0px 0px 2px 5px, black 0px 0px 10px 11px'
+const PrCStyle = 'rgb(19, 246, 49) 0px 0px 2px 5px, yellow 0px 0px 5px 10px'
+const PCStyle = 'rgb(0, 87, 250) 0px 0px 2px 5px, yellow 0px 0px 5px 10px'
+const FCStyle = 'rgb(255, 5, 5) 0px 0px 2px 5px, yellow 0px 0px 5px 10px'
+const PrPCStyle = 'rgb(19, 246, 49) 0px 0px 2px 4px, black 0px 0px 0px 7px, yellow 0px 0px 10px 15px'
+const PPStyle = 'rgb(0, 87, 250) 0px 0px 2px 4px, black 0px 0px 5px 8px'
+const PPCStyle = 'rgb(0, 87, 250) 0px 0px 2px 4px, black 0px 0px 0px 7px, yellow 0px 0px 10px 15px'
+const FPCStyle = 'rgb(255, 5, 5) 0px 0px 2px 4px, black 0px 0px 0px 7px, yellow 0px 0px 10px 15px'
+const FPStyle = 'rgb(255, 5, 5) 0px 0px 2px 4px, black 0px 0px 5px 8px'
 
 let sixth_level_styles = [PrSStyle, FSStyle, PSStyle, PrPStyle, PrCStyle, PCStyle, FCStyle, PrPCStyle, PPStyle, PPCStyle, FPCStyle]
 

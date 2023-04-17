@@ -1,15 +1,17 @@
-html {
+html, body {
   box-sizing: border-box;
+  height: 100%;
 }
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+  // background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,246,187,1) 32%, rgba(252,255,175,1) 100%);
 }
 
 img {
   display: block;
-  border-radius: 20px;
+  border-radius: 40px;
   // max-width: 100%;
   // height: auto;
 }
