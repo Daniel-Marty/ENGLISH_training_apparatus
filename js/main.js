@@ -27,8 +27,9 @@ input.addEventListener('input', () => {
 let marks_array = ['1.png', '2.png', '3.png']
 let subject_array = ['he.jpg', 'it.jpg', 'me.jpg', 'she.jpg', 'they.jpg', 'we.jpg', 'you.jpg', 'cat.jpg', 'dog.jpg', 'Charlie.jpg',]
 let verbs_array = ['accuse.gif', 'achieve.gif', 'act.gif', 'add.gif', 'admit.gif', 'advise.gif', 'agree.gif', 'allow.gif', 'answer.gif', 'apologize.gif', 'argue.gif', 'arrive.gif', 'ask for opinion.gif', 'ask.gif', 'attract attention.gif', 'assist.gif', 'backup.gif', 'bare.gif', 'be able.gif', 'be angry.gif', 'be annoyed.gif', 'be cold.gif', 'be friends.gif', 'be grumpy.gif', 'be happy.gif', 'be interested.gif', 'be late.gif', 'be sarcastic.gif', 'be stubborn.gif', 'be tired.gif', 'be young.gif', 'become.gif', 'be.jpg', 'beg.gif', 'begin start.gif', 'believe.gif', 'bet.gif', 'bite.gif', 'break.gif', 'break into.gif', 'bring.gif', 'broadcast.gif', 'build.gif', 'burn.gif', 'buy.gif', 'call.gif', 'can.jpg', 'cast.gif', 'catch red handed.gif', 'catch.gif', 'challenge.gif', 'change.gif', 'chase.gif', 'chat.gif', 'cheer.gif', 'choose.gif', 'circle.gif', 'claim.gif', 'clean.gif', 'climb.gif', 'collapse.gif', 'collect.gif', 'come.gif', 'come in.gif', 'come up.gif', 'come back.gif', 'comfort.gif', 'compensate.jpg', 'complain.gif', 'compliment.gif', 'comprehend.gif', 'conclude.gif', 'confess.gif', 'confuse.gif', 'consider.gif', 'continue.gif', 'cook.gif', 'count.gif', 'create.gif', 'cross out.gif', 'cry.gif', 'cut.gif', 'dance.gif', 'debate.gif', 'decide.gif', 'defend.gif', 'demonstrate.gif', 'deny.gif', 'deny2.gif', 'develop.gif', 'die.gif', 'disappear.gif', 'discover.gif', 'discuss.gif', 'do.gif', 'do ballet.gif', 'do gymnastics.gif', 'double-cross.gif', 'doubt.gif', 'drink.gif', 'draw.gif', 'drive.gif', 'drop.gif', 'eat.gif', 'embrace.gif', 'encourage.gif', 'entertain.gif', 'escape.gif', 'expect.gif', 'experience.gif', 'explain.gif', 'fall.gif', 'fart.gif', 'feed.gif', 'feel.gif', 'feel sick.gif', 'fight.gif', 'figure out.gif', 'find.gif', 'fly.gif', 'follow.gif', 'forget.gif', 'freeze.gif', 'gather.gif', 'get a present.gif', 'get a shock.gif', 'get dirty.gif', 'get dressed.gif', 'get embarrassed.gif', 'get fat.gif', 'get in.gif', 'get married.gif', 'get promoted.gif', 'give.gif', 'give up.gif', 'go.gif', 'go out.gif', 'greet.gif', 'grow.gif', 'happen.gif', 'have.jpg', 'have picnic.gif', 'have to.gif', 'hear.gif', 'heat up.gif', 'help.gif', 'hesitate.gif', 'hide.gif', 'hit.gif', 'hit2.gif', 'hold.gif', 'hurry.gif', 'hurt.gif', 'improve.gif', 'include.gif', 'inform.gif', 'interrupt.gif', 'invite.gif', 'jump.gif', 'keep.gif', 'kill.gif', 'knit.gif', 'know.gif',
-    'lead.gif', 'leave.gif', 'let go.gif', 'lie on the ground.gif', 'lie.gif', 'list.gif', 'listen.gif', 'live.gif', 'look.gif', 'look for.gif', 'lose weight.gif', 'lose.gif', 'make.gif', 'make a bed.gif', 'make coffee.gif', 'meet.gif', 'memorize.gif', 'mention.gif', 'mind.gif', 'miss.gif', 'miss train.gif', 'miss you.gif', "mix.gif", 'move.gif', 'need.gif', 'nod.gif', 'note.gif', 'offer.gif', 'order.gif', 'overtake.gif', 'paint the town red.gif', 'paint.gif', 'panic.gif', 'pass by.gif', 'pass exam.gif', 'pay.gif', 'persuade.gif', 'play.gif', 'point out.gif', 'pour.gif', 'prefer.jpg', 'protect.gif', 'provide.gif', 'pull.gif', 'punch.gif', 'pursue.gif', 'push.gif', 'put down.gif', 'quit.gif', 'rain.gif', 'raise.gif', 'reach.gif', 'read.gif', 'realize.gif', 'recognize.gif', 'recommend.gif', 'record.gif', 'regret.gif', 'release.gif', 'remain.gif', 'remind.gif', 'repeat.gif', 'reply.gif', 'report.gif', 'represent.gif', 'request.gif', 'require.gif', 'resolve.gif', 'respond.gif', 'reveal.gif', 'ride.gif', 'rip off.gif', 'rise.gif', 'run out of time.gif', 'run out of.gif', 'run.gif', 'rush.gif', 'be sarcastic.gif', 'save.gif', 'say.gif', 'see.gif', 'seek.gif', 'select.gif', 'sell.gif', 'separate.gif', 'serve.gif', 'set.gif', 'shopping.gif', 'shout out.gif', 'show true colors.jpg', 'show.gif', 'shut.gif', 'sing.gif', 'sit.gif', 'ski.gif', 'sleep.gif', 'slice.gif', 'smoke.gif', 'solve.gif', 'sorry.gif', 'spare.gif', 'speak.gif', 'spend.gif', 'spin.gif', 'split.gif', 'spread.gif', 'stand for.gif', 'stand up get up.gif', 'stand.gif', 'start talking.gif', 'stay.jpg', 'steal.gif', 'stir.gif', 'study.gif', 'succeed.gif', 'suggest.gif', 'sunstroke.gif', 'surf the internet.gif', 'surprise.gif', 'swallow.gif', 'swim.gif', 'take.gif', 'take off clothes.gif', 'plane take off.gif', 'taste.gif', 'teach.gif', 'tell.gif', 'think.gif', 'think2.gif', 'throw.gif', 'throw up.gif', 'travel.gif', 'trust.gif', 'try.gif', 'turn.gif', 'turn back.gif', 'turn on.gif', 'twist.gif', 'understand.gif', 'unwrap.gif', 'use.gif', 'visit.gif', 'wait.gif', 'wake.gif', 'walk.gif', 'want.jpg', 'warn.gif', 'watch.gif', 'wear.gif', 'welcome.gif', 'whisper.gif', 'win.gif', 'work.gif', 'wrap.gif', 'write.gif']
+    'lead.gif', 'leave.gif', 'let go.gif', 'lie on the ground.gif', 'lie.gif', 'list.gif', 'listen.gif', 'live.gif', 'look.gif', 'look for.gif', 'lose weight.gif', 'lose.gif', 'make.gif', 'make a bed.gif', 'make coffee.gif', 'meet.gif', 'memorize.gif', 'mention.gif', 'mind.gif', 'miss.gif', 'miss train.gif', 'miss you.gif', "mix.gif", 'move.gif', 'need.gif', 'nod.gif', 'note.gif', 'offer.gif', 'order.gif', 'overtake.gif', 'paint the town red.gif', 'paint.gif', 'panic.gif', 'pass by.gif', 'pass exam.gif', 'pay.gif', 'persuade.gif', 'play.gif', 'point out.gif', 'pour.gif', 'prefer.jpg', 'protect.gif', 'provide.gif', 'pull.gif', 'punch.gif', 'pursue.gif', 'push.gif', 'put down.gif', 'quit.gif', 'rain.gif', 'raise.gif', 'reach.gif', 'read.gif', 'realize.gif', 'recognize.gif', 'recommend.gif', 'record.gif', 'regret.gif', 'release.gif', 'remain.gif', 'remind.gif', 'repeat.gif', 'reply.gif', 'report.gif', 'represent.gif', 'request.gif', 'require.gif', 'resolve.gif', 'respond.gif', 'reveal.gif', 'ride.gif', 'rip off.gif', 'rise.gif', 'run out of time.gif', 'run out of.gif', 'run.gif', 'rush.gif', 'be sarcastic.gif', 'save.gif', 'say.gif', 'see.gif', 'seek.gif', 'select.gif', 'sell.gif', 'separate.gif', 'serve.gif', 'set.gif', 'shopping.gif', 'shout out.gif', 'show true colors.jpg', 'show.gif', 'shut.gif', 'sing.gif', 'sit.gif', 'ski.gif', 'sleep.gif', 'slice.gif', 'smoke.gif', 'solve.gif', 'be sorry.gif', 'spare.gif', 'speak.gif', 'spend.gif', 'spin.gif', 'split.gif', 'spread.gif', 'stand for.gif', 'stand up get up.gif', 'stand.gif', 'start talking.gif', 'stay.jpg', 'steal.gif', 'stir.gif', 'study.gif', 'succeed.gif', 'suggest.gif', 'sunstroke.gif', 'surf the internet.gif', 'surprise.gif', 'swallow.gif', 'swim.gif', 'take.gif', 'take off clothes.gif', 'plane take off.gif', 'taste.gif', 'teach.gif', 'tell.gif', 'think.gif', 'think2.gif', 'throw.gif', 'throw up.gif', 'travel.gif', 'trust.gif', 'try.gif', 'turn.gif', 'turn back.gif', 'turn on.gif', 'twist.gif', 'understand.gif', 'unwrap.gif', 'use.gif', 'visit.gif', 'wait.gif', 'wake.gif', 'walk.gif', 'want.jpg', 'warn.gif', 'watch.gif', 'wear.gif', 'welcome.gif', 'whisper.gif', 'win.gif', 'work.gif', 'wrap.gif', 'write.gif']
 let there_is_subjects_array = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg', '21.jpg', '22.jpg', '23.jpg', '24.jpg', '25.jpg', '26.jpg', '27.jpg', '28.jpg', '29.jpg', '30.jpg', '31.jpg', '32.jpg']
+let toBeVerbsArray = ['be able.gif', 'be angry.gif', 'be annoyed.gif', 'be cold.gif', 'be friends.gif', 'be grumpy.gif', 'be happy.gif', 'be interested.gif', 'be late.gif', 'be sarcastic.gif', 'be sorry.gif', 'be stubborn.gif', 'be tired.gif', 'be young.gif']
 
 console.log(verbs_array.indexOf('come in.gif'));
 const buttonPrS = document.getElementById('present__s');
@@ -44,6 +45,7 @@ const buttonFC = document.getElementById('future__c');
 const buttonFP = document.getElementById('future__p');
 const buttonFPC = document.getElementById('future__pc');
 const buttonThereIs = document.getElementById('button_there_is');
+const buttonToBe = document.getElementById('to_be');
 const subject = document.getElementById('subject');
 const firstVerb = document.getElementById('firstVerb');
 const secondVerb = document.querySelector('.secondVerb');
@@ -126,6 +128,72 @@ function get_second_verb() {
     document.getElementById('verb').src = `./images-verbs/${selected_image}`
     document.getElementById('secondVerb_prompt').innerHTML = `${selected_image.slice(0, -4)}`
 }
+function get_toBe_verb() {
+    random_verb = Math.floor(Math.random() * toBeVerbsArray.length);
+    selected_image = toBeVerbsArray[random_verb]
+    document.getElementById('verb').src = `./images-verbs/${selected_image}`
+    document.getElementById('secondVerb_prompt').innerHTML = `${selected_image.slice(0, -4)}`
+}
+buttonToBe.addEventListener('click', () => {
+    get_toBe_verb();
+})
+
+let altPressed = false;
+
+document.addEventListener('keydown', function (e) {
+    if (e.code === 'KeyB' && e.altKey && !altPressed) {
+        get_toBe_verb();
+        altPressed = true;
+    } else if (e.code === 'KeyS' && e.altKey && !altPressed) {
+        get_random_subject();
+        altPressed = true;
+    } else if (e.code === 'KeyV' && e.altKey && !altPressed) {
+        get_second_verb();
+        altPressed = true;
+    } else if (e.code === 'KeyM' && e.altKey && !altPressed) {
+        get_random_mark();
+        altPressed = true;
+    } else if (e.code === 'KeyO' && e.altKey && !altPressed) {
+        second_verb_question.classList.add('hidden');
+        second_verb_prompt.style.opacity = 1;
+        second_verb_prompt.classList.remove('hidden');
+        altPressed = true;
+    }
+});
+document.addEventListener('keyup', function (e) {
+    if (e.code === 'KeyB' && e.altKey) {
+        altPressed = false;
+    } else if (e.code === 'KeyS' && e.altKey) {
+        altPressed = false;
+    } else if (e.code === 'KeyO' && e.altKey) {
+        altPressed = false;
+    } else if (e.code === 'KeyV' && e.altKey) {
+        altPressed = false;
+    } else if (e.code === 'KeyM' && e.altKey) {
+        altPressed = false;
+    }
+});
+// document.onkeydown = function (e) {
+//     if (e.code == "AltLeft" || "AltRight") {
+//         flag = true;
+//         console.log('fucking flag');
+//     } else { flag = false; }
+//     if (e.code == 'KeyB' && flag) {
+//         get_toBe_verb();
+//     } else if (e.code == "KeyS" && flag == true) {
+//         get_random_subject();
+//     } else if (e.code == "KeyM" && flag == true) {
+//         get_random_mark();
+//     } else if (e.code == "KeyV" && flag == true) {
+//         get_second_verb();
+//     } else if (e.code == "KeyO" && flag == true) {
+//         second_verb_question.classList.add('hidden');
+//         second_verb_prompt.style.opacity = 1;
+//         second_verb_prompt.classList.remove('hidden');
+//     }
+//     console.log(e.code);
+// };
+
 second_verb_question.addEventListener('click', () => {
     second_verb_question.classList.add('hidden');
     second_verb_prompt.style.opacity = 1;
@@ -350,12 +418,8 @@ buttonFPC.addEventListener('click', () => {
     mark.style.boxShadow = FPCStyle;
 })
 
-
-
 let whatIsMyStyle = document.querySelector('.boxShadow')
 console.log(whatIsMyStyle.style.boxShadow);
-
-
 
 function conditionals() {
     let circles = document.getElementById('circles');
